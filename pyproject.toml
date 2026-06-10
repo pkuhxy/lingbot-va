@@ -16,13 +16,15 @@ dependencies = [
     "torch>=2.9.0",
     "torchvision>=0.24.0",
     "diffusers>=0.36.0",
+    "accelerate>=0.31.0",
     "transformers>=4.55.4",
     "tokenizers>=0.21.4",
     "tqdm",
     "imageio",
     "easydict",
     "flash_attn",
-    "numpy>=1.26.4,<2"
+    "numpy>=1.26.4,<2",
+    "setuptools"
 ]
 
 [project.optional-dependencies]
@@ -57,5 +59,4 @@ profile = "black"
 
 [tool.mypy]
 strict = true
-
 

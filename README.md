@@ -90,7 +90,7 @@ https://github.com/user-attachments/assets/cec7b7a6-953b-4fa4-8f1a-47efc1fce547
 
 ```bash
 pip install torch==2.9.0 torchvision==0.24.0 torchaudio==2.9.0 --index-url https://download.pytorch.org/whl/cu126
-pip install websockets einops diffusers==0.36.0 transformers==4.55.2 accelerate msgpack opencv-python matplotlib ftfy easydict
+pip install websockets einops diffusers==0.36.0 transformers==4.55.2 "accelerate>=0.31.0" msgpack opencv-python matplotlib ftfy easydict
 pip install flash-attn --no-build-isolation
 ```
 
@@ -133,6 +133,17 @@ In summary:
    ```bash
    sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-tools
    ```
+   RoboTwin also launches the `ffmpeg` executable when saving evaluation
+   videos:
+   ```bash
+   sudo apt install ffmpeg
+   ```
+   On minimal server/container images, also make sure GLVND's EGL vendor
+   directory exists:
+   ```bash
+   sudo apt install libegl1 libglvnd0
+   sudo mkdir -p /etc/glvnd/egl_vendor.d
+   ```
 
 2. Clone the RoboTwin repository:
    ```bash
@@ -165,6 +176,7 @@ In summary:
    av
    matplotlib
    ffmpeg
+   setuptools
    ```
 
 4. Modify line 8 of `script/_install.sh`:
@@ -175,6 +187,17 @@ In summary:
 5. Install dependencies:
    ```bash
    bash script/_install.sh
+   ```
+   If RoboTwin later fails with `No module named 'curobo.types.math'`,
+   remove any incompatible `curobo` package and install NVIDIA cuRobo in the
+   active conda environment:
+   ```bash
+   pip uninstall -y curobo
+   cd envs
+   git clone https://github.com/NVlabs/curobo.git
+   cd curobo
+   pip install -e . --no-build-isolation
+   cd ../..
    ```
 
 6. Download assets:

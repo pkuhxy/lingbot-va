@@ -699,7 +699,7 @@ class WanTransformer3DModel(ModelMixin, ConfigMixin):
         timestep_proj = timestep_proj.unflatten(2, (6, -1))  # B L 6 C
         return temb, timestep_proj
 
-    def forward_train(self, input_dict):
+    def forward_train(self, input_dict, return_latents=False):
         input_dict['latent_dict']['noisy_latents'] = input_dict['latent_dict']['noisy_latents'].to(torch.bfloat16)
         input_dict['latent_dict']['latent'] = input_dict['latent_dict']['latent'].to(torch.bfloat16)
         input_dict['action_dict']['noisy_latents'] = input_dict['action_dict']['noisy_latents'].to(torch.bfloat16)
@@ -785,7 +785,14 @@ class WanTransformer3DModel(ModelMixin, ConfigMixin):
         hidden_states = (self.norm_out(hidden_states.float()) *
                                 (1. + scale) +
                                 shift).type_as(hidden_states)
-        latent_hidden_states, _, action_hidden_states, _, _ = torch.split(hidden_states, split_list, dim=1)
+        latent_hidden_states, condition_latent_hidden_states, action_hidden_states, condition_action_hidden_states, _ = torch.split(
+            hidden_states, split_list, dim=1)
+
+        latent_repr = latent_hidden_states
+        condition_latent_repr = condition_latent_hidden_states
+        action_repr = action_hidden_states
+        condition_action_repr = condition_action_hidden_states
+
         latent_hidden_states = self.proj_out(latent_hidden_states)
         latent_hidden_states = rearrange(latent_hidden_states,
                                              '1 (b l) (n c) -> b (l n) c',
@@ -794,6 +801,29 @@ class WanTransformer3DModel(ModelMixin, ConfigMixin):
         action_hidden_states = rearrange(action_hidden_states,
                                              '1 (b l) c -> b l c',
                                              b=batch_size)  #
+
+        if return_latents:
+            latent_seq_len = latent_repr.shape[1] // batch_size
+            action_seq_len = action_repr.shape[1] // batch_size
+            repr_dict = {
+                'latent_noisy': rearrange(latent_repr,
+                                          '1 (b l) c -> b l c',
+                                          b=batch_size,
+                                          l=latent_seq_len),
+                'latent_clean': rearrange(condition_latent_repr,
+                                          '1 (b l) c -> b l c',
+                                          b=batch_size,
+                                          l=latent_seq_len),
+                'action_noisy': rearrange(action_repr,
+                                          '1 (b l) c -> b l c',
+                                          b=batch_size,
+                                          l=action_seq_len),
+                'action_clean': rearrange(condition_action_repr,
+                                          '1 (b l) c -> b l c',
+                                          b=batch_size,
+                                          l=action_seq_len),
+            }
+            return latent_hidden_states, action_hidden_states, repr_dict
 
         return latent_hidden_states, action_hidden_states
 
@@ -804,6 +834,7 @@ class WanTransformer3DModel(ModelMixin, ConfigMixin):
         cache_name="pos",
         action_mode=False,
         train_mode=False,
+        return_latents=False,
     ):
         r"""
         Forward pass through the diffusion model
@@ -825,7 +856,7 @@ class WanTransformer3DModel(ModelMixin, ConfigMixin):
                 List of denoised video tensors with original input shapes [C_out, F, H / 8, W / 8]
         """
         if train_mode:
-            return self.forward_train(input_dict)
+            return self.forward_train(input_dict, return_latents=return_latents)
         if action_mode:  # action input emb
             latent_hidden_states = rearrange(input_dict['noisy_latents'],
                                              'b c f h w -> b (f h w) c')

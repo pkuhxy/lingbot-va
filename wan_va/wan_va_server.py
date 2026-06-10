@@ -47,6 +47,7 @@ class VA_Server:
         self.dtype = job_config.param_dtype
         self.device = torch.device(f"cuda:{job_config.local_rank}")
         self.enable_offload = getattr(job_config, 'enable_offload', True)  # offload vae & text_encoder to save vram
+        self.video_processor = VideoProcessor(vae_scale_factor=1)
 
         self.scheduler = FlowMatchScheduler(shift=self.job_config.snr_shift,
                                             sigma_min=0.0,
@@ -620,8 +621,15 @@ class VA_Server:
             return dict()
         else:
             logger.info(f"################# Infer One Chunk #################")
-            action, _ = self._infer(obs, frame_st_id=self.frame_st_id)
-            return dict(action=action)
+            action, latents = self._infer(obs, frame_st_id=self.frame_st_id)
+            ret = dict(action=action)
+            if obs.get('save_visualization', False):
+                if self.enable_offload:
+                    self.vae = self.vae.to(self.device).to(self.dtype)
+                ret['video'] = self.decode_one_video(latents, 'np')[0]
+                if self.enable_offload:
+                    self.vae = self.vae.to('cpu')
+            return ret
     
     def decode_one_video(self, latents, output_type):
         latents = latents.to(self.vae.dtype)
@@ -646,7 +654,6 @@ class VA_Server:
     
     @torch.no_grad()
     def generate(self):
-        self.video_processor = VideoProcessor(vae_scale_factor=1)
         self._reset(self.job_config.prompt)
         init_obs = self.load_init_obs()
         pred_latent_lst = []

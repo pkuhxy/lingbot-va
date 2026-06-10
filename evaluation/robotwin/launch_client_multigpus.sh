@@ -1,5 +1,38 @@
 #!/bin/bash
-export LD_LIBRARY_PATH=/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
+set -euo pipefail
+
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+PROJECT_ROOT=$(cd "${SCRIPT_DIR}/../.." && pwd)
+
+export LD_LIBRARY_PATH=/usr/lib64:/usr/lib:${LD_LIBRARY_PATH:-}
+export ROBOTWIN_ROOT=${ROBOTWIN_ROOT:-"${PROJECT_ROOT}/RoboTwin"}
+export PYTHONPATH="${PROJECT_ROOT}:${ROBOTWIN_ROOT}:${PYTHONPATH:-}"
+
+if [ ! -d "${ROBOTWIN_ROOT}/envs" ]; then
+    echo "RoboTwin root not found: ${ROBOTWIN_ROOT}" >&2
+    echo "Set ROBOTWIN_ROOT=/path/to/RoboTwin before running this script." >&2
+    exit 1
+fi
+
+if [ ! -d /etc/glvnd/egl_vendor.d ]; then
+    echo "Missing EGL vendor directory: /etc/glvnd/egl_vendor.d" >&2
+    echo "SAPIEN needs the GLVND EGL vendor directory to initialize rendering." >&2
+    echo "Install Vulkan/GLVND packages or create the directory on the server:" >&2
+    echo "  sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-tools libegl1 libglvnd0" >&2
+    echo "  sudo mkdir -p /etc/glvnd/egl_vendor.d" >&2
+    exit 1
+fi
+
+FFMPEG_BINARY=${FFMPEG_BINARY:-ffmpeg}
+if ! command -v "${FFMPEG_BINARY}" >/dev/null 2>&1; then
+    echo "Missing ffmpeg executable: ${FFMPEG_BINARY}" >&2
+    echo "RoboTwin writes evaluation videos by launching an ffmpeg command." >&2
+    echo "Install it on the server:" >&2
+    echo "  conda install -c conda-forge ffmpeg -y" >&2
+    echo "or set FFMPEG_BINARY=/path/to/ffmpeg before running this script." >&2
+    exit 1
+fi
+export FFMPEG_BINARY
 
 
 save_root=${1:-'./results'}
@@ -13,6 +46,8 @@ seed=${3:-0}
 test_num=${4:-100}
 start_port=29556 
 num_gpus=8
+SERVER_HOST=${SERVER_HOST:-127.0.0.1}
+SAVE_VISUALIZATION=${SAVE_VISUALIZATION:-True}
 
 task_list_id=${2:-0}
 
@@ -70,7 +105,9 @@ for i in "${!task_names[@]}"; do
         --save_root ${save_root} \
         --video_guidance_scale 5 \
         --action_guidance_scale 1 \
+        --save_visualization ${SAVE_VISUALIZATION} \
         --test_num ${test_num} \
+        --host ${SERVER_HOST} \
         --port ${port} > "$log_file" 2>&1 &
 
     pid=$!
