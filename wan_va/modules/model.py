@@ -700,6 +700,7 @@ class WanTransformer3DModel(ModelMixin, ConfigMixin):
         return temb, timestep_proj
 
     def forward_train(self, input_dict):
+        return_hidden = input_dict.get('return_hidden', False)
         input_dict['latent_dict']['noisy_latents'] = input_dict['latent_dict']['noisy_latents'].to(torch.bfloat16)
         input_dict['latent_dict']['latent'] = input_dict['latent_dict']['latent'].to(torch.bfloat16)
         input_dict['action_dict']['noisy_latents'] = input_dict['action_dict']['noisy_latents'].to(torch.bfloat16)
@@ -786,6 +787,21 @@ class WanTransformer3DModel(ModelMixin, ConfigMixin):
                                 (1. + scale) +
                                 shift).type_as(hidden_states)
         latent_hidden_states, _, action_hidden_states, _, _ = torch.split(hidden_states, split_list, dim=1)
+        if return_hidden:
+            latent_hidden_states = rearrange(
+                latent_hidden_states,
+                '1 (b l) c -> b l c',
+                b=batch_size,
+            )
+            action_hidden_states = rearrange(
+                action_hidden_states,
+                '1 (b l) c -> b l c',
+                b=batch_size,
+            )
+            return {
+                'latent_hidden': latent_hidden_states,
+                'action_hidden': action_hidden_states,
+            }
         latent_hidden_states = self.proj_out(latent_hidden_states)
         latent_hidden_states = rearrange(latent_hidden_states,
                                              '1 (b l) (n c) -> b (l n) c',

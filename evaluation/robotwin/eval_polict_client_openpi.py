@@ -6,10 +6,25 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import cv2
 from pathlib import Path
 
-robowin_root = Path("/path/to/your/robowin")
-if str(robowin_root) not in sys.path:
-    sys.path.insert(0, str(robowin_root))
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+robotwin_root_env = os.environ.get("ROBOTWIN_ROOT") or os.environ.get("ROBOWIN_ROOT")
+robowin_root = (
+    Path(robotwin_root_env).expanduser()
+    if robotwin_root_env
+    else PROJECT_ROOT / "RoboTwin"
+).resolve()
 
+if not (robowin_root / "envs").is_dir():
+    raise FileNotFoundError(
+        f"RoboTwin root is not configured correctly: {robowin_root}. "
+        "Set ROBOTWIN_ROOT=/path/to/RoboTwin or clone RoboTwin into the "
+        "LingBot-VA repo as ./RoboTwin."
+    )
+
+for import_root in (PROJECT_ROOT, robowin_root):
+    import_root = str(import_root)
+    if import_root not in sys.path:
+        sys.path.insert(0, import_root)
 
 import os
 os.chdir(robowin_root)
@@ -196,16 +211,44 @@ def save_comparison_video(real_obs_list, imagined_video, action_history, save_pa
         return
 
     n_real = len(real_obs_list)
+
+    def temporal_resample_video(video, target_len):
+        if target_len <= 0 or len(video) == 0:
+            return video[:0]
+        if len(video) == target_len:
+            return video
+        src_ids = np.linspace(0, len(video) - 1, target_len)
+        src_ids = np.rint(src_ids).astype(np.int64)
+        return video[src_ids]
+
     if imagined_video is not None:
         imagined_video = np.concatenate(imagined_video, 0)
-        n_imagined = len(imagined_video) 
+        raw_n_imagined = len(imagined_video)
+        imagined_video = temporal_resample_video(imagined_video, n_real)
+        n_imagined = len(imagined_video)
     else:
+        raw_n_imagined = 0
         n_imagined = 0
     n_frames = n_real # Based on real observation frames
     
-    print(f"Saving video: Real {n_real} frames, Imagined {n_imagined} frames...")
+    print(
+        f"Saving video: Real {n_real} frames, "
+        f"Imagined {raw_n_imagined}->{n_imagined} frames after temporal resampling..."
+    )
 
     final_frames = []
+
+    def pad_to_size(img, target_h, target_w):
+        h, w = img.shape[:2]
+        if h > target_h or w > target_w:
+            scale = min(target_w / w, target_h / h)
+            img = cv2.resize(img, (max(1, int(w * scale)), max(1, int(h * scale))))
+            h, w = img.shape[:2]
+        out = np.zeros((target_h, target_w, 3), dtype=np.uint8)
+        y0 = (target_h - h) // 2
+        x0 = (target_w - w) // 2
+        out[y0:y0 + h, x0:x0 + w] = img
+        return out
 
     for i in range(n_frames):
         obs = real_obs_list[i]
@@ -243,18 +286,48 @@ def save_comparison_video(real_obs_list, imagined_video, action_history, save_pa
             elif img_frame.dtype != np.uint8:
                 img_frame = img_frame.astype(np.uint8)
 
-            h = int(img_frame.shape[0] * target_width / img_frame.shape[1])
-            row_imagined = cv2.resize(img_frame, (target_width, h))
+            # RoboTwin T-shape latent layout decodes to:
+            # top 1/3 = left/right wrist cameras side-by-side, bottom 2/3 = high camera.
+            if img_frame.shape[0] > img_frame.shape[1]:
+                wrist_h = img_frame.shape[0] // 3
+                wrist_row = img_frame[:wrist_h]
+                high_img = img_frame[wrist_h:]
+                wrist_w = wrist_row.shape[1] // 2
+                left_img = wrist_row[:, :wrist_w]
+                right_img = wrist_row[:, wrist_w:]
+                row_imagined = np.hstack([
+                    resize_h(high_img, base_h),
+                    resize_h(left_img, base_h),
+                    resize_h(right_img, base_h),
+                ])
+            else:
+                h = int(img_frame.shape[0] * target_width / img_frame.shape[1])
+                row_imagined = cv2.resize(img_frame, (target_width, h))
         else:
             row_imagined = np.zeros((300, target_width, 3), dtype=np.uint8)
             cv2.putText(row_imagined, "Coming soon", (target_width//2 - 100, 150), 
                         cv2.FONT_HERSHEY_SIMPLEX, 1, (100, 100, 100), 2)
 
         row_imagined = np.ascontiguousarray(row_imagined)
+        row_imagined = pad_to_size(row_imagined, row_imagined.shape[0], target_width)
         row_imagined = add_title_bar(row_imagined, "Imagined Video Stream")
         full_frame = np.vstack([row_real, row_imagined])
         full_frame = np.ascontiguousarray(full_frame)
         final_frames.append(full_frame)
+
+    if final_frames:
+        target_h = max(frame.shape[0] for frame in final_frames)
+        target_w = max(frame.shape[1] for frame in final_frames)
+        if target_w % 2:
+            target_w += 1
+        if target_h % 2:
+            target_h += 1
+        final_frames = [pad_to_size(frame, target_h, target_w) for frame in final_frames]
+        try:
+            final_frames = np.stack(final_frames, axis=0)
+        except ValueError as exc:
+            shapes = [frame.shape for frame in final_frames]
+            raise ValueError(f"Comparison video frames still have inconsistent shapes: {shapes}") from exc
 
     imageio.mimsave(save_path, final_frames, fps=fps)
     print(f"Combined video saved to: {save_path}")
@@ -305,6 +378,9 @@ def main(usr_args):
     policy_name = usr_args["policy_name"]
     video_guidance_scale = usr_args["video_guidance_scale"]
     action_guidance_scale = usr_args["action_guidance_scale"]
+    save_visualization = usr_args.get("save_visualization", True)
+    if isinstance(save_visualization, str):
+        save_visualization = save_visualization.lower() in ("1", "true", "yes", "y")
     instruction_type = 'seen'
     save_dir = None
     video_save_dir = None
@@ -397,7 +473,10 @@ def main(usr_args):
     test_num = usr_args["test_num"]
 
     
-    model = WebsocketClientPolicy(port=usr_args['port'])
+    model = WebsocketClientPolicy(
+        host=usr_args.get('host', '127.0.0.1'),
+        port=usr_args['port'],
+    )
 
     st_seed, suc_num = eval_policy(task_name,
                                    TASK_ENV,
@@ -407,7 +486,7 @@ def main(usr_args):
                                    test_num=test_num,
                                    video_size=video_size,
                                    instruction_type=instruction_type,
-                                   save_visualization=True,
+                                   save_visualization=save_visualization,
                                    video_guidance_scale=video_guidance_scale,
                                    action_guidance_scale=action_guidance_scale)
     suc_nums.append(suc_num)
@@ -428,6 +507,15 @@ def format_obs(observation, prompt):
                 "observation.state": observation["joint_action"]["vector"],
                 "task": prompt,
             }
+
+def format_eef_state(observation):
+    return np.array(
+        observation['endpose']['left_endpose'] +
+        [observation['endpose']['left_gripper']] +
+        observation['endpose']['right_endpose'] +
+        [observation['endpose']['right_gripper']],
+        dtype=np.float64,
+    )
 
 def add_eef_pose(new_pose, init_pose):
     new_pose_R = R.from_quat(new_pose[3:7][None])
@@ -510,7 +598,7 @@ def eval_policy(task_name,
         if TASK_ENV.eval_video_path is not None:
             ffmpeg = subprocess.Popen(
                 [
-                    "ffmpeg",
+                    os.environ.get("FFMPEG_BINARY", "ffmpeg"),
                     "-y",
                     "-loglevel",
                     "error",
@@ -545,6 +633,10 @@ def eval_policy(task_name,
         full_obs_list = []
         gen_video_list = []
         full_action_history = []
+        executed_action_history = []
+        keyframe_state_history = []
+        keyframe_eef_state_history = []
+        chunk_action_history = []
 
         initial_obs = TASK_ENV.get_obs() 
         inint_eef_pose = initial_obs['endpose']['left_endpose'] + \
@@ -554,6 +646,8 @@ def eval_policy(task_name,
         inint_eef_pose = np.array(inint_eef_pose, dtype=np.float64)
         initial_formatted_obs = format_obs(initial_obs, prompt)
         full_obs_list.append(initial_formatted_obs)
+        keyframe_state_history.append(initial_formatted_obs["observation.state"])
+        keyframe_eef_state_history.append(format_eef_state(initial_obs))
         first_obs = None
         while TASK_ENV.take_action_cnt<TASK_ENV.step_lim:
             if first:
@@ -562,6 +656,7 @@ def eval_policy(task_name,
 
             ret = model.infer(dict(obs=first_obs, prompt=prompt, save_visualization=save_visualization, video_guidance_scale=video_guidance_scale, action_guidance_scale=action_guidance_scale)) #(TASK_ENV, model, observation)
             action = ret['action']
+            chunk_action_history.append(action)
             if 'video' in ret:
                 imagined_video = ret['video']
                 gen_video_list.append(imagined_video)
@@ -597,10 +692,14 @@ def eval_policy(task_name,
                     else:
                         raise NotImplementedError
                     TASK_ENV.take_action(ee_action, action_type='ee')
+                    executed_action_history.append(ee_action)
                    
                     if (j+1) % action_per_frame == 0:
-                        obs = format_obs(TASK_ENV.get_obs(), prompt)
+                        raw_obs = TASK_ENV.get_obs()
+                        obs = format_obs(raw_obs, prompt)
                         full_obs_list.append(obs)
+                        keyframe_state_history.append(obs["observation.state"])
+                        keyframe_eef_state_history.append(format_eef_state(raw_obs))
                         key_frame_list.append(obs)
                     
             first = False
@@ -616,9 +715,21 @@ def eval_policy(task_name,
         vis_dir.mkdir(parents=True, exist_ok=True)
         video_name = f"{TASK_ENV.test_num}_{prompt.replace(' ', '_')}_{succ}.mp4"
         out_img_file = vis_dir / video_name
+        debug_file = out_img_file.with_suffix(".npz")
+        np.savez_compressed(
+            debug_file,
+            prompt=prompt,
+            success=succ,
+            chunk_actions=np.array(chunk_action_history, dtype=object),
+            raw_action_steps=np.array(full_action_history),
+            executed_ee_actions=np.array(executed_action_history),
+            keyframe_states=np.array(keyframe_state_history),
+            keyframe_eef_states=np.array(keyframe_eef_state_history),
+        )
+        print(f"Action/state debug data saved to: {debug_file}")
         save_comparison_video(
             real_obs_list=full_obs_list,
-            imagined_video=None, #gen_video_list,
+            imagined_video=gen_video_list if gen_video_list else None,
             action_history=full_action_history,
             save_path=str(out_img_file),
             fps=15 # Suggest adjusting fps based on simulation step
@@ -662,6 +773,7 @@ def parse_args_and_config():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=str, required=True)
     parser.add_argument("--overrides", nargs=argparse.REMAINDER)
+    parser.add_argument("--host", type=str, default="127.0.0.1", help='remote policy socket host.')
     parser.add_argument("--port", type=int, default=8000, help='remote policy socket port.')
     parser.add_argument("--save_root", type=str, default="results/default_vis_path")
     parser.add_argument("--video_guidance_scale", type=float, default=5.0)
@@ -697,4 +809,3 @@ if __name__ == "__main__":
     Sapien_TEST()
     usr_args = parse_args_and_config()
     main(usr_args)
-

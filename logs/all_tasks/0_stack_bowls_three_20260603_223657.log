@@ -1,0 +1,42 @@
+/mnt/data/users/xianyi/miniconda/envs/lingbotva/lib/python3.10/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.0.7) or chardet (7.4.3)/charset_normalizer (3.4.1) doesn't match a supported version!
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/data/users/xianyi/EmbodyAi/lingbot-va/evaluation/robotwin/websocket_client_policy.py", line 47, in _wait_for_server
+    conn = websockets.sync.client.connect(
+  File "/mnt/data/users/xianyi/miniconda/envs/lingbotva/lib/python3.10/site-packages/websockets/sync/client.py", line 327, in connect
+    sock = socket.create_connection(
+  File "/mnt/data/users/xianyi/miniconda/envs/lingbotva/lib/python3.10/socket.py", line 857, in create_connection
+    raise err
+  File "/mnt/data/users/xianyi/miniconda/envs/lingbotva/lib/python3.10/socket.py", line 845, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/users/xianyi/miniconda/envs/lingbotva/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/mnt/data/users/xianyi/miniconda/envs/lingbotva/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/mnt/data/users/xianyi/EmbodyAi/lingbot-va/evaluation/robotwin/eval_polict_client_openpi.py", line 811, in <module>
+    main(usr_args)
+  File "/mnt/data/users/xianyi/EmbodyAi/lingbot-va/evaluation/robotwin/eval_polict_client_openpi.py", line 476, in main
+    model = WebsocketClientPolicy(
+  File "/mnt/data/users/xianyi/EmbodyAi/lingbot-va/evaluation/robotwin/websocket_client_policy.py", line 22, in __init__
+    self._ws, self._server_metadata = self._wait_for_server()
+  File "/mnt/data/users/xianyi/EmbodyAi/lingbot-va/evaluation/robotwin/websocket_client_policy.py", line 59, in _wait_for_server
+    time.sleep(5)
+KeyboardInterrupt
+[32mRender Well[0m
+============= Config =============
+
+[95mMessy Table:[0m False
+[95mRandom Background:[0m False
+[95mRandom Light:[0m False
+[95mRandom Table Height:[0m 0
+[95mRandom Head Camera Distance:[0m 0
+[94mHead Camera Config:[0m D435, True
+[94mWrist Camera Config:[0m D435, True
+[94mEmbodiment Config:[0m aloha-agilex
+
+==================================
