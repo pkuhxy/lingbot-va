@@ -3,7 +3,14 @@ import argparse
 import os
 import sys
 from pathlib import Path
-import wandb
+
+try:
+    import wandb
+except ImportError as exc:
+    wandb = None
+    _WANDB_IMPORT_ERROR = exc
+else:
+    _WANDB_IMPORT_ERROR = None
 
 import torch
 import torch.distributed as dist
@@ -49,21 +56,30 @@ import gc
 
 class Trainer:
     def __init__(self, config):
-        if config.enable_wandb and config.rank == 0:
-            wandb.login(host=os.environ['WANDB_BASE_URL'], key=os.environ['WANDB_API_KEY'])
-            self.wandb = wandb
-            self.wandb.init(
-                entity=os.environ["WANDB_TEAM_NAME"],
-                project=os.getenv("WANDB_PROJECT", "va_robotwin"),
-                # dir=log_dir,
-                config=config,
-                mode="online",
-                name='test_lln'
-                # name=os.path.basename(os.path.normpath(job_config.job.dump_folder))
-            )
-            logger.info("WandB logging enabled")
         self.step = 0
         self.config = config
+        self.wandb = None
+
+        if config.enable_wandb and config.rank == 0:
+            if wandb is None:
+                logger.warning(
+                    "WandB requested but wandb could not be imported (%s); disabling WandB logging",
+                    _WANDB_IMPORT_ERROR,
+                )
+                self.config.enable_wandb = False
+            else:
+                wandb.login(host=os.environ['WANDB_BASE_URL'], key=os.environ['WANDB_API_KEY'])
+                self.wandb = wandb
+                self.wandb.init(
+                    entity=os.environ["WANDB_TEAM_NAME"],
+                    project=os.getenv("WANDB_PROJECT", "va_robotwin"),
+                    # dir=log_dir,
+                    config=config,
+                    mode="online",
+                    name='test_lln'
+                    # name=os.path.basename(os.path.normpath(job_config.job.dump_folder))
+                )
+                logger.info("WandB logging enabled")
         self.device = torch.device(f"cuda:{config.local_rank}")
         self.dtype = config.param_dtype
         self.patch_size = config.patch_size
