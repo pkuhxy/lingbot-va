@@ -250,6 +250,12 @@ requires `torch<2.8`, while LingBot-VA training uses the newer Torch stack.
 The helper script installs the compatible LeRobot data-loading dependencies
 separately and pins `datasets<=3.6.0`.
 
+If your environment was accidentally upgraded to `huggingface-hub>=1.0` or
+`datasets>=5.0`, re-run the helper script; it will downgrade them to versions
+compatible with `transformers==4.55.2` and `lerobot==0.3.3`. A remaining
+`pip check` warning about LeRobot requiring `torch<2.8` is expected and should
+not be fixed by downgrading Torch.
+
 ### Data Preparation
 
 Download the post-training dataset from HuggingFace:

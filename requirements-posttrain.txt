@@ -2,6 +2,7 @@
 # LeRobot itself should be installed with --no-deps because lerobot==0.3.3
 # declares torch<2.8, while this project trains with torch 2.9.
 datasets>=2.19.0,<=3.6.0
+huggingface-hub>=0.34.0,<1.0
 numpy==1.26.4
 pandas<3.0
 av>=14.2.0
