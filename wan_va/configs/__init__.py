@@ -4,6 +4,7 @@ from .va_robotwin_cfg import va_robotwin_cfg
 from .va_franka_i2va import va_franka_i2va_cfg
 from .va_robotwin_i2va import va_robotwin_i2va_cfg
 from .va_robotwin_train_cfg import va_robotwin_train_cfg
+from .va_robotwin_contrastive_align_cfg import va_robotwin_contrastive_align_cfg
 from .va_robotwin_latent_posttrain_cfg import va_robotwin_latent_posttrain_cfg
 from .va_demo_train_cfg import va_demo_train_cfg
 from .va_demo_cfg import va_demo_cfg
@@ -19,6 +20,7 @@ VA_CONFIGS = {
     'robotwin_i2av': va_robotwin_i2va_cfg,
     'franka_i2av': va_franka_i2va_cfg,
     'robotwin_train': va_robotwin_train_cfg,
+    'robotwin_contrastive_align': va_robotwin_contrastive_align_cfg,
     'robotwin_latent_posttrain': va_robotwin_latent_posttrain_cfg,
     'demo': va_demo_cfg,
     'demo_train': va_demo_train_cfg,

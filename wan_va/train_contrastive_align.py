@@ -580,7 +580,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Train WAN model for robotics with contrastive video/action alignment"
     )
-    parser.add_argument("--config-name", type=str, default="robotwin_train", help="Config name")
+    parser.add_argument("--config-name", type=str, default="robotwin_contrastive_align", help="Config name")
     parser.add_argument("--save-root", type=str, default=None, help="Root directory for checkpoints")
     parser.add_argument("--resume-from", type=str, default=None, help="Checkpoint directory to resume from")
     parser.add_argument("--lambda-align", type=float, default=None, help="Weight of the alignment loss")
