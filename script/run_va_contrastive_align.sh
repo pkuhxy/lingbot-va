@@ -14,6 +14,7 @@ RESUME_FROM=${RESUME_FROM:-""}
 LAMBDA_ALIGN=${LAMBDA_ALIGN:-""}
 LAMBDA_ACTION_RECON=${LAMBDA_ACTION_RECON:-""}
 TORCHFT_LIGHTHOUSE=${TORCHFT_LIGHTHOUSE:-"http://localhost:29510"}
+PYTHON=${PYTHON:-python}
 
 args=(--config-name "${CONFIG_NAME}")
 if [ -n "${SAVE_ROOT}" ]; then
@@ -33,8 +34,14 @@ if [ $# -ne 0 ]; then
 fi
 
 export TOKENIZERS_PARALLELISM=false
+if ! "${PYTHON}" -c "import lerobot" >/dev/null 2>&1; then
+    echo "ERROR: lerobot is not installed in this Python environment: $(${PYTHON} -c 'import sys; print(sys.executable)')" >&2
+    echo "Run: PYTHON=${PYTHON} bash script/install_posttrain_deps.sh" >&2
+    exit 1
+fi
+
 PYTORCH_CUDA_ALLOC_CONF="expandable_segments:True" TORCHFT_LIGHTHOUSE=${TORCHFT_LIGHTHOUSE} \
-python -m torch.distributed.run \
+"${PYTHON}" -m torch.distributed.run \
     --nproc_per_node="${NGPU}" \
     --local-ranks-filter="${LOG_RANK}" \
     --master_port "${MASTER_PORT}" \

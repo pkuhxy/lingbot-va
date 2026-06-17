@@ -10,6 +10,7 @@ PORT=${PORT:-"1106"}
 LOG_RANK=${LOG_RANK:-"0"}
 TORCHFT_LIGHTHOUSE=${TORCHFT_LIGHTHOUSE:-"http://localhost:29510"}
 CONFIG_NAME=${CONFIG_NAME:-"robotwin_contrastive_align"} # robotwin_contrastive_align, robotwin_train, libero_train
+PYTHON=${PYTHON:-python}
 
 overrides=""
 if [ $# -ne 0 ]; then
@@ -30,8 +31,14 @@ config_name=${CONFIG_NAME}
 
 ## cmd setting
 export TOKENIZERS_PARALLELISM=false
+if ! "${PYTHON}" -c "import lerobot" >/dev/null 2>&1; then
+    echo "ERROR: lerobot is not installed in this Python environment: $(${PYTHON} -c 'import sys; print(sys.executable)')" >&2
+    echo "Run: PYTHON=${PYTHON} bash script/install_posttrain_deps.sh" >&2
+    exit 1
+fi
+
 PYTORCH_ALLOC_CONF="expandable_segments:True" TORCHFT_LIGHTHOUSE=${torchft_lighthouse} \
-python -m torch.distributed.run \
+"${PYTHON}" -m torch.distributed.run \
     --nproc_per_node=${num_gpu} \
     --local-ranks-filter=${log_rank} \
     --master_port ${master_port} \

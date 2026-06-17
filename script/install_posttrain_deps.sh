@@ -3,20 +3,34 @@
 set -euo pipefail
 set -x
 
+PYTHON=${PYTHON:-python}
+
 # Remove LeRobot while repairing dependencies so pip does not try to satisfy
 # its stale torch<2.8 metadata against the LingBot-VA torch 2.9 stack.
-python -m pip uninstall -y lerobot || true
+"${PYTHON}" -m pip uninstall -y lerobot || true
 
-python -m pip install --upgrade "accelerate>=0.31.0" "huggingface-hub>=0.34.0,<1.0"
+"${PYTHON}" -m pip install --upgrade "accelerate>=0.31.0" "huggingface-hub>=0.34.0,<1.0"
 
 # Repair environments where a later pip command upgraded datasets or hub too far.
-python -m pip install --upgrade --force-reinstall "datasets>=2.19.0,<=3.6.0"
-python -m pip install --upgrade --force-reinstall "huggingface-hub>=0.34.0,<1.0"
+"${PYTHON}" -m pip install --upgrade --force-reinstall "datasets>=2.19.0,<=3.6.0"
+"${PYTHON}" -m pip install --upgrade --force-reinstall "huggingface-hub>=0.34.0,<1.0"
 
-python -m pip install --upgrade -r requirements-posttrain.txt
+"${PYTHON}" -m pip install --upgrade -r requirements-posttrain.txt
 
 # Do not let pip resolve LeRobot's torch<2.8 metadata; LingBot-VA uses torch 2.9.
-python -m pip install --upgrade --no-deps "lerobot==0.3.3"
+"${PYTHON}" -m pip install --upgrade --no-deps "lerobot==0.3.3"
+
+"${PYTHON}" - <<'PY'
+import sys
+import lerobot
+import datasets
+import huggingface_hub
+
+print("Python:", sys.executable)
+print("lerobot:", getattr(lerobot, "__version__", "unknown"))
+print("datasets:", datasets.__version__)
+print("huggingface_hub:", huggingface_hub.__version__)
+PY
 
 cat <<'EOF'
 Post-training dependencies installed.
