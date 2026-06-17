@@ -34,6 +34,8 @@ if [ $# -ne 0 ]; then
 fi
 
 export TOKENIZERS_PARALLELISM=false
+export OMP_NUM_THREADS=${OMP_NUM_THREADS:-1}
+export MKL_NUM_THREADS=${MKL_NUM_THREADS:-1}
 if ! "${PYTHON}" -c "import lerobot" >/dev/null 2>&1; then
     echo "ERROR: lerobot is not installed in this Python environment: $(${PYTHON} -c 'import sys; print(sys.executable)')" >&2
     echo "Run: PYTHON=${PYTHON} bash script/install_posttrain_deps.sh" >&2

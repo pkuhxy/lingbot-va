@@ -40,14 +40,18 @@ def construct_lerobot(
 def construct_lerobot_multi_processor(config, 
                                       num_init_worker=8,
                                       ):
-    datasets_out_lst = []
-    construct_func = partial(
-        construct_lerobot,
-        config=config,
-    )
     repo_list = recursive_find_file(config.dataset_path, 'info.json')
-    repo_list = [v.split('/meta/info.json')[0] for v in repo_list]
-    with Pool(num_init_worker) as pool:
+    repo_list = sorted([v.split('/meta/info.json')[0] for v in repo_list])
+    num_init_worker = max(int(num_init_worker), 1)
+    if num_init_worker == 1 or len(repo_list) <= 1:
+        return [
+            construct_lerobot(repo_id=repo_id, config=config)
+            for repo_id in tqdm(repo_list, desc="Initializing LeRobot datasets")
+        ]
+
+    datasets_out_lst = []
+    construct_func = partial(construct_lerobot, config=config)
+    with Pool(min(num_init_worker, len(repo_list))) as pool:
         datasets_out_lst = pool.map(construct_func, repo_list)
                 
     return datasets_out_lst
@@ -71,7 +75,7 @@ class MultiLatentLeRobotDataset(torch.utils.data.Dataset):
     def __init__(
         self,
         config,
-        num_init_worker=128,
+        num_init_worker=1,
     ):
         self._datasets = construct_lerobot_multi_processor(config, 
                                                            num_init_worker, 

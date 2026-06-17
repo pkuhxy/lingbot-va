@@ -8,6 +8,8 @@ va_robotwin_contrastive_align_cfg = EasyDict(__name__="Config: VA robotwin contr
 va_robotwin_contrastive_align_cfg.update(va_robotwin_train_cfg)
 
 va_robotwin_contrastive_align_cfg.save_root = "./train_out_contrastive_align"
+va_robotwin_contrastive_align_cfg.dataset_init_worker = 1
+va_robotwin_contrastive_align_cfg.load_worker = 0
 
 # Contrastive video-action transition alignment.
 va_robotwin_contrastive_align_cfg.lambda_align = 0.1
