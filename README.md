@@ -242,8 +242,13 @@ We support post-training (fine-tuning) LingBot-VA on custom robotic manipulation
 On top of the base installation, post-training requires:
 
 ```bash
-pip install lerobot==0.3.3 scipy wandb --no-deps
+bash script/install_posttrain_deps.sh
 ```
+
+`lerobot==0.3.3` is installed with `--no-deps` because its package metadata
+requires `torch<2.8`, while LingBot-VA training uses the newer Torch stack.
+The helper script installs the compatible LeRobot data-loading dependencies
+separately and pins `datasets<=3.6.0`.
 
 ### Data Preparation
 

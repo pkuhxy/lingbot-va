@@ -18,7 +18,5 @@ ftfy
 safetensors
 Pillow
 
-# Post-training
-lerobot==0.3.3
 scipy
 wandb

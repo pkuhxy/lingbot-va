@@ -1,0 +1,21 @@
+# Install these after the base requirements for VA post-training.
+# LeRobot itself should be installed with --no-deps because lerobot==0.3.3
+# declares torch<2.8, while this project trains with torch 2.9.
+datasets>=2.19.0,<=3.6.0
+numpy==1.26.4
+pandas<3.0
+av>=14.2.0
+cmake>=3.29.0.1
+deepdiff>=7.0.1,<9.0.0
+draccus==0.10.0
+flask>=3.0.3,<4.0.0
+gymnasium>=0.29.1,<1.0.0
+imageio[ffmpeg]>=2.34.0,<3.0.0
+jsonlines>=4.0.0
+opencv-python-headless>=4.9.0
+pynput>=1.7.7
+pyserial>=3.5
+rerun-sdk>=0.21.0,<0.23.0
+termcolor>=2.4.0,<4.0.0
+scipy
+wandb
