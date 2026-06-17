@@ -69,9 +69,10 @@ class Trainer:
                 self.config.enable_wandb = False
             else:
                 wandb.login(host=os.environ['WANDB_BASE_URL'], key=os.environ['WANDB_API_KEY'])
+                wandb_entity = os.getenv("WANDB_ENTITY") or os.getenv("WANDB_TEAM_NAME")
                 self.wandb = wandb
                 self.wandb.init(
-                    entity=os.environ["WANDB_TEAM_NAME"],
+                    entity=wandb_entity,
                     project=os.getenv("WANDB_PROJECT", "va_robotwin"),
                     # dir=log_dir,
                     config=config,
@@ -80,6 +81,8 @@ class Trainer:
                     # name=os.path.basename(os.path.normpath(job_config.job.dump_folder))
                 )
                 logger.info("WandB logging enabled")
+                if self.wandb.run is not None:
+                    logger.info(f"WandB run URL: {self.wandb.run.url}")
         self.device = torch.device(f"cuda:{config.local_rank}")
         self.dtype = config.param_dtype
         self.patch_size = config.patch_size

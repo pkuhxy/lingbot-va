@@ -19,6 +19,8 @@ ENABLE_WANDB=${ENABLE_WANDB:-"0"}
 WANDB_BASE_URL=${WANDB_BASE_URL:-"https://api.wandb.ai"}
 WANDB_PROJECT=${WANDB_PROJECT:-"va_robotwin_contrastive_align"}
 WANDB_RUN_NAME=${WANDB_RUN_NAME:-""}
+WANDB_ENTITY=${WANDB_ENTITY:-${WANDB_TEAM_NAME:-""}}
+WANDB_MODE=${WANDB_MODE:-"online"}
 
 args=(--config-name "${CONFIG_NAME}")
 if [ -n "${SAVE_ROOT}" ]; then
@@ -35,13 +37,16 @@ if [ -n "${LAMBDA_ACTION_RECON}" ]; then
 fi
 if [ "${ENABLE_WANDB}" = "1" ]; then
     : "${WANDB_API_KEY:?Set WANDB_API_KEY when ENABLE_WANDB=1}"
-    : "${WANDB_TEAM_NAME:?Set WANDB_TEAM_NAME when ENABLE_WANDB=1}"
     export WANDB_API_KEY
     export WANDB_BASE_URL
-    export WANDB_TEAM_NAME
     export WANDB_PROJECT
+    export WANDB_MODE
     if [ -n "${WANDB_RUN_NAME}" ]; then
         export WANDB_RUN_NAME
+    fi
+    if [ -n "${WANDB_ENTITY}" ]; then
+        export WANDB_ENTITY
+        export WANDB_TEAM_NAME="${WANDB_ENTITY}"
     fi
     "${PYTHON}" - <<'PY'
 import os
@@ -53,6 +58,7 @@ wandb.login(
     relogin=True,
 )
 print("WandB initialized for project:", os.environ["WANDB_PROJECT"])
+print("WandB entity:", os.environ.get("WANDB_ENTITY", "<default>"))
 PY
     args+=(--enable-wandb)
 else
