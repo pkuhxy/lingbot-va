@@ -1,5 +1,10 @@
 # Copyright 2024-2025 The Robbyant Team Authors. All rights reserved.
 import torch
+
+from .diffusers_compat import patch_accelerate_init_empty_weights
+
+patch_accelerate_init_empty_weights()
+
 from diffusers import AutoencoderKLWan
 from transformers import (
     T5TokenizerFast,

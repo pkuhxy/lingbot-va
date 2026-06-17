@@ -3,7 +3,7 @@ torchvision==0.24.0
 torchaudio==2.9.0
 diffusers==0.36.0
 transformers==4.55.2
-accelerate
+accelerate>=0.31.0
 einops
 easydict
 flash_attn

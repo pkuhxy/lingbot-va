@@ -5,6 +5,11 @@ from copy import deepcopy
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+
+from .diffusers_compat import patch_accelerate_init_empty_weights
+
+patch_accelerate_init_empty_weights()
+
 from diffusers.configuration_utils import ConfigMixin, register_to_config
 from diffusers.models.attention import FeedForward
 from diffusers.models.embeddings import (

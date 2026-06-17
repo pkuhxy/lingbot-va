@@ -5,6 +5,13 @@ import sys
 import time
 from functools import partial
 from PIL import Image
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from modules.diffusers_compat import patch_accelerate_init_empty_weights
+
+patch_accelerate_init_empty_weights()
+
 from diffusers.video_processor import VideoProcessor
 from diffusers.utils import export_to_video
 
@@ -14,8 +21,6 @@ import torch.nn.functional as F
 from diffusers.pipelines.wan.pipeline_wan import prompt_clean
 from einops import rearrange
 from tqdm import tqdm
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from configs import VA_CONFIGS
 from distributed.fsdp import shard_model
