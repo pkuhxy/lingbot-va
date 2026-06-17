@@ -385,6 +385,18 @@ NGPU=8 CONFIG_NAME='robotwin_train' bash script/run_va_posttrain.sh
 NGPU=8 CONFIG_NAME='libero_train' bash script/run_va_posttrain.sh
 ```
 
+To enable WandB logging from the launch script:
+
+```bash
+ENABLE_WANDB=1 \
+WANDB_API_KEY=your_key \
+WANDB_TEAM_NAME=your_entity \
+WANDB_PROJECT=va_robotwin_contrastive_align \
+WANDB_RUN_NAME=align_exp_001 \
+NGPU=8 \
+bash script/run_va_contrastive_align.sh
+```
+
 For better training performance, use a larger global batch size (e.g., 32, 64). If you have limited GPU resources, you can increase `gradient_accumulation_steps` to achieve a larger effective batch size.
 
 

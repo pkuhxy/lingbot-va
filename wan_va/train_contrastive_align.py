@@ -249,6 +249,14 @@ class ContrastiveAlignTrainer(Trainer):
             if p.grad is not None:
                 dist.all_reduce(p.grad, op=dist.ReduceOp.AVG)
 
+    @staticmethod
+    def _metric_item(value):
+        if hasattr(value, "to_local"):
+            value = value.to_local()
+        if torch.is_tensor(value):
+            return value.detach().float().cpu().item()
+        return float(value)
+
     # ---- representation capture --------------------------------------------
     def _make_hook(self, name):
         def hook(module, args):
@@ -355,15 +363,21 @@ class ContrastiveAlignTrainer(Trainer):
 
         if should_sync:
             self._sync_head_grads()
-            total_norm = torch.nn.utils.clip_grad_norm_(
-                list(self.transformer.parameters()) + list(self.align_head.parameters()),
+            # Transformer params are FSDP/DTensor-backed, while align_head is a
+            # normal replicated module. Clip separately because foreach norm
+            # cannot mix Tensor and DTensor inputs.
+            total_norm = torch.nn.utils.clip_grad_norm_(self.transformer.parameters(), 2.0)
+            align_total_norm = torch.nn.utils.clip_grad_norm_(
+                self.align_head.parameters(),
                 2.0,
+                foreach=False,
             )
             self.optimizer.step()
             self.lr_scheduler.step()
             self.optimizer.zero_grad()
 
             losses["total_norm"] = total_norm
+            losses["align_total_norm"] = align_total_norm
             losses["should_log"] = True
         else:
             losses["should_log"] = False
@@ -494,7 +508,8 @@ class ContrastiveAlignTrainer(Trainer):
                     gc.collect()
 
                 if self.config.rank == 0:
-                    total_norm = losses["total_norm"]
+                    total_norm = self._metric_item(losses["total_norm"])
+                    align_total_norm = self._metric_item(losses["align_total_norm"])
                     logit_scale = self.align_head.logit_scale.exp().clamp(
                         max=self.align_head.logit_scale_max
                     ).detach().cpu().item()
@@ -507,7 +522,8 @@ class ContrastiveAlignTrainer(Trainer):
                         "align_acc": f"{align_acc_show:.3f}",
                         "total": f"{total_loss_show:.4f}",
                         "step": self.step,
-                        "grad_norm": f"{total_norm.item():.2f}",
+                        "grad_norm": f"{total_norm:.2f}",
+                        "align_grad": f"{align_total_norm:.2f}",
                         "lr": f"{lr:.2e}",
                     })
                     if self.config.enable_wandb:
@@ -525,7 +541,8 @@ class ContrastiveAlignTrainer(Trainer):
                             "loss_metrics/total_loss": total_loss_show,
                             "align_metrics/top1": align_acc_show,
                             "align_metrics/logit_scale": logit_scale,
-                            "grad_norm": total_norm.item(),
+                            "grad_norm": total_norm,
+                            "align_grad_norm": align_total_norm,
                             "lr": lr,
                             "align_lr": align_lr,
                         }, step=self.step)
@@ -565,12 +582,19 @@ def run(args):
         config.lambda_align = args.lambda_align
     if args.lambda_action_recon is not None:
         config.lambda_action_recon = args.lambda_action_recon
+    if args.enable_wandb and args.disable_wandb:
+        raise ValueError("--enable-wandb and --disable-wandb cannot be used together")
+    if args.enable_wandb:
+        config.enable_wandb = True
+    if args.disable_wandb:
+        config.enable_wandb = False
 
     if rank == 0:
         logger.info(f"Using config: {args.config_name}")
         logger.info(f"World size: {world_size}, Local rank: {local_rank}")
         logger.info(f"lambda_align: {getattr(config, 'lambda_align', 0.1)}")
         logger.info(f"lambda_action_recon: {getattr(config, 'lambda_action_recon', 0.1)}")
+        logger.info(f"enable_wandb: {getattr(config, 'enable_wandb', False)}")
 
     trainer = ContrastiveAlignTrainer(config)
     trainer.train()
@@ -583,6 +607,8 @@ def main():
     parser.add_argument("--config-name", type=str, default="robotwin_contrastive_align", help="Config name")
     parser.add_argument("--save-root", type=str, default=None, help="Root directory for checkpoints")
     parser.add_argument("--resume-from", type=str, default=None, help="Checkpoint directory to resume from")
+    parser.add_argument("--enable-wandb", action="store_true", help="Enable WandB logging")
+    parser.add_argument("--disable-wandb", action="store_true", help="Disable WandB logging")
     parser.add_argument("--lambda-align", type=float, default=None, help="Weight of the alignment loss")
     parser.add_argument(
         "--lambda-action-recon",
