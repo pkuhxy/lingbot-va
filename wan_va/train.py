@@ -68,21 +68,29 @@ class Trainer:
                 )
                 self.config.enable_wandb = False
             else:
-                wandb.login(host=os.environ['WANDB_BASE_URL'], key=os.environ['WANDB_API_KEY'])
-                wandb_entity = os.getenv("WANDB_ENTITY") or os.getenv("WANDB_TEAM_NAME")
-                self.wandb = wandb
-                self.wandb.init(
-                    entity=wandb_entity,
-                    project=os.getenv("WANDB_PROJECT", "va_robotwin"),
-                    # dir=log_dir,
-                    config=config,
-                    mode="online",
-                    name=os.getenv("WANDB_RUN_NAME", "test_lln")
-                    # name=os.path.basename(os.path.normpath(job_config.job.dump_folder))
-                )
-                logger.info("WandB logging enabled")
-                if self.wandb.run is not None:
-                    logger.info(f"WandB run URL: {self.wandb.run.url}")
+                wandb_api_key = os.getenv("WANDB_API_KEY")
+                if not wandb_api_key:
+                    logger.warning("WandB requested but WANDB_API_KEY is not set; disabling WandB logging")
+                    self.config.enable_wandb = False
+                else:
+                    wandb_base_url = os.getenv("WANDB_BASE_URL", "https://api.wandb.ai")
+                    wandb.login(host=wandb_base_url, key=wandb_api_key)
+                    wandb_entity = os.getenv("WANDB_ENTITY") or os.getenv("WANDB_TEAM_NAME")
+                    self.wandb = wandb
+                    self.wandb.init(
+                        entity=wandb_entity,
+                        project=os.getenv("WANDB_PROJECT", "va_robotwin"),
+                        # dir=log_dir,
+                        config=config,
+                        mode=os.getenv("WANDB_MODE", "online"),
+                        name=os.getenv("WANDB_RUN_NAME", "test_lln")
+                        # name=os.path.basename(os.path.normpath(job_config.job.dump_folder))
+                    )
+                    logger.info("WandB logging enabled")
+                    if self.wandb.run is not None:
+                        logger.info(f"WandB run URL: {self.wandb.run.url}")
+        elif config.rank == 0:
+            self.config.enable_wandb = False
         self.device = torch.device(f"cuda:{config.local_rank}")
         self.dtype = config.param_dtype
         self.patch_size = config.patch_size
@@ -167,8 +175,8 @@ class Trainer:
 
         self.gradient_accumulation_steps = getattr(config, 'gradient_accumulation_steps', 1)
         self.train_loader_iter = None
-        # if hasattr(config, 'resume_from') and config.resume_from:
-        #     self._load_training_state(config.resume_from)
+        if hasattr(config, 'resume_from') and config.resume_from:
+            self._load_training_state(config.resume_from)
     
     def _get_next_batch(self):
         """Get next batch from iterator, reset if epoch is finished."""
@@ -386,14 +394,11 @@ class Trainer:
                 with open(config_file, 'w') as f:
                     json.dump(config_dict, f, indent=2)
 
-                # # Save optimizer state and training metadata in PyTorch format
-                # training_state_path = checkpoint_dir / "training_state.pt"
-                # logger.info(f"Saving training state to {training_state_path}")
-                # torch.save({
-                #     'step': self.step,
-                #     'optimizer_state_dict': optim_state,
-                #     'config': vars(self.config),
-                # }, training_state_path)
+                trainer_state_path = checkpoint_dir / "trainer_state.pt"
+                torch.save({
+                    'step': self.step,
+                    'lr_scheduler_state_dict': self.lr_scheduler.state_dict(),
+                }, trainer_state_path)
 
                 logger.info(f"Checkpoint saved successfully at step {self.step}")
 
@@ -413,11 +418,32 @@ class Trainer:
     def _load_training_state(self, checkpoint_path):
         """Load training state (optimizer + step) after FSDP and optimizer creation."""
         checkpoint_dir = Path(checkpoint_path)
+        trainer_state_path = checkpoint_dir / "trainer_state.pt"
         training_state_path = checkpoint_dir / "training_state.pt"
 
-        if not training_state_path.exists():
+        if trainer_state_path.exists():
+            trainer_state = torch.load(trainer_state_path, map_location='cpu', weights_only=False)
+            self.step = int(trainer_state.get('step', self.step))
+            scheduler_state = trainer_state.get('lr_scheduler_state_dict')
+            if scheduler_state is not None:
+                self.lr_scheduler.load_state_dict(scheduler_state)
             if self.config.rank == 0:
-                logger.warning(f"Training state not found: {training_state_path}, starting from step 0")
+                logger.info(f"Training state loaded from {trainer_state_path}, resuming from step {self.step}")
+            if dist.is_initialized():
+                dist.barrier()
+            return
+
+        if not training_state_path.exists():
+            prefix = "checkpoint_step_"
+            if checkpoint_dir.name.startswith(prefix):
+                try:
+                    self.step = int(checkpoint_dir.name[len(prefix):])
+                    if self.config.rank == 0:
+                        logger.info(f"Inferred resume step {self.step} from {checkpoint_dir.name}")
+                except ValueError:
+                    pass
+            if self.config.rank == 0:
+                logger.warning(f"Training state not found: {training_state_path}; using loaded model weights")
             return
 
         if self.config.rank == 0:
@@ -529,6 +555,9 @@ def run(args):
     """Main entry point."""
     config = VA_CONFIGS[args.config_name]
 
+    if args.enable_wandb and args.disable_wandb:
+        raise ValueError("--enable-wandb and --disable-wandb cannot be used together")
+
     rank = int(os.getenv("RANK", 0))
     local_rank = int(os.environ.get('LOCAL_RANK', 0))
     world_size = int(os.environ.get("WORLD_SIZE", 1))
@@ -541,10 +570,28 @@ def run(args):
 
     if args.save_root is not None:
         config.save_root = args.save_root
+    if args.resume_from is not None:
+        config.resume_from = args.resume_from
+    if args.dataset_path is not None:
+        config.dataset_path = args.dataset_path
+        config.empty_emb_path = os.path.join(args.dataset_path, "empty_emb.pt")
+    if args.empty_emb_path is not None:
+        config.empty_emb_path = args.empty_emb_path
+    if args.pretrained_model is not None:
+        config.wan22_pretrained_model_name_or_path = args.pretrained_model
+    if args.num_steps is not None:
+        config.num_steps = args.num_steps
+    if args.enable_wandb:
+        config.enable_wandb = True
+    if args.disable_wandb:
+        config.enable_wandb = False
 
     if rank == 0:
         logger.info(f"Using config: {args.config_name}")
         logger.info(f"World size: {world_size}, Local rank: {local_rank}")
+        logger.info(f"Dataset path: {getattr(config, 'dataset_path', None)}")
+        logger.info(f"Save root: {config.save_root}")
+        logger.info(f"enable_wandb: {getattr(config, 'enable_wandb', False)}")
 
     trainer = Trainer(config)
     trainer.train()
@@ -565,6 +612,38 @@ def main():
         default=None,
         help="Root directory for saving checkpoints",
     )
+    parser.add_argument(
+        "--resume-from",
+        type=str,
+        default=None,
+        help="Checkpoint directory to resume model weights from",
+    )
+    parser.add_argument(
+        "--dataset-path",
+        type=str,
+        default=None,
+        help="Dataset root; empty_emb_path defaults to <dataset-path>/empty_emb.pt",
+    )
+    parser.add_argument(
+        "--empty-emb-path",
+        type=str,
+        default=None,
+        help="Override empty text embedding path",
+    )
+    parser.add_argument(
+        "--pretrained-model",
+        type=str,
+        default=None,
+        help="Pretrained LingBot-VA model root",
+    )
+    parser.add_argument(
+        "--num-steps",
+        type=int,
+        default=None,
+        help="Override number of optimizer steps",
+    )
+    parser.add_argument("--enable-wandb", action="store_true", help="Enable WandB logging")
+    parser.add_argument("--disable-wandb", action="store_true", help="Disable WandB logging")
 
     args = parser.parse_args()
     run(args)
