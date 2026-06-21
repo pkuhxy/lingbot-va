@@ -3,3 +3,6 @@ RoboTwin/
 results/
 results_base/
 visualization/
+train_out_contrastive_align/
+ckpts/
+wandb/
