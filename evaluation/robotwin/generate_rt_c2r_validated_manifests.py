@@ -206,6 +206,66 @@ def write_jsonl_record(path: Path, record: dict[str, Any]) -> None:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
+def read_jsonl_records(path: Path) -> list[dict[str, Any]]:
+    if not path.is_file():
+        return []
+    records = []
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                records.append(json.loads(line))
+    return records
+
+
+def task_valid_records(path: Path, split: str, task_name: str) -> list[dict[str, Any]]:
+    records = []
+    for record in read_jsonl_records(path):
+        if record.get("split") != split or record.get("task") != task_name:
+            continue
+        if record.get("expert_validated") is False:
+            continue
+        records.append(record)
+    records.sort(key=lambda item: int(item.get("episode_id", 0)))
+    return records
+
+
+def candidate_id_from_record(record: dict[str, Any]) -> int:
+    return int(record.get("candidate_id", record.get("episode_id", -1)))
+
+
+def next_candidate_id(output_file: Path, failure_file: Path | None) -> int:
+    max_candidate_id = -1
+    for record in read_jsonl_records(output_file):
+        max_candidate_id = max(max_candidate_id, candidate_id_from_record(record))
+    if failure_file is not None:
+        for record in read_jsonl_records(failure_file):
+            max_candidate_id = max(max_candidate_id, candidate_id_from_record(record))
+    return max_candidate_id + 1
+
+
+def seed_task_output_from_combined(
+    combined_file: Path,
+    task_output_file: Path,
+    split: str,
+    task_name: str,
+    episodes_per_task: int,
+) -> None:
+    if task_output_file.exists() or not combined_file.is_file():
+        return
+    records = task_valid_records(combined_file, split, task_name)[:episodes_per_task]
+    if not records:
+        return
+    task_output_file.parent.mkdir(parents=True, exist_ok=True)
+    with task_output_file.open("w", encoding="utf-8") as f:
+        for record in records:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def task_output_count(path: Path, split: str, task_name: str) -> int:
+    return len(task_valid_records(path, split, task_name))
+
+
 def validate_task_split(
     robotwin_root: Path,
     split: str,
@@ -217,14 +277,37 @@ def validate_task_split(
     output_file: Path,
     failure_file: Path | None,
     verbose_failures: bool,
+    resume: bool,
+    overwrite: bool,
 ) -> None:
+    if overwrite or not resume:
+        if output_file.exists():
+            output_file.unlink()
+        if failure_file is not None and failure_file.exists():
+            failure_file.unlink()
+
     args = build_task_args(robotwin_root, task_name, split)
     task_env = class_decorator(task_name)
     task_env.suc = 0
     task_env.test_num = 0
 
-    valid_count = 0
-    candidate_id = 0
+    valid_count = task_output_count(output_file, split, task_name) if resume else 0
+    if valid_count >= episodes_per_task:
+        print(
+            f"[{split}][{task_name}] resume skip: "
+            f"{valid_count}/{episodes_per_task} already validated",
+            flush=True,
+        )
+        return
+
+    candidate_id = next_candidate_id(output_file, failure_file) if resume else 0
+    if valid_count > 0 or candidate_id > 0:
+        print(
+            f"[{split}][{task_name}] resume from "
+            f"valid={valid_count}/{episodes_per_task}, candidate={candidate_id}",
+            flush=True,
+        )
+
     while valid_count < episodes_per_task and candidate_id < max_candidates_per_task:
         record = manifest_record(
             split=split,
@@ -277,10 +360,6 @@ def validate_task_split_worker(worker_args: dict[str, Any]) -> dict[str, Any]:
         if worker_args["failure_file"] is None
         else Path(worker_args["failure_file"])
     )
-    if output_file.exists():
-        output_file.unlink()
-    if failure_file is not None and failure_file.exists():
-        failure_file.unlink()
 
     validate_task_split(
         robotwin_root=robotwin_root,
@@ -293,6 +372,8 @@ def validate_task_split_worker(worker_args: dict[str, Any]) -> dict[str, Any]:
         output_file=output_file,
         failure_file=failure_file,
         verbose_failures=worker_args["verbose_failures"],
+        resume=worker_args["resume"],
+        overwrite=worker_args["overwrite"],
     )
     return {
         "split": worker_args["split"],
@@ -308,6 +389,7 @@ def merge_split_outputs(
     task_index_by_name: dict[str, int],
     tmp_dir: Path,
     output_file: Path,
+    episodes_per_task: int,
 ) -> None:
     if output_file.exists():
         output_file.unlink()
@@ -318,9 +400,79 @@ def merge_split_outputs(
             task_file = tmp_dir / split / f"{task_index:02d}_{task_name}.jsonl"
             if not task_file.is_file():
                 raise FileNotFoundError(f"Missing validated task output: {task_file}")
-            with task_file.open("r", encoding="utf-8") as src:
-                for line in src:
-                    out.write(line)
+            records = task_valid_records(task_file, split, task_name)
+            if len(records) < episodes_per_task:
+                raise RuntimeError(
+                    f"Task output has only {len(records)}/{episodes_per_task} "
+                    f"records: {task_file}"
+                )
+            for record in records[:episodes_per_task]:
+                out.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def build_worker_jobs(
+    splits: list[str],
+    tasks: list[str],
+    task_index_by_name: dict[str, int],
+    robotwin_root: Path,
+    output_dir: Path,
+    failure_log_dir: Path | None,
+    episodes_per_task: int,
+    base_seed: int,
+    max_candidates_per_task: int,
+    verbose_failures: bool,
+    resume: bool,
+    overwrite: bool,
+) -> tuple[list[dict[str, Any]], Path]:
+    tmp_dir = output_dir / "_tmp_by_task"
+    worker_jobs: list[dict[str, Any]] = []
+    for split in splits:
+        combined_file = output_dir / f"{task_config_name(split)}.jsonl"
+        for task_name in tasks:
+            task_index = task_index_by_name[task_name]
+            task_output_file = tmp_dir / split / f"{task_index:02d}_{task_name}.jsonl"
+            failure_file = None
+            if failure_log_dir is not None:
+                failure_file = failure_log_dir / split / f"{task_index:02d}_{task_name}.jsonl"
+
+            if overwrite:
+                if task_output_file.exists():
+                    task_output_file.unlink()
+                if failure_file is not None and failure_file.exists():
+                    failure_file.unlink()
+            elif resume:
+                seed_task_output_from_combined(
+                    combined_file=combined_file,
+                    task_output_file=task_output_file,
+                    split=split,
+                    task_name=task_name,
+                    episodes_per_task=episodes_per_task,
+                )
+
+            if resume and task_output_count(task_output_file, split, task_name) >= episodes_per_task:
+                print(
+                    f"[{split}][{task_name}] resume skip: completed task output exists",
+                    flush=True,
+                )
+                continue
+
+            worker_jobs.append(
+                {
+                    "robotwin_root": str(robotwin_root),
+                    "split": split,
+                    "task_name": task_name,
+                    "task_index": task_index,
+                    "episodes_per_task": episodes_per_task,
+                    "base_seed": base_seed,
+                    "max_candidates_per_task": max_candidates_per_task,
+                    "output_file": str(task_output_file),
+                    "failure_file": None if failure_file is None else str(failure_file),
+                    "verbose_failures": verbose_failures,
+                    "resume": resume,
+                    "overwrite": overwrite,
+                }
+            )
+    return worker_jobs, tmp_dir
 
 
 def parse_args() -> argparse.Namespace:
@@ -347,6 +499,17 @@ def parse_args() -> argparse.Namespace:
         "--verbose-failures",
         action="store_true",
         help="Print full tracebacks for rejected candidate seeds.",
+    )
+    parser.add_argument(
+        "--resume",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Resume from existing per-task validated outputs and failure logs.",
+    )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Delete existing per-task outputs/failure logs for selected jobs.",
     )
     parser.add_argument("--base-seed", type=int, default=20260622)
     parser.add_argument(
@@ -397,74 +560,67 @@ def main() -> None:
         failure_log_dir = Path(failure_log_dir)
 
     task_index_by_name = {task_name: idx for idx, task_name in enumerate(TASK_NAMES)}
+    worker_jobs, tmp_dir = build_worker_jobs(
+        splits=args.splits,
+        tasks=args.tasks,
+        task_index_by_name=task_index_by_name,
+        robotwin_root=robotwin_root,
+        output_dir=args.output_dir,
+        failure_log_dir=failure_log_dir,
+        episodes_per_task=args.episodes_per_task,
+        base_seed=args.base_seed,
+        max_candidates_per_task=args.max_candidates_per_task,
+        verbose_failures=args.verbose_failures,
+        resume=args.resume,
+        overwrite=args.overwrite,
+    )
+
     if args.num_workers <= 1:
         configure_robotwin_imports(robotwin_root)
+        for job in worker_jobs:
+            validate_task_split(
+                robotwin_root=robotwin_root,
+                split=job["split"],
+                task_name=job["task_name"],
+                task_index=job["task_index"],
+                episodes_per_task=job["episodes_per_task"],
+                base_seed=job["base_seed"],
+                max_candidates_per_task=job["max_candidates_per_task"],
+                output_file=Path(job["output_file"]),
+                failure_file=None if job["failure_file"] is None else Path(job["failure_file"]),
+                verbose_failures=job["verbose_failures"],
+                resume=job["resume"],
+                overwrite=job["overwrite"],
+            )
         for split in args.splits:
             output_file = args.output_dir / f"{task_config_name(split)}.jsonl"
-            if output_file.exists():
-                output_file.unlink()
-            for task_name in args.tasks:
-                failure_file = None
-                if failure_log_dir is not None:
-                    failure_file = (
-                        failure_log_dir
-                        / split
-                        / f"{task_index_by_name[task_name]:02d}_{task_name}.jsonl"
-                    )
-                    if failure_file.exists():
-                        failure_file.unlink()
-
-                validate_task_split(
-                    robotwin_root=robotwin_root,
-                    split=split,
-                    task_name=task_name,
-                    task_index=task_index_by_name[task_name],
-                    episodes_per_task=args.episodes_per_task,
-                    base_seed=args.base_seed,
-                    max_candidates_per_task=args.max_candidates_per_task,
-                    output_file=output_file,
-                    failure_file=failure_file,
-                    verbose_failures=args.verbose_failures,
-                )
+            merge_split_outputs(
+                split=split,
+                tasks=args.tasks,
+                task_index_by_name=task_index_by_name,
+                tmp_dir=tmp_dir,
+                output_file=output_file,
+                episodes_per_task=args.episodes_per_task,
+            )
             print(f"Wrote validated split manifest: {output_file}")
         return
 
-    tmp_dir = args.output_dir / "_tmp_by_task"
-    worker_jobs: list[dict[str, Any]] = []
-    for split in args.splits:
-        for task_name in args.tasks:
-            task_index = task_index_by_name[task_name]
-            failure_file = None
-            if failure_log_dir is not None:
-                failure_file = failure_log_dir / split / f"{task_index:02d}_{task_name}.jsonl"
-            worker_jobs.append(
-                {
-                    "robotwin_root": str(robotwin_root),
-                    "split": split,
-                    "task_name": task_name,
-                    "task_index": task_index,
-                    "episodes_per_task": args.episodes_per_task,
-                    "base_seed": args.base_seed,
-                    "max_candidates_per_task": args.max_candidates_per_task,
-                    "output_file": str(tmp_dir / split / f"{task_index:02d}_{task_name}.jsonl"),
-                    "failure_file": None if failure_file is None else str(failure_file),
-                    "verbose_failures": args.verbose_failures,
-                }
-            )
-
-    print(f"Validating {len(worker_jobs)} task/split jobs with {args.num_workers} workers")
-    with concurrent.futures.ProcessPoolExecutor(max_workers=args.num_workers) as executor:
-        future_to_job = {
-            executor.submit(validate_task_split_worker, job): job for job in worker_jobs
-        }
-        for future in concurrent.futures.as_completed(future_to_job):
-            job = future_to_job[future]
-            result = future.result()
-            print(
-                f"Finished [{result['split']}][{result['task_name']}] "
-                f"-> {result['output_file']}",
-                flush=True,
-            )
+    if worker_jobs:
+        print(f"Validating {len(worker_jobs)} task/split jobs with {args.num_workers} workers")
+        with concurrent.futures.ProcessPoolExecutor(max_workers=args.num_workers) as executor:
+            future_to_job = {
+                executor.submit(validate_task_split_worker, job): job for job in worker_jobs
+            }
+            for future in concurrent.futures.as_completed(future_to_job):
+                job = future_to_job[future]
+                result = future.result()
+                print(
+                    f"Finished [{result['split']}][{result['task_name']}] "
+                    f"-> {result['output_file']}",
+                    flush=True,
+                )
+    else:
+        print("All selected task/split jobs are already complete; merging outputs.")
 
     for split in args.splits:
         output_file = args.output_dir / f"{task_config_name(split)}.jsonl"
@@ -474,6 +630,7 @@ def main() -> None:
             task_index_by_name=task_index_by_name,
             tmp_dir=tmp_dir,
             output_file=output_file,
+            episodes_per_task=args.episodes_per_task,
         )
         print(f"Wrote validated split manifest: {output_file}")
 

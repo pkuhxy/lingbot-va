@@ -122,6 +122,27 @@ evaluation/robotwin/rt_c2r_validated_manifests/
 
 如果想看被过滤 seed 的完整异常堆栈，额外加 `--verbose-failures`。默认不打印 traceback，因为类似 `target_pose cannot be None` 的错误通常只表示该候选 case 对 scripted expert 不合理，应被过滤。
 
+验证脚本默认支持断点续跑：
+
+```bash
+# 默认就是 --resume
+python evaluation/robotwin/generate_rt_c2r_validated_manifests.py ...
+
+# 对选中的 split/task 从头重跑
+python evaluation/robotwin/generate_rt_c2r_validated_manifests.py ... --overwrite
+
+# 完全不读取旧输出和失败日志
+python evaluation/robotwin/generate_rt_c2r_validated_manifests.py ... --no-resume
+```
+
+断点文件按 task/split 存在：
+
+```text
+evaluation/robotwin/rt_c2r_validated_manifests/_tmp_by_task/
+```
+
+最终的 `rt_c2r_*.jsonl` 会由这些 task 级断点文件稳定合并生成。失败日志也会参与 resume，用于跳过已经验证失败的 candidate ids。
+
 在 RoboTwin 环境中生成 simulator 可读取的 6 个 task_config：
 
 ```bash
