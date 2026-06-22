@@ -48,8 +48,20 @@ start_port=${START_PORT:-29056}
 num_gpus=${NUM_GPUS:-1}
 SERVER_HOST=${SERVER_HOST:-127.0.0.1}
 SAVE_VISUALIZATION=${SAVE_VISUALIZATION:-False}
-STRICT_SEED_MANIFEST=${STRICT_SEED_MANIFEST:-True}
-MANIFEST_DIR=${MANIFEST_DIR:-"${PROJECT_ROOT}/evaluation/robotwin/rt_c2r_manifests"}
+VALIDATED_MANIFEST_DIR=${VALIDATED_MANIFEST_DIR:-"${PROJECT_ROOT}/evaluation/robotwin/rt_c2r_validated_manifests"}
+if [ -f "${VALIDATED_MANIFEST_DIR}/rt_c2r_easy.jsonl" ]; then
+    DEFAULT_MANIFEST_DIR="${VALIDATED_MANIFEST_DIR}"
+else
+    DEFAULT_MANIFEST_DIR="${PROJECT_ROOT}/evaluation/robotwin/rt_c2r_manifests"
+fi
+MANIFEST_DIR=${MANIFEST_DIR:-"${DEFAULT_MANIFEST_DIR}"}
+if [ -z "${STRICT_SEED_MANIFEST+x}" ]; then
+    if [ "${MANIFEST_DIR}" = "${VALIDATED_MANIFEST_DIR}" ]; then
+        STRICT_SEED_MANIFEST=True
+    else
+        STRICT_SEED_MANIFEST=False
+    fi
+fi
 SPLITS=${SPLITS:-"easy background light clutter height hard"}
 REGENERATE_MANIFESTS=${REGENERATE_MANIFESTS:-False}
 

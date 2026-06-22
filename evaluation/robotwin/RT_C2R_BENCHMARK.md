@@ -66,7 +66,8 @@ huggingface-cli download \
 - `wan_va/configs/va_robotwin_train_cfg.py`：默认已经指向 clean-only 子目录，是 RT-C2R 主实验训练配置。
 - `evaluation/robotwin/eval_polict_client_openpi.py`：新增 `seed_manifest` 支持，评测时可以严格复用固定 seeds，并输出 per-episode JSONL。
 - `evaluation/robotwin/rt_c2r.py`：50 个 task 和 6 个 split 的 canonical 定义。
-- `evaluation/robotwin/generate_rt_c2r_benchmark.py`：生成 seed manifests，并可从 RoboTwin `demo_clean.yml` 派生 6 个 `task_config` YAML。
+- `evaluation/robotwin/generate_rt_c2r_benchmark.py`：生成候选 seed manifests，并可从 RoboTwin `demo_clean.yml` 派生 6 个 `task_config` YAML。
+- `evaluation/robotwin/generate_rt_c2r_validated_manifests.py`：用 RoboTwin scripted expert / CuRobo planner / `check_success()` 过滤候选 seeds，只保留 expert 可解 case。
 - `evaluation/robotwin/launch_rt_c2r_benchmark.sh`：跨 6 个 split 和 50 个 task 批量评测。
 - `evaluation/robotwin/calc_rt_c2r_stat.py`：汇总 split success rate、per-task success rate、Hard/Easy retention 和 Easy-Hard drop。
 - `evaluation/robotwin/build_clean_train_manifest.py`：可选，扫描 clean LeRobot 数据并生成训练 manifest。
@@ -93,6 +94,30 @@ python evaluation/robotwin/generate_rt_c2r_benchmark.py \
   --manifest-dir evaluation/robotwin/rt_c2r_manifests \
   --episodes-per-task 100
 ```
+
+正式 benchmark 建议生成 expert-validated manifests：
+
+```bash
+ROBOTWIN_ROOT=/path/to/RoboTwin \
+python evaluation/robotwin/generate_rt_c2r_validated_manifests.py \
+  --episodes-per-task 100 \
+  --max-candidates-per-task 2000 \
+  --write-task-configs
+```
+
+输出目录：
+
+```text
+evaluation/robotwin/rt_c2r_validated_manifests/
+  rt_c2r_easy.jsonl
+  rt_c2r_background.jsonl
+  rt_c2r_light.jsonl
+  rt_c2r_clutter.jsonl
+  rt_c2r_height.jsonl
+  rt_c2r_hard.jsonl
+```
+
+每条保留记录都满足 RoboTwin 自带 scripted expert + CuRobo planner 能跑通，且 `check_success()` 通过。被过滤掉的候选 seed 会写到 `evaluation/robotwin/rt_c2r_validation_failures/`，便于排查。
 
 在 RoboTwin 环境中生成 simulator 可读取的 6 个 task_config：
 
@@ -176,7 +201,7 @@ Easy, Background, Light, Clutter, Height, Hard, Hard/Easy Retention
 ## 注意事项
 
 - 不要用 randomized split 选择 checkpoint；checkpoint selection 只能基于固定 step 或 clean validation。
-- `STRICT_SEED_MANIFEST=True` 时，如果某个 manifest seed 连 expert setup/check 都无法通过，评测会直接失败。这是有意的：正式 benchmark 应先验证 manifest seeds，而不是评测时静默替换 seed。
-- 如果想复现旧的“自动跳过 unstable seed”行为，可以临时设置 `STRICT_SEED_MANIFEST=False`，但这不建议用于正式对比。
+- launcher 会优先使用 `evaluation/robotwin/rt_c2r_validated_manifests/`；如果该目录存在，默认 `STRICT_SEED_MANIFEST=True`。
+- 如果还没有 validated manifests，launcher 会回退到候选 manifests，并默认 `STRICT_SEED_MANIFEST=False`，用于 pilot 和先跑通环境。
+- 正式 benchmark 应使用 validated manifests，这样各模型共用同一批 expert-valid seeds。
 - LingBot-VA original 的 clean+aug 训练结果可以作为 upper bound，但不要把它称作 clean-to-randomized OOD 主实验。
-

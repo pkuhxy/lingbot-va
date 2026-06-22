@@ -656,7 +656,9 @@ def eval_policy(task_name,
     clear_cache_freq = args["clear_cache_freq"]
     use_seed_manifest = bool(seed_records)
     seed_record_idx = 0
-    if use_seed_manifest and len(seed_records) < test_num:
+    fallback_seed = st_seed
+    fallback_notice_printed = False
+    if use_seed_manifest and strict_seed_manifest and len(seed_records) < test_num:
         raise ValueError(
             f"Seed manifest only has {len(seed_records)} records for {task_name}, "
             f"but test_num={test_num}"
@@ -667,14 +669,25 @@ def eval_policy(task_name,
     while succ_seed < test_num:
         seed_record = None
         if use_seed_manifest:
-            if seed_record_idx >= len(seed_records):
+            if seed_record_idx < len(seed_records):
+                seed_record = seed_records[seed_record_idx]
+                seed_record_idx += 1
+                now_seed = int(seed_record["seed"])
+                fallback_seed = max(fallback_seed, now_seed + 1)
+                now_id = int(seed_record.get("episode_id", succ_seed))
+            elif strict_seed_manifest:
                 raise RuntimeError(
                     f"Ran out of manifest seeds for {task_name} before {test_num} rollouts"
                 )
-            seed_record = seed_records[seed_record_idx]
-            seed_record_idx += 1
-            now_seed = int(seed_record["seed"])
-            now_id = int(seed_record.get("episode_id", succ_seed))
+            else:
+                if not fallback_notice_printed:
+                    print(
+                        f"No more RT-C2R manifest candidates for {task_name}; "
+                        "continuing with sequential expert-validated seeds."
+                    )
+                    fallback_notice_printed = True
+                now_seed = fallback_seed
+                now_id = succ_seed
 
         render_freq = args["render_freq"]
         args["render_freq"] = 0
@@ -692,6 +705,7 @@ def eval_policy(task_name,
                         f"seed={now_seed}"
                     ) from e
                 now_seed += 1
+                fallback_seed = max(fallback_seed, now_seed)
                 args["render_freq"] = render_freq
                 continue
             except Exception as e:
@@ -702,6 +716,7 @@ def eval_policy(task_name,
                         f"seed={now_seed}: {e}"
                     ) from e
                 now_seed += 1
+                fallback_seed = max(fallback_seed, now_seed)
                 args["render_freq"] = render_freq
                 print(f"error occurs ! {e}")
                 traceback.print_exc()
@@ -717,6 +732,7 @@ def eval_policy(task_name,
                     f"task={task_name}, seed={now_seed}"
                 )
             now_seed += 1
+            fallback_seed = max(fallback_seed, now_seed)
             args["render_freq"] = render_freq
             continue
 
@@ -911,8 +927,9 @@ def eval_policy(task_name,
             f"\033[93m{task_name}\033[0m | \033[94m{args['policy_name']}\033[0m | \033[92m{args['task_config']}\033[0m | \033[91m{args['ckpt_setting']}\033[0m\n"
             f"Success rate: \033[96m{TASK_ENV.suc}/{TASK_ENV.test_num}\033[0m => \033[95m{round(TASK_ENV.suc/TASK_ENV.test_num*100, 1)}%\033[0m, current seed: \033[90m{now_seed}\033[0m\n"
         )
-        if not use_seed_manifest:
+        if not use_seed_manifest or seed_record is None:
             now_seed += 1
+            fallback_seed = max(fallback_seed, now_seed)
 
     return now_seed, TASK_ENV.suc
 

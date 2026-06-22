@@ -159,8 +159,10 @@ def manifest_record(
     task_index: int,
     episode_id: int,
     base_seed: int = 20260622,
+    candidate_id: int | None = None,
 ) -> dict[str, Any]:
-    return {
+    seed_source_id = episode_id if candidate_id is None else candidate_id
+    record = {
         "benchmark": "robotwin_rt_c2r",
         "benchmark_version": "v1",
         "task": task_name,
@@ -168,7 +170,9 @@ def manifest_record(
         "split": split,
         "task_config": task_config_name(split),
         "episode_id": episode_id,
-        "seed": stable_eval_seed(split, task_name, episode_id, base_seed),
+        "seed": stable_eval_seed(split, task_name, seed_source_id, base_seed),
         "randomization": SPLIT_RANDOMIZATION[split],
     }
-
+    if candidate_id is not None:
+        record["candidate_id"] = candidate_id
+    return record
