@@ -14,11 +14,21 @@ if [ ! -d "${ROBOTWIN_ROOT}/envs" ]; then
     exit 1
 fi
 
-if [ ! -d /etc/glvnd/egl_vendor.d ]; then
-    echo "Missing EGL vendor directory: /etc/glvnd/egl_vendor.d" >&2
-    echo "SAPIEN needs the GLVND EGL vendor directory to initialize rendering." >&2
-    exit 1
+for egl_vendor_dir in /etc/glvnd/egl_vendor.d /usr/share/glvnd/egl_vendor.d; do
+if [ ! -d "${egl_vendor_dir}" ]; then
+    if [ "$(id -u)" -eq 0 ]; then
+        mkdir -p "${egl_vendor_dir}"
+        echo "Created missing EGL vendor directory: ${egl_vendor_dir}"
+    else
+        echo "Missing EGL vendor directory: ${egl_vendor_dir}" >&2
+        echo "SAPIEN needs the GLVND EGL vendor directory to initialize rendering." >&2
+        echo "Create it or install Vulkan/GLVND packages on the server:" >&2
+        echo "  sudo mkdir -p /etc/glvnd/egl_vendor.d /usr/share/glvnd/egl_vendor.d" >&2
+        echo "  sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-tools libegl1 libglvnd0" >&2
+        exit 1
+    fi
 fi
+done
 
 FFMPEG_BINARY=${FFMPEG_BINARY:-ffmpeg}
 if ! command -v "${FFMPEG_BINARY}" >/dev/null 2>&1; then

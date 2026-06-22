@@ -29,6 +29,14 @@ for import_root in (PROJECT_ROOT, robowin_root):
 import os
 os.chdir(robowin_root)
 
+# Some RoboTwin/CuRobo versions access wp.torch without importing the Warp
+# torch bridge first. Importing the submodule here keeps newer Warp builds
+# compatible without patching the RoboTwin checkout.
+try:
+    import warp.torch  # noqa: F401
+except ImportError:
+    pass
+
 from envs import CONFIGS_PATH
 from envs.utils.create_actor import UnStableError
 
