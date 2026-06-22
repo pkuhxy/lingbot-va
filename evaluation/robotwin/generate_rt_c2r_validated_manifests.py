@@ -8,10 +8,10 @@ manifest is therefore safe to use with STRICT_SEED_MANIFEST=True.
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import os
 import sys
-import traceback
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -173,7 +173,13 @@ def close_env_quietly(task_env) -> None:
         pass
 
 
-def validate_candidate(task_env, args: dict[str, Any], seed: int, now_id: int) -> tuple[bool, str]:
+def validate_candidate(
+    task_env,
+    args: dict[str, Any],
+    seed: int,
+    now_id: int,
+    verbose_failures: bool = False,
+) -> tuple[bool, str]:
     from envs.utils.create_actor import UnStableError
 
     try:
@@ -187,7 +193,10 @@ def validate_candidate(task_env, args: dict[str, Any], seed: int, now_id: int) -
         return False, "unstable"
     except Exception as exc:
         close_env_quietly(task_env)
-        traceback.print_exc()
+        if verbose_failures:
+            import traceback
+
+            traceback.print_exc()
         return False, f"{type(exc).__name__}: {exc}"
 
 
@@ -207,6 +216,7 @@ def validate_task_split(
     max_candidates_per_task: int,
     output_file: Path,
     failure_file: Path | None,
+    verbose_failures: bool,
 ) -> None:
     args = build_task_args(robotwin_root, task_name, split)
     task_env = class_decorator(task_name)
@@ -229,6 +239,7 @@ def validate_task_split(
             args=args,
             seed=int(record["seed"]),
             now_id=valid_count,
+            verbose_failures=verbose_failures,
         )
         if valid:
             record["expert_validated"] = True
@@ -257,6 +268,61 @@ def validate_task_split(
         )
 
 
+def validate_task_split_worker(worker_args: dict[str, Any]) -> dict[str, Any]:
+    robotwin_root = Path(worker_args["robotwin_root"])
+    configure_robotwin_imports(robotwin_root)
+    output_file = Path(worker_args["output_file"])
+    failure_file = (
+        None
+        if worker_args["failure_file"] is None
+        else Path(worker_args["failure_file"])
+    )
+    if output_file.exists():
+        output_file.unlink()
+    if failure_file is not None and failure_file.exists():
+        failure_file.unlink()
+
+    validate_task_split(
+        robotwin_root=robotwin_root,
+        split=worker_args["split"],
+        task_name=worker_args["task_name"],
+        task_index=worker_args["task_index"],
+        episodes_per_task=worker_args["episodes_per_task"],
+        base_seed=worker_args["base_seed"],
+        max_candidates_per_task=worker_args["max_candidates_per_task"],
+        output_file=output_file,
+        failure_file=failure_file,
+        verbose_failures=worker_args["verbose_failures"],
+    )
+    return {
+        "split": worker_args["split"],
+        "task_name": worker_args["task_name"],
+        "task_index": worker_args["task_index"],
+        "output_file": str(output_file),
+    }
+
+
+def merge_split_outputs(
+    split: str,
+    tasks: list[str],
+    task_index_by_name: dict[str, int],
+    tmp_dir: Path,
+    output_file: Path,
+) -> None:
+    if output_file.exists():
+        output_file.unlink()
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with output_file.open("w", encoding="utf-8") as out:
+        for task_name in tasks:
+            task_index = task_index_by_name[task_name]
+            task_file = tmp_dir / split / f"{task_index:02d}_{task_name}.jsonl"
+            if not task_file.is_file():
+                raise FileNotFoundError(f"Missing validated task output: {task_file}")
+            with task_file.open("r", encoding="utf-8") as src:
+                for line in src:
+                    out.write(line)
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -271,6 +337,17 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--episodes-per-task", type=int, default=100)
     parser.add_argument("--max-candidates-per-task", type=int, default=2000)
+    parser.add_argument(
+        "--num-workers",
+        type=int,
+        default=1,
+        help="Number of parallel worker processes. Use 1 for sequential validation.",
+    )
+    parser.add_argument(
+        "--verbose-failures",
+        action="store_true",
+        help="Print full tracebacks for rejected candidate seeds.",
+    )
     parser.add_argument("--base-seed", type=int, default=20260622)
     parser.add_argument(
         "--splits",
@@ -303,7 +380,6 @@ def main() -> None:
     args = parse_args()
     robotwin_root = args.robotwin_root.expanduser().resolve()
     ensure_egl_vendor_dirs()
-    configure_robotwin_imports(robotwin_root)
 
     if args.write_task_configs:
         write_task_configs(
@@ -321,32 +397,84 @@ def main() -> None:
         failure_log_dir = Path(failure_log_dir)
 
     task_index_by_name = {task_name: idx for idx, task_name in enumerate(TASK_NAMES)}
+    if args.num_workers <= 1:
+        configure_robotwin_imports(robotwin_root)
+        for split in args.splits:
+            output_file = args.output_dir / f"{task_config_name(split)}.jsonl"
+            if output_file.exists():
+                output_file.unlink()
+            for task_name in args.tasks:
+                failure_file = None
+                if failure_log_dir is not None:
+                    failure_file = (
+                        failure_log_dir
+                        / split
+                        / f"{task_index_by_name[task_name]:02d}_{task_name}.jsonl"
+                    )
+                    if failure_file.exists():
+                        failure_file.unlink()
+
+                validate_task_split(
+                    robotwin_root=robotwin_root,
+                    split=split,
+                    task_name=task_name,
+                    task_index=task_index_by_name[task_name],
+                    episodes_per_task=args.episodes_per_task,
+                    base_seed=args.base_seed,
+                    max_candidates_per_task=args.max_candidates_per_task,
+                    output_file=output_file,
+                    failure_file=failure_file,
+                    verbose_failures=args.verbose_failures,
+                )
+            print(f"Wrote validated split manifest: {output_file}")
+        return
+
+    tmp_dir = args.output_dir / "_tmp_by_task"
+    worker_jobs: list[dict[str, Any]] = []
     for split in args.splits:
-        output_file = args.output_dir / f"{task_config_name(split)}.jsonl"
-        if output_file.exists():
-            output_file.unlink()
         for task_name in args.tasks:
+            task_index = task_index_by_name[task_name]
             failure_file = None
             if failure_log_dir is not None:
-                failure_file = (
-                    failure_log_dir
-                    / split
-                    / f"{task_index_by_name[task_name]:02d}_{task_name}.jsonl"
-                )
-                if failure_file.exists():
-                    failure_file.unlink()
-
-            validate_task_split(
-                robotwin_root=robotwin_root,
-                split=split,
-                task_name=task_name,
-                task_index=task_index_by_name[task_name],
-                episodes_per_task=args.episodes_per_task,
-                base_seed=args.base_seed,
-                max_candidates_per_task=args.max_candidates_per_task,
-                output_file=output_file,
-                failure_file=failure_file,
+                failure_file = failure_log_dir / split / f"{task_index:02d}_{task_name}.jsonl"
+            worker_jobs.append(
+                {
+                    "robotwin_root": str(robotwin_root),
+                    "split": split,
+                    "task_name": task_name,
+                    "task_index": task_index,
+                    "episodes_per_task": args.episodes_per_task,
+                    "base_seed": args.base_seed,
+                    "max_candidates_per_task": args.max_candidates_per_task,
+                    "output_file": str(tmp_dir / split / f"{task_index:02d}_{task_name}.jsonl"),
+                    "failure_file": None if failure_file is None else str(failure_file),
+                    "verbose_failures": args.verbose_failures,
+                }
             )
+
+    print(f"Validating {len(worker_jobs)} task/split jobs with {args.num_workers} workers")
+    with concurrent.futures.ProcessPoolExecutor(max_workers=args.num_workers) as executor:
+        future_to_job = {
+            executor.submit(validate_task_split_worker, job): job for job in worker_jobs
+        }
+        for future in concurrent.futures.as_completed(future_to_job):
+            job = future_to_job[future]
+            result = future.result()
+            print(
+                f"Finished [{result['split']}][{result['task_name']}] "
+                f"-> {result['output_file']}",
+                flush=True,
+            )
+
+    for split in args.splits:
+        output_file = args.output_dir / f"{task_config_name(split)}.jsonl"
+        merge_split_outputs(
+            split=split,
+            tasks=args.tasks,
+            task_index_by_name=task_index_by_name,
+            tmp_dir=tmp_dir,
+            output_file=output_file,
+        )
         print(f"Wrote validated split manifest: {output_file}")
 
 

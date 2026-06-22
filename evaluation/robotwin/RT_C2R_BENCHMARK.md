@@ -102,6 +102,7 @@ ROBOTWIN_ROOT=/path/to/RoboTwin \
 python evaluation/robotwin/generate_rt_c2r_validated_manifests.py \
   --episodes-per-task 100 \
   --max-candidates-per-task 2000 \
+  --num-workers 4 \
   --write-task-configs
 ```
 
@@ -118,6 +119,8 @@ evaluation/robotwin/rt_c2r_validated_manifests/
 ```
 
 每条保留记录都满足 RoboTwin 自带 scripted expert + CuRobo planner 能跑通，且 `check_success()` 通过。被过滤掉的候选 seed 会写到 `evaluation/robotwin/rt_c2r_validation_failures/`，便于排查。
+
+如果想看被过滤 seed 的完整异常堆栈，额外加 `--verbose-failures`。默认不打印 traceback，因为类似 `target_pose cannot be None` 的错误通常只表示该候选 case 对 scripted expert 不合理，应被过滤。
 
 在 RoboTwin 环境中生成 simulator 可读取的 6 个 task_config：
 
