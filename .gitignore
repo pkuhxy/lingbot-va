@@ -1,5 +1,5 @@
 *.pyc
-RoboTwin/
+/RoboTwin/
 results/
 results_base/
 visualization/

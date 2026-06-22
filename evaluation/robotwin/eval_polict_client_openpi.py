@@ -71,6 +71,61 @@ def write_json(data: dict, fpath: Path) -> None:
     with open(fpath, "w") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
+
+def append_jsonl(data: dict, fpath: Path) -> None:
+    fpath.parent.mkdir(exist_ok=True, parents=True)
+    with open(fpath, "a", encoding="utf-8") as f:
+        f.write(json.dumps(data, ensure_ascii=False) + "\n")
+
+
+def str_to_bool(value, default=False):
+    if value is None:
+        return default
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return bool(value)
+    if isinstance(value, str):
+        return value.lower() in ("1", "true", "yes", "y")
+    return default
+
+
+def resolve_task_config(task_config):
+    task_config_path = Path(str(task_config)).expanduser()
+    if task_config_path.is_file():
+        return task_config_path.resolve(), task_config_path.stem
+    return Path(f"./task_config/{task_config}.yml"), str(task_config)
+
+
+def load_seed_manifest(manifest_path, task_name, split_name=None):
+    if not manifest_path:
+        return None
+    manifest_path = Path(str(manifest_path)).expanduser()
+    if not manifest_path.is_file():
+        raise FileNotFoundError(f"Seed manifest not found: {manifest_path}")
+
+    records = []
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        for line_no, line in enumerate(f, start=1):
+            line = line.strip()
+            if not line:
+                continue
+            record = json.loads(line)
+            if record.get("task") != task_name:
+                continue
+            if split_name is not None and record.get("split") != split_name:
+                continue
+            if "seed" not in record:
+                raise ValueError(f"Missing seed at {manifest_path}:{line_no}")
+            records.append(record)
+
+    records.sort(key=lambda x: int(x.get("episode_id", 0)))
+    if not records:
+        raise ValueError(
+            f"No seed records for task={task_name}, split={split_name} in {manifest_path}"
+        )
+    return records
+
 def add_title_bar(img, text, font_scale=0.8, thickness=2):
     """Add a black title bar with text above the image"""
     h, w, _ = img.shape
@@ -373,6 +428,7 @@ def main(usr_args):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     task_name = usr_args["task_name"]
     task_config = usr_args["task_config"]
+    task_config_path, task_config_name = resolve_task_config(task_config)
     ckpt_setting = usr_args["ckpt_setting"]
     save_root = usr_args["save_root"]
     policy_name = usr_args["policy_name"]
@@ -386,13 +442,16 @@ def main(usr_args):
     video_save_dir = None
     video_size = None
 
-    with open(f"./task_config/{task_config}.yml", "r", encoding="utf-8") as f:
+    with open(task_config_path, "r", encoding="utf-8") as f:
         args = yaml.load(f.read(), Loader=yaml.FullLoader)
 
     args['task_name'] = task_name
-    args["task_config"] = task_config
+    args["task_config"] = task_config_name
+    args["task_config_path"] = str(task_config_path)
     args["ckpt_setting"] = ckpt_setting
     args["save_root"] = save_root
+    args["split_name"] = usr_args.get("split_name", task_config_name)
+    args["seed_manifest"] = usr_args.get("seed_manifest")
 
     embodiment_type = args.get("embodiment")
     embodiment_config_path = os.path.join(CONFIGS_PATH, "_embodiment_config.yml")
@@ -433,7 +492,7 @@ def main(usr_args):
     else:
         embodiment_name = str(embodiment_type[0]) + "+" + str(embodiment_type[1])
 
-    save_dir = Path(f"eval_result/{task_name}/{policy_name}/{task_config}/{ckpt_setting}/{current_time}")
+    save_dir = Path(f"eval_result/{task_name}/{policy_name}/{task_config_name}/{ckpt_setting}/{current_time}")
     save_dir.mkdir(parents=True, exist_ok=True)
 
     if args["eval_video_log"]:
@@ -471,6 +530,15 @@ def main(usr_args):
     st_seed = 10000 * (1 + seed)
     suc_nums = []
     test_num = usr_args["test_num"]
+    seed_records = load_seed_manifest(
+        usr_args.get("seed_manifest"),
+        task_name=task_name,
+        split_name=usr_args.get("split_name"),
+    )
+    strict_seed_manifest = str_to_bool(
+        usr_args.get("strict_seed_manifest"),
+        default=True,
+    )
 
     
     model = WebsocketClientPolicy(
@@ -488,7 +556,9 @@ def main(usr_args):
                                    instruction_type=instruction_type,
                                    save_visualization=save_visualization,
                                    video_guidance_scale=video_guidance_scale,
-                                   action_guidance_scale=action_guidance_scale)
+                                   action_guidance_scale=action_guidance_scale,
+                                   seed_records=seed_records,
+                                   strict_seed_manifest=strict_seed_manifest)
     suc_nums.append(suc_num)
 
     file_path = os.path.join(save_dir, f"_result.txt")
@@ -539,7 +609,9 @@ def eval_policy(task_name,
                 instruction_type=None,
                 save_visualization=False,
                 video_guidance_scale=5.0,
-                action_guidance_scale=5.0):
+                action_guidance_scale=5.0,
+                seed_records=None,
+                strict_seed_manifest=True):
     print(f"\033[34mTask Name: {args['task_name']}\033[0m")
     print(f"\033[34mPolicy Name: {args['policy_name']}\033[0m")
 
@@ -554,10 +626,28 @@ def eval_policy(task_name,
 
     now_seed = st_seed
     clear_cache_freq = args["clear_cache_freq"]
+    use_seed_manifest = bool(seed_records)
+    seed_record_idx = 0
+    if use_seed_manifest and len(seed_records) < test_num:
+        raise ValueError(
+            f"Seed manifest only has {len(seed_records)} records for {task_name}, "
+            f"but test_num={test_num}"
+        )
 
     args["eval_mode"] = True
 
     while succ_seed < test_num:
+        seed_record = None
+        if use_seed_manifest:
+            if seed_record_idx >= len(seed_records):
+                raise RuntimeError(
+                    f"Ran out of manifest seeds for {task_name} before {test_num} rollouts"
+                )
+            seed_record = seed_records[seed_record_idx]
+            seed_record_idx += 1
+            now_seed = int(seed_record["seed"])
+            now_id = int(seed_record.get("episode_id", succ_seed))
+
         render_freq = args["render_freq"]
         args["render_freq"] = 0
 
@@ -568,11 +658,21 @@ def eval_policy(task_name,
                 TASK_ENV.close_env()
             except UnStableError as e:
                 TASK_ENV.close_env()
+                if use_seed_manifest and strict_seed_manifest:
+                    raise RuntimeError(
+                        f"Unstable RT-C2R manifest seed for task={task_name}, "
+                        f"seed={now_seed}"
+                    ) from e
                 now_seed += 1
                 args["render_freq"] = render_freq
                 continue
             except Exception as e:
                 TASK_ENV.close_env()
+                if use_seed_manifest and strict_seed_manifest:
+                    raise RuntimeError(
+                        f"Failed RT-C2R manifest seed for task={task_name}, "
+                        f"seed={now_seed}: {e}"
+                    ) from e
                 now_seed += 1
                 args["render_freq"] = render_freq
                 print(f"error occurs ! {e}")
@@ -583,6 +683,11 @@ def eval_policy(task_name,
             succ_seed += 1
             suc_test_seed_list.append(now_seed)
         else:
+            if use_seed_manifest and strict_seed_manifest:
+                raise RuntimeError(
+                    f"Expert plan/check failed for RT-C2R manifest seed: "
+                    f"task={task_name}, seed={now_seed}"
+                )
             now_seed += 1
             args["render_freq"] = render_freq
             continue
@@ -705,7 +810,7 @@ def eval_policy(task_name,
             first = False
 
             model.infer(dict(obs = key_frame_list, compute_kv_cache=True, imagine=False, save_visualization=save_visualization, state=action))
-  
+
             if TASK_ENV.eval_success:
                 succ = True
                 break
@@ -749,6 +854,7 @@ def eval_policy(task_name,
         if TASK_ENV.render_freq:
             TASK_ENV.viewer.close()
 
+        rollout_id = TASK_ENV.test_num
         TASK_ENV.test_num += 1
 
         save_dir = Path(args['save_root']) / f'stseed-{st_seed}' / 'metrics' / task_name
@@ -759,12 +865,26 @@ def eval_policy(task_name,
           "total_num": float(TASK_ENV.test_num),
           "succ_rate": float(TASK_ENV.suc / TASK_ENV.test_num),
         }, out_json_file)
+        episode_record = {
+            "task": task_name,
+            "task_config": args["task_config"],
+            "split": args.get("split_name"),
+            "rollout_id": int(rollout_id),
+            "seed": int(now_seed),
+            "prompt": prompt,
+            "success": bool(succ),
+            "manifest_episode_id": (
+                None if seed_record is None else seed_record.get("episode_id")
+            ),
+        }
+        append_jsonl(episode_record, save_dir / "episodes.jsonl")
         
         print(
             f"\033[93m{task_name}\033[0m | \033[94m{args['policy_name']}\033[0m | \033[92m{args['task_config']}\033[0m | \033[91m{args['ckpt_setting']}\033[0m\n"
             f"Success rate: \033[96m{TASK_ENV.suc}/{TASK_ENV.test_num}\033[0m => \033[95m{round(TASK_ENV.suc/TASK_ENV.test_num*100, 1)}%\033[0m, current seed: \033[90m{now_seed}\033[0m\n"
         )
-        now_seed += 1
+        if not use_seed_manifest:
+            now_seed += 1
 
     return now_seed, TASK_ENV.suc
 
