@@ -30,12 +30,32 @@ import os
 os.chdir(robowin_root)
 
 # Some RoboTwin/CuRobo versions access wp.torch without importing the Warp
-# torch bridge first. Importing the submodule here keeps newer Warp builds
-# compatible without patching the RoboTwin checkout.
+# torch bridge first. Newer Warp builds expose PyTorch interop at top level
+# instead of as a warp.torch submodule, so bind a small compatibility shim.
 try:
-    import warp.torch  # noqa: F401
-except ImportError:
-    pass
+    import importlib
+    from types import SimpleNamespace
+    import warp as _warp
+
+    try:
+        _warp.torch = importlib.import_module("warp.torch")
+    except ModuleNotFoundError:
+        _warp.torch = SimpleNamespace(
+            device_from_torch=_warp.device_from_torch,
+            device_to_torch=_warp.device_to_torch,
+            dtype_from_torch=_warp.dtype_from_torch,
+            dtype_to_torch=_warp.dtype_to_torch,
+            from_torch=_warp.from_torch,
+            to_torch=_warp.to_torch,
+            stream_from_torch=_warp.stream_from_torch,
+            stream_to_torch=_warp.stream_to_torch,
+        )
+except Exception as exc:
+    raise ImportError(
+        "RoboTwin/CuRobo requires NVIDIA Warp with PyTorch interop. "
+        "Install it with: python -m pip uninstall -y warp warp-lang && "
+        "python -m pip install --no-cache-dir warp-lang"
+    ) from exc
 
 from envs import CONFIGS_PATH
 from envs.utils.create_actor import UnStableError
