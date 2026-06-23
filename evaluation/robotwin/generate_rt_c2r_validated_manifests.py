@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import json
+import multiprocessing
 import os
 import sys
 from pathlib import Path
@@ -29,11 +30,43 @@ from evaluation.robotwin.rt_c2r import (  # noqa: E402
 )
 
 
+WORKER_GPU_ID: str | None = None
+
+
 def robotwin_root_from_env() -> Path:
     root = os.environ.get("ROBOTWIN_ROOT") or os.environ.get("ROBOWIN_ROOT")
     if root:
         return Path(root).expanduser().resolve()
     return (PROJECT_ROOT / "RoboTwin").resolve()
+
+
+def parse_gpu_ids(raw_gpu_ids: str | None) -> list[str]:
+    if raw_gpu_ids is None:
+        raw_gpu_ids = os.environ.get("CUDA_VISIBLE_DEVICES", "")
+    raw_gpu_ids = raw_gpu_ids.strip()
+    if not raw_gpu_ids:
+        return []
+    if raw_gpu_ids.lower() in ("none", "cpu", "disable"):
+        return []
+    return [item.strip() for item in raw_gpu_ids.split(",") if item.strip()]
+
+
+def bind_cuda_visible_device(gpu_id: str | None) -> None:
+    if gpu_id is None:
+        return
+    os.environ["CUDA_DEVICE_ORDER"] = os.environ.get("CUDA_DEVICE_ORDER", "PCI_BUS_ID")
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
+    print(
+        f"[pid={os.getpid()}] CUDA_VISIBLE_DEVICES={os.environ['CUDA_VISIBLE_DEVICES']}",
+        flush=True,
+    )
+
+
+def init_worker_gpu(gpu_queue) -> None:
+    global WORKER_GPU_ID
+    gpu_id = gpu_queue.get()
+    WORKER_GPU_ID = str(gpu_id)
+    bind_cuda_visible_device(WORKER_GPU_ID)
 
 
 def ensure_egl_vendor_dirs() -> None:
@@ -379,6 +412,7 @@ def validate_task_split_worker(worker_args: dict[str, Any]) -> dict[str, Any]:
         "split": worker_args["split"],
         "task_name": worker_args["task_name"],
         "task_index": worker_args["task_index"],
+        "gpu_id": WORKER_GPU_ID,
         "output_file": str(output_file),
     }
 
@@ -475,6 +509,16 @@ def build_worker_jobs(
     return worker_jobs, tmp_dir
 
 
+def make_gpu_queue(gpu_ids: list[str], num_workers: int):
+    if not gpu_ids:
+        return None, None
+    manager = multiprocessing.Manager()
+    gpu_queue = manager.Queue()
+    for worker_idx in range(num_workers):
+        gpu_queue.put(gpu_ids[worker_idx % len(gpu_ids)])
+    return manager, gpu_queue
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -494,6 +538,12 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=1,
         help="Number of parallel worker processes. Use 1 for sequential validation.",
+    )
+    parser.add_argument(
+        "--gpu-ids",
+        default=None,
+        help="Comma-separated physical GPU ids assigned to workers round-robin, "
+        "for example '0,1,2,3'. Defaults to current CUDA_VISIBLE_DEVICES if set.",
     )
     parser.add_argument(
         "--verbose-failures",
@@ -560,6 +610,16 @@ def main() -> None:
         failure_log_dir = Path(failure_log_dir)
 
     task_index_by_name = {task_name: idx for idx, task_name in enumerate(TASK_NAMES)}
+    gpu_ids = parse_gpu_ids(args.gpu_ids)
+    if gpu_ids:
+        print(f"Assigning validation jobs round-robin over GPU ids: {','.join(gpu_ids)}")
+    elif args.num_workers > 1:
+        print(
+            "No --gpu-ids or CUDA_VISIBLE_DEVICES list was provided; workers may "
+            "all use the same default GPU.",
+            flush=True,
+        )
+
     worker_jobs, tmp_dir = build_worker_jobs(
         splits=args.splits,
         tasks=args.tasks,
@@ -576,6 +636,8 @@ def main() -> None:
     )
 
     if args.num_workers <= 1:
+        if gpu_ids:
+            bind_cuda_visible_device(gpu_ids[0])
         configure_robotwin_imports(robotwin_root)
         for job in worker_jobs:
             validate_task_split(
@@ -607,18 +669,28 @@ def main() -> None:
 
     if worker_jobs:
         print(f"Validating {len(worker_jobs)} task/split jobs with {args.num_workers} workers")
-        with concurrent.futures.ProcessPoolExecutor(max_workers=args.num_workers) as executor:
+        gpu_manager, gpu_queue = make_gpu_queue(gpu_ids, args.num_workers)
+        executor_kwargs = {"max_workers": args.num_workers}
+        if gpu_queue is not None:
+            executor_kwargs["initializer"] = init_worker_gpu
+            executor_kwargs["initargs"] = (gpu_queue,)
+        with concurrent.futures.ProcessPoolExecutor(**executor_kwargs) as executor:
             future_to_job = {
                 executor.submit(validate_task_split_worker, job): job for job in worker_jobs
             }
             for future in concurrent.futures.as_completed(future_to_job):
                 job = future_to_job[future]
                 result = future.result()
+                gpu_text = (
+                    "" if result.get("gpu_id") is None else f" on gpu {result['gpu_id']}"
+                )
                 print(
                     f"Finished [{result['split']}][{result['task_name']}] "
-                    f"-> {result['output_file']}",
+                    f"{gpu_text} -> {result['output_file']}",
                     flush=True,
                 )
+        if gpu_manager is not None:
+            gpu_manager.shutdown()
     else:
         print("All selected task/split jobs are already complete; merging outputs.")
 

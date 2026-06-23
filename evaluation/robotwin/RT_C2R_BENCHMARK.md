@@ -103,6 +103,7 @@ python evaluation/robotwin/generate_rt_c2r_validated_manifests.py \
   --episodes-per-task 100 \
   --max-candidates-per-task 2000 \
   --num-workers 4 \
+  --gpu-ids 0,1,2,3 \
   --write-task-configs
 ```
 
@@ -121,6 +122,18 @@ evaluation/robotwin/rt_c2r_validated_manifests/
 每条保留记录都满足 RoboTwin 自带 scripted expert + CuRobo planner 能跑通，且 `check_success()` 通过。被过滤掉的候选 seed 会写到 `evaluation/robotwin/rt_c2r_validation_failures/`，便于排查。
 
 如果想看被过滤 seed 的完整异常堆栈，额外加 `--verbose-failures`。默认不打印 traceback，因为类似 `target_pose cannot be None` 的错误通常只表示该候选 case 对 scripted expert 不合理，应被过滤。
+
+多卡验证时需要显式指定 GPU，否则多个 worker 可能都默认落在可见 GPU 0：
+
+```bash
+python evaluation/robotwin/generate_rt_c2r_validated_manifests.py \
+  --episodes-per-task 100 \
+  --max-candidates-per-task 2000 \
+  --num-workers 4 \
+  --gpu-ids 0,1
+```
+
+`--gpu-ids` 会按 worker 进程轮询绑定，并在每个 worker 导入 SAPIEN/Warp 前设置 `CUDA_VISIBLE_DEVICES`。如果不传，则默认读取当前 `CUDA_VISIBLE_DEVICES`。例如 `CUDA_VISIBLE_DEVICES=0,1` 时等价于 `--gpu-ids 0,1`。
 
 验证脚本默认支持断点续跑：
 
