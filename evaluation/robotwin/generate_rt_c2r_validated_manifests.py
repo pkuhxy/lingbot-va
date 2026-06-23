@@ -83,6 +83,28 @@ def ensure_egl_vendor_dirs() -> None:
             )
 
 
+def required_asset_paths(robotwin_root: Path, splits: list[str]) -> list[Path]:
+    paths: list[Path] = []
+    if any(SPLIT_RANDOMIZATION[split].get("random_background") for split in splits):
+        paths.append(robotwin_root / "assets" / "background_texture" / "unseen")
+    return paths
+
+
+def ensure_required_assets(robotwin_root: Path, splits: list[str]) -> None:
+    missing_paths = [path for path in required_asset_paths(robotwin_root, splits) if not path.is_dir()]
+    if not missing_paths:
+        return
+
+    missing_text = "\n".join(f"  - {path}" for path in missing_paths)
+    raise FileNotFoundError(
+        "Missing RoboTwin assets required by the selected RT-C2R splits:\n"
+        f"{missing_text}\n"
+        "Run RoboTwin's asset downloader from ROBOTWIN_ROOT, or symlink the "
+        "asset directory into the RoboTwin checkout. These are infrastructure "
+        "errors, not invalid benchmark seeds."
+    )
+
+
 def install_warp_torch_compat() -> None:
     import importlib
     import warp as wp
@@ -206,6 +228,13 @@ def close_env_quietly(task_env) -> None:
         pass
 
 
+def is_infrastructure_file_error(exc: Exception) -> bool:
+    if not isinstance(exc, FileNotFoundError):
+        return False
+    text = str(exc)
+    return "assets" in text or "task_config" in text
+
+
 def validate_candidate(
     task_env,
     args: dict[str, Any],
@@ -226,6 +255,8 @@ def validate_candidate(
         return False, "unstable"
     except Exception as exc:
         close_env_quietly(task_env)
+        if is_infrastructure_file_error(exc):
+            raise
         if verbose_failures:
             import traceback
 
@@ -593,6 +624,7 @@ def main() -> None:
     args = parse_args()
     robotwin_root = args.robotwin_root.expanduser().resolve()
     ensure_egl_vendor_dirs()
+    ensure_required_assets(robotwin_root, args.splits)
 
     if args.write_task_configs:
         write_task_configs(
