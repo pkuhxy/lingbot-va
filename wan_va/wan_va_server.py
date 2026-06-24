@@ -1,5 +1,6 @@
 # Copyright 2024-2025 The Robbyant Team Authors. All rights reserved.
 import argparse
+import copy
 import os
 import sys
 import time
@@ -688,10 +689,12 @@ class VA_Server:
 
 def run(args):    
     
-    config = VA_CONFIGS[args.config_name]
+    config = copy.deepcopy(VA_CONFIGS[args.config_name])
     port = config.port if args.port is None else args.port
     if args.save_root is not None:
         config.save_root = args.save_root
+    if args.pretrained_model is not None:
+        config.wan22_pretrained_model_name_or_path = os.path.expanduser(args.pretrained_model)
     rank = int(os.getenv("RANK", 0))
     local_rank = int(os.environ.get('LOCAL_RANK', 0))
     world_size = int(os.environ.get("WORLD_SIZE", 1))
@@ -699,6 +702,11 @@ def run(args):
     config.rank = rank
     config.local_rank = local_rank
     config.world_size = world_size
+    if rank == 0:
+        logger.info(f"Using config: {args.config_name}")
+        logger.info(f"Model root: {config.wan22_pretrained_model_name_or_path}")
+        logger.info(f"Server port: {port}")
+        logger.info(f"Save root: {config.save_root}")
     model = VA_Server(config)
     if config.infer_mode == 'i2va':
         logger.info(f"******************************USE I2AV mode******************************")
@@ -732,6 +740,14 @@ def main():
         type=str,
         default=None,
         help='save root'
+    )
+    parser.add_argument(
+        "--pretrained-model",
+        "--model-path",
+        dest="pretrained_model",
+        type=str,
+        default=None,
+        help="Model root containing vae/, tokenizer/, text_encoder/, and transformer/.",
     )
     args = parser.parse_args()
     run(args)

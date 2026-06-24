@@ -46,6 +46,7 @@ train_config_name=${TRAIN_CONFIG_NAME:-0}
 model_name=${MODEL_NAME:-0}
 start_port=${START_PORT:-29056}
 num_gpus=${NUM_GPUS:-1}
+GPU_IDS=${GPU_IDS:-}
 SERVER_HOST=${SERVER_HOST:-127.0.0.1}
 SAVE_VISUALIZATION=${SAVE_VISUALIZATION:-False}
 SPLITS=${SPLITS:-"easy background light clutter height hard"}
@@ -146,6 +147,16 @@ task_names=(
 log_dir="${PROJECT_ROOT}/logs/rt_c2r"
 mkdir -p "$log_dir"
 
+if [ -n "$GPU_IDS" ]; then
+    IFS=',' read -r -a gpu_ids <<< "$GPU_IDS"
+    num_gpus=${#gpu_ids[@]}
+else
+    gpu_ids=()
+    for (( i=0; i<num_gpus; i++ )); do
+        gpu_ids+=("$i")
+    done
+fi
+
 batch_time=$(date +%Y%m%d_%H%M%S)
 pid_file="${PROJECT_ROOT}/pids_rt_c2r_${batch_time}.txt"
 > "$pid_file"
@@ -156,6 +167,7 @@ echo "test_num=${test_num}"
 echo "num_tasks=${#task_names[@]}"
 echo "splits=${SPLITS}"
 echo "num_gpus=${num_gpus}"
+echo "gpu_ids=${gpu_ids[*]}"
 echo "server_host=${SERVER_HOST}"
 echo "start_port=${start_port}"
 echo "manifest_dir=${MANIFEST_DIR}"
@@ -211,8 +223,9 @@ for split in ${SPLITS}; do
 
         for (( i=batch_start; i<batch_end; i++ )); do
             task_name="${task_names[$i]}"
-            gpu_id=$(( (i - batch_start) % num_gpus ))
-            port=$(( start_port + gpu_id ))
+            gpu_slot=$(( (i - batch_start) % num_gpus ))
+            gpu_id="${gpu_ids[$gpu_slot]}"
+            port=$(( start_port + gpu_slot ))
             log_file="${log_dir}/${split}_${i}_${task_name}_${batch_time}.log"
 
             echo -e "\033[33m[${split} Task $i/$(( total - 1 ))] ${task_name}: GPU ${gpu_id}, PORT ${port}, Log ${log_file}\033[0m"
