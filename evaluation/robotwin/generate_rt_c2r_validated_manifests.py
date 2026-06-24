@@ -287,7 +287,7 @@ def task_valid_records(path: Path, split: str, task_name: str) -> list[dict[str,
     for record in read_jsonl_records(path):
         if record.get("split") != split or record.get("task") != task_name:
             continue
-        if record.get("expert_validated") is False:
+        if record.get("expert_validated") is not True:
             continue
         records.append(record)
     records.sort(key=lambda item: int(item.get("episode_id", 0)))
@@ -592,6 +592,12 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Delete existing per-task outputs/failure logs for selected jobs.",
     )
+    parser.add_argument(
+        "--merge-only",
+        action="store_true",
+        help="Only merge existing _tmp_by_task per-task validated JSONL files "
+        "into split manifests. Does not import RoboTwin or run validation.",
+    )
     parser.add_argument("--base-seed", type=int, default=20260622)
     parser.add_argument(
         "--splits",
@@ -623,6 +629,24 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     robotwin_root = args.robotwin_root.expanduser().resolve()
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    task_index_by_name = {task_name: idx for idx, task_name in enumerate(TASK_NAMES)}
+
+    if args.merge_only:
+        tmp_dir = args.output_dir / "_tmp_by_task"
+        for split in args.splits:
+            output_file = args.output_dir / f"{task_config_name(split)}.jsonl"
+            merge_split_outputs(
+                split=split,
+                tasks=args.tasks,
+                task_index_by_name=task_index_by_name,
+                tmp_dir=tmp_dir,
+                output_file=output_file,
+                episodes_per_task=args.episodes_per_task,
+            )
+            print(f"Wrote validated split manifest: {output_file}")
+        return
+
     ensure_egl_vendor_dirs()
     ensure_required_assets(robotwin_root, args.splits)
 
@@ -634,14 +658,12 @@ def main() -> None:
             output_dir=None,
         )
 
-    args.output_dir.mkdir(parents=True, exist_ok=True)
     failure_log_dir = args.failure_log_dir
     if failure_log_dir == "":
         failure_log_dir = None
     else:
         failure_log_dir = Path(failure_log_dir)
 
-    task_index_by_name = {task_name: idx for idx, task_name in enumerate(TASK_NAMES)}
     gpu_ids = parse_gpu_ids(args.gpu_ids)
     if gpu_ids:
         print(f"Assigning validation jobs round-robin over GPU ids: {','.join(gpu_ids)}")

@@ -48,6 +48,7 @@ start_port=${START_PORT:-29056}
 num_gpus=${NUM_GPUS:-1}
 SERVER_HOST=${SERVER_HOST:-127.0.0.1}
 SAVE_VISUALIZATION=${SAVE_VISUALIZATION:-False}
+SPLITS=${SPLITS:-"easy background light clutter height hard"}
 VALIDATED_MANIFEST_DIR=${VALIDATED_MANIFEST_DIR:-"${PROJECT_ROOT}/evaluation/robotwin/rt_c2r_validated_manifests"}
 if [ -f "${VALIDATED_MANIFEST_DIR}/rt_c2r_easy.jsonl" ]; then
     DEFAULT_MANIFEST_DIR="${VALIDATED_MANIFEST_DIR}"
@@ -62,10 +63,23 @@ if [ -z "${STRICT_SEED_MANIFEST+x}" ]; then
         STRICT_SEED_MANIFEST=False
     fi
 fi
-SPLITS=${SPLITS:-"easy background light clutter height hard"}
 REGENERATE_MANIFESTS=${REGENERATE_MANIFESTS:-False}
 
-if [ "${REGENERATE_MANIFESTS}" = "True" ] || [ ! -f "${MANIFEST_DIR}/rt_c2r_easy.jsonl" ]; then
+if [ "${STRICT_SEED_MANIFEST}" = "True" ]; then
+    for split in ${SPLITS}; do
+        split_manifest="${MANIFEST_DIR}/rt_c2r_${split}.jsonl"
+        if [ ! -f "${split_manifest}" ]; then
+            echo "Missing strict RT-C2R seed manifest: ${split_manifest}" >&2
+            echo "Run generate_rt_c2r_validated_manifests.py first, or set MANIFEST_DIR to the validated manifest directory." >&2
+            exit 1
+        fi
+        if grep -Evq '^[[:space:]]*$|"expert_validated"[[:space:]]*:[[:space:]]*true' "${split_manifest}"; then
+            echo "Strict RT-C2R manifest does not look expert-validated: ${split_manifest}" >&2
+            echo "Refusing to run with raw candidate manifests. Set MANIFEST_DIR to rt_c2r_validated_manifests." >&2
+            exit 1
+        fi
+    done
+elif [ "${REGENERATE_MANIFESTS}" = "True" ] || [ ! -f "${MANIFEST_DIR}/rt_c2r_easy.jsonl" ]; then
     python "${SCRIPT_DIR}/generate_rt_c2r_benchmark.py" \
         --manifest-dir "${MANIFEST_DIR}" \
         --episodes-per-task "${test_num}"
@@ -144,6 +158,8 @@ echo "splits=${SPLITS}"
 echo "num_gpus=${num_gpus}"
 echo "server_host=${SERVER_HOST}"
 echo "start_port=${start_port}"
+echo "manifest_dir=${MANIFEST_DIR}"
+echo "strict_seed_manifest=${STRICT_SEED_MANIFEST}"
 
 run_one_task() {
     local split=$1
