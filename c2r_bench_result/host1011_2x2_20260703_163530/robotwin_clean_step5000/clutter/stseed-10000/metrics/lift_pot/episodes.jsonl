@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 36841133, "prompt": "Hold the metal kitchenpot firmly and lift it", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 604241992, "prompt": "Secure the kitchenpot with smooth exterior and lift it up", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 346464184, "prompt": "With arms, raise the gray kitchenpot upward slowly.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 710924868, "prompt": "Bring the gray kitchenpot up together", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 8688537, "prompt": "Raise the gray cylindrical metal kitchenpot with strong support", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 699950745, "prompt": "Engage arms to grip and lift the cooking kitchenpot with side grips.", "success": false, "manifest_episode_id": 2}

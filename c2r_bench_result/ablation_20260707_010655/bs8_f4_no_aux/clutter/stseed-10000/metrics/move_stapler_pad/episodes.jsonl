@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 744409618, "prompt": "Lift the black stapler for joining pages to the Magenta mat using the left arm", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 897601493, "prompt": "Shift the simple stapler to the Green mat", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 856607750, "prompt": "Pick the metal and plastic stapler using the left arm and move it to Black mat.", "success": false, "manifest_episode_id": 2}

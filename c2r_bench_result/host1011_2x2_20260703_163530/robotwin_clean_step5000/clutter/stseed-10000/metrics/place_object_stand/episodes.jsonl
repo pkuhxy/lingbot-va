@@ -1,0 +1,3 @@
+{"task": "place_object_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 162697052, "prompt": "Put the plastic toycar on the rectangular displaystand after picking it", "success": false, "manifest_episode_id": 0}
+{"task": "place_object_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 418834084, "prompt": "Carefully place the blue bell onto the displaystand with smooth finish.", "success": false, "manifest_episode_id": 1}
+{"task": "place_object_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 405003736, "prompt": "Place the rubikscube with six colored faces on the metallic brown displaystand with cutout.", "success": false, "manifest_episode_id": 2}

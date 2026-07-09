@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 274942227, "prompt": "Lift the round bottle with orange screw-top with the left arm and drop on pad", "success": true, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 288595804, "prompt": "Grab the bottle with white screw cap and drop it on the pad", "success": true, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 296874874, "prompt": "Place the white bottle on the pad after lifting it up.", "success": true, "manifest_episode_id": 2}

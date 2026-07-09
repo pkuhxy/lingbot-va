@@ -1,0 +1,3 @@
+{"task": "handover_block", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 120650234, "prompt": "Move the red block using the left arm.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_block", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 717027428, "prompt": "Pick up and handover the red block.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_block", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 80952010, "prompt": "Grip the red block with the left arm and transfer it.", "success": false, "manifest_episode_id": 2}

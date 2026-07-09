@@ -1,0 +1,3 @@
+{"task": "click_alarmclock", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 409164606, "prompt": "Click the middle button on the rectangular alarm-clock's top side", "success": false, "manifest_episode_id": 0}
+{"task": "click_alarmclock", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 354819658, "prompt": "Press the center top button on the dark blue clock with the right arm", "success": true, "manifest_episode_id": 1}
+{"task": "click_alarmclock", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 294128050, "prompt": "Hit the center of the alarm clock with green stripe's top button", "success": true, "manifest_episode_id": 2}

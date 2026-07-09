@@ -7,9 +7,12 @@ from .va_robotwin_train_cfg import va_robotwin_train_cfg
 va_robotwin_contrastive_align_cfg = EasyDict(__name__="Config: VA robotwin contrastive align")
 va_robotwin_contrastive_align_cfg.update(va_robotwin_train_cfg)
 
-va_robotwin_contrastive_align_cfg.save_root = "./ckpts/train_out_contrastive_align_clean"
+va_robotwin_contrastive_align_cfg.save_root = "/mnt/data/users/xianyi/EmbodyAi/lingbot-va/ckpts/contrastive_bs8_fn_4"
 va_robotwin_contrastive_align_cfg.dataset_init_worker = 1
 va_robotwin_contrastive_align_cfg.load_worker = 0
+va_robotwin_contrastive_align_cfg.batch_size = 8
+va_robotwin_contrastive_align_cfg.train_frame_num = 4
+va_robotwin_contrastive_align_cfg.gradient_accumulation_steps = 1
 
 # Contrastive video-action transition alignment.
 va_robotwin_contrastive_align_cfg.lambda_align = 0.1

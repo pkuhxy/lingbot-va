@@ -1,0 +1,3 @@
+{"task": "place_fan", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 519267369, "prompt": "Place the white fan with adjustable arm on the Black mat and ensure it faces the robot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_fan", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 653249117, "prompt": "Using the right arm, grab the round white fan and set it on the Red mat facing the robot.", "success": false, "manifest_episode_id": 1}
+{"task": "place_fan", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 329176087, "prompt": "Using the right arm, grab the smooth off-white plastic fan and put it on the Navy mat facing the robot.", "success": false, "manifest_episode_id": 2}

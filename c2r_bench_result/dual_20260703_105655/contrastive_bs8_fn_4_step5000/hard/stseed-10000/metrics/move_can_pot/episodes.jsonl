@@ -1,0 +1,3 @@
+{"task": "move_can_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 391042719, "prompt": "Set the medium sauce can right next to the black cooking pot with silver handles", "success": false, "manifest_episode_id": 0}
+{"task": "move_can_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 154997150, "prompt": "Use the left arm to take the sauce can with sealed top to the dark gray pot with side handles", "success": false, "manifest_episode_id": 1}
+{"task": "move_can_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 5195896, "prompt": "Grab the red sauce can with the right arm and set it near the round pot with dark gray knob", "success": false, "manifest_episode_id": 2}

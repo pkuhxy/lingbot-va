@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 856853141, "prompt": "Use the left arm to interact with the small trapezoid switch", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 550623619, "prompt": "Activate the flat square with raised center with robotic precision", "success": true, "manifest_episode_id": 2}
+{"task": "turn_switch", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 856853143, "prompt": "Activate the compact switch with flat base by pressing it", "success": false, "manifest_episode_id": null}

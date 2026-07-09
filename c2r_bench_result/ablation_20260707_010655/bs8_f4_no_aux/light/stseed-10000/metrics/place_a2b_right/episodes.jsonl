@@ -1,0 +1,3 @@
+{"task": "place_a2b_right", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 803416018, "prompt": "Move the square loaf of bread and place it to the black tea-box with gold logo's right.", "success": false, "manifest_episode_id": 0}
+{"task": "place_a2b_right", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 697891595, "prompt": "Shift the toycar for kids to the right of the plastic rubikscube", "success": false, "manifest_episode_id": 1}
+{"task": "place_a2b_right", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 508155630, "prompt": "Set the rectangular box for card storage properly on the right of the blue bell.", "success": false, "manifest_episode_id": 2}

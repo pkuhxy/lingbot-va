@@ -1,0 +1,3 @@
+{"task": "open_microwave", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 136410473, "prompt": "Pull the door of the gray appliance with transparent glass top to open it.", "success": false, "manifest_episode_id": 0}
+{"task": "open_microwave", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 500810587, "prompt": "Use the left arm to open the rectangular gray microwave by pulling.", "success": false, "manifest_episode_id": 1}
+{"task": "open_microwave", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 312831618, "prompt": "Open the microwave by grasping its handle.", "success": false, "manifest_episode_id": 2}

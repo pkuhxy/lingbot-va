@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 710924868, "prompt": "Raise and hold the cooking kitchenpot with side grips together", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 8688537, "prompt": "Lift the round kitchenpot with handles upwards with care", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 710924869, "prompt": "Grab the smooth gray kitchenpot and lift it up", "success": true, "manifest_episode_id": null}

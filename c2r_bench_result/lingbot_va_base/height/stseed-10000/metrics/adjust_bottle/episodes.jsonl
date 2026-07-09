@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 455908385, "prompt": "Secure the medium-sized green bottle upright with the right arm", "success": false, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 644781190, "prompt": "Grab the bottle with white printed label and lift it with the left arm", "success": false, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 72570431, "prompt": "Raise the medium dark brown bottle in a head-up position", "success": false, "manifest_episode_id": 2}

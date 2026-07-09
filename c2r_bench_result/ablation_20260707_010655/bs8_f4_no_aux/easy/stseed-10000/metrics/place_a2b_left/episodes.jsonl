@@ -1,0 +1,3 @@
+{"task": "place_a2b_left", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 684117033, "prompt": "Place the glass and metal smartphone directly to the left of the soap with uneven tan grains.", "success": true, "manifest_episode_id": 0}
+{"task": "place_a2b_left", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 454120611, "prompt": "Shift the decorative tea-box and position it left of the flat rectangular box labeled coffee.", "success": false, "manifest_episode_id": 1}
+{"task": "place_a2b_left", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 471332874, "prompt": "Drop the toycar with transparent windshield on the left side of the rectangular coffee-box", "success": false, "manifest_episode_id": 2}

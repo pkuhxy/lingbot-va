@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 744409618, "prompt": "Use the left arm to shift the stapler with silver inner plates onto the Magenta mat", "success": true, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 897601493, "prompt": "Shift the compact bright blue stapler manually to the Green mat", "success": true, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 856607750, "prompt": "Transfer the blue stapler with curved design to the Black mat", "success": true, "manifest_episode_id": 2}

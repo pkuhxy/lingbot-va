@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 487447292, "prompt": "Pick the Coca-Cola bottle head-up using the right arm", "success": true, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 737866826, "prompt": "Locate the medium green bottle with capped neck and lift it upright with the right arm.", "success": true, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 371717434, "prompt": "Take the plastic drink bottle from the table and keep upright", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "open_laptop", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 273582622, "prompt": "Gently open the black metallic laptop.", "success": false, "manifest_episode_id": 0}
+{"task": "open_laptop", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 747832439, "prompt": "Pull open the silver laptop with foldable parts", "success": false, "manifest_episode_id": 1}
+{"task": "open_laptop", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 878742703, "prompt": "Use the left arm to open the laptop with blue screen.", "success": false, "manifest_episode_id": 2}

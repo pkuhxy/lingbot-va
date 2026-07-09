@@ -1,0 +1,3 @@
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 140007227, "prompt": "Lift the smooth black bottle with ridges and shake it horizontally.", "success": false, "manifest_episode_id": 0}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 256776264, "prompt": "Pick up the rectangular bottle with cylindrical neck using the right arm and shake sideways.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 608621530, "prompt": "Pick up the bottle with red cap with the right arm, shake it sideways.", "success": true, "manifest_episode_id": 2}

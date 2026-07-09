@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 11397417, "prompt": "Lift the round-bottom bottle with white cap with the right arm and shake.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 257406650, "prompt": "Grab the yellow capped drink bottle and move it to shake.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 175537280, "prompt": "Take the rounded bottle with printed details using the right arm and give it a shake.", "success": true, "manifest_episode_id": 2}

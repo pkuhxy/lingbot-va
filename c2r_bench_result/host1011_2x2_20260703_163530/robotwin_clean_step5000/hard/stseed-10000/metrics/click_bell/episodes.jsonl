@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 810410507, "prompt": "Make the right arm interact with the metal bell with plastic parts's top center.", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 463659194, "prompt": "Pinpoint the bell shaped like half-circle dome and click its top center.", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 52248362, "prompt": "Command the right arm to press the small desk bell for tapping's top.", "success": true, "manifest_episode_id": 2}

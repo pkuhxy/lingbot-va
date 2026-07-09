@@ -1,0 +1,3 @@
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 506817488, "prompt": "Hold the dark drink bottle with logo and move it side to side.", "success": false, "manifest_episode_id": 0}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 352531093, "prompt": "With the right arm, grab the bottle with green label and shake it horizontally.", "success": false, "manifest_episode_id": 1}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 709758823, "prompt": "Hold the yellow bottle with green label and move it side to side.", "success": false, "manifest_episode_id": 2}

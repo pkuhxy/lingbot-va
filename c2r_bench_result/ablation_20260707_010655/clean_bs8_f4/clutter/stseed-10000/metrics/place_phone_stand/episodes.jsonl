@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 560963078, "prompt": "Move the rectangle-shaped communication phone onto the phonestand with slot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 527621882, "prompt": "Take the phone with polished silver border to the metal adjustable phone clamp.", "success": true, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 820717100, "prompt": "Take the compact rectangular phone to the compact adjustable phone holder.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 321912419, "prompt": "Grab the medium bottle with colorful label carefully and shake.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 608374554, "prompt": "With the right arm, pick the bottle with orange cap and shake properly.", "success": false, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 12784272, "prompt": "Use the right arm to lift and shake the handheld green bottle.", "success": true, "manifest_episode_id": 2}

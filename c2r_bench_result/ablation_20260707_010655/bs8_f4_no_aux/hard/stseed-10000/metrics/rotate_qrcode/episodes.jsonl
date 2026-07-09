@@ -1,0 +1,3 @@
+{"task": "rotate_qrcode", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 242251430, "prompt": "Catch the compact paymentsign for scanning payments off the table and rotate its qrcode to you.", "success": false, "manifest_episode_id": 0}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 698451167, "prompt": "Lift the paymentsign for scanning QR codes and rotate for its qrcode to face you.", "success": false, "manifest_episode_id": 1}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 784311135, "prompt": "Use the right arm to grab the tabletop paymentsign and rotate QR code towards you.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 489372951, "prompt": "Bring both arms to grab the palm-length roller.", "success": true, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 873814779, "prompt": "Place hands on the smooth cylindrical roller and lift.", "success": true, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 237527256, "prompt": "Grip the roller for smoothing materials firmly with arms.", "success": true, "manifest_episode_id": 2}

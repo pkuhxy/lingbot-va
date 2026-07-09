@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 251571692, "prompt": "Grip the microphone with slider switch and pass it to the other side", "success": false, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 210965001, "prompt": "Take the handheld microphone and move it to another hand.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 660773544, "prompt": "Lift the microphone with textured metal head and pass it across.", "success": false, "manifest_episode_id": 2}

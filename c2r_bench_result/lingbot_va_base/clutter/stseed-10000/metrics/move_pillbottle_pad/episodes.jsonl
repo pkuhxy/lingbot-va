@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 170572259, "prompt": "Use the right arm to lift the white-capped cylindrical bottle and place it", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 90540716, "prompt": "Pick the orange bottle for pills or liquid up and drop it onto the pad", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 221127949, "prompt": "Grab the cylindrical bottle with brown surface and carefully set it onto the pad.", "success": false, "manifest_episode_id": 2}

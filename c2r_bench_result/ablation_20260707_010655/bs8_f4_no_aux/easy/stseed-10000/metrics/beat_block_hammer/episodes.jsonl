@@ -1,0 +1,3 @@
+{"task": "beat_block_hammer", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 800201550, "prompt": "Beat the block after grabbing the hammer with claw-shaped end", "success": false, "manifest_episode_id": 0}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 159442177, "prompt": "Take the medium-sized metal hammer and beat the block", "success": false, "manifest_episode_id": 2}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 800201551, "prompt": "Pick the plastic handle metal hammer from the table and strike", "success": false, "manifest_episode_id": null}

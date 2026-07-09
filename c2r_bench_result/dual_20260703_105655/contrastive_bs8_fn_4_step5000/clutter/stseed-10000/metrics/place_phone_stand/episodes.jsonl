@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 560963078, "prompt": "Take the compact phone with shiny texture to the phonestand for holding phones.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 527621882, "prompt": "Move the black front phone with silver sides onto the phonestand with smooth texture.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 820717100, "prompt": "Take the metal and glass black phone to the small green and silver stand.", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 317869620, "prompt": "Grab the blue bowl with slightly rounded base, arrange them vertically.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 619397709, "prompt": "Align bowls the dark inside bowl light blue outside in descending size, forming a stack.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 594208474, "prompt": "Position the second the curved bowl light blue shade over the first, then the third on top.", "success": false, "manifest_episode_id": 2}

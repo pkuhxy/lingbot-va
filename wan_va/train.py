@@ -3,6 +3,7 @@ import argparse
 import os
 import sys
 from pathlib import Path
+from functools import partial
 
 try:
     import wandb
@@ -50,7 +51,7 @@ from utils import (
     FlowMatchScheduler
 )
 
-from dataset import MultiLatentLeRobotDataset
+from dataset import MultiLatentLeRobotDataset, collate_variable_frame_batch
 import gc
 
 
@@ -157,12 +158,21 @@ class Trainer:
             shuffle=True,
             seed=42
         ) if config.world_size > 1 else None
+        collate_fn = (
+            partial(
+                collate_variable_frame_batch,
+                max_frame_num=getattr(config, 'train_frame_num', None),
+            )
+            if getattr(config, 'train_frame_num', None)
+            else None
+        )
         self.train_loader = DataLoader(
             train_dataset,
             batch_size=config.batch_size,
             shuffle=(train_sampler is None), 
             num_workers=config.load_worker,
             sampler=train_sampler,
+            collate_fn=collate_fn,
         )
 
         self.train_scheduler_latent = FlowMatchScheduler(shift=self.config.snr_shift, sigma_min=0.0, extra_one_step=True)

@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 863397555, "prompt": "Use the left arm to hold the bottle with ridges on bottom from the table", "success": false, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 290312341, "prompt": "Lift the medium-sized green bottle head-up from the table.", "success": true, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 721733724, "prompt": "Lift the bottle with white neck and red top from the table without mentioning the arm.", "success": true, "manifest_episode_id": 2}

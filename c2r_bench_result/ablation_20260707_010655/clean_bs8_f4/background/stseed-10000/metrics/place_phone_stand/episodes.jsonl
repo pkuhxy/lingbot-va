@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 844715882, "prompt": "Move the phone with smooth back panel onto the curved phonestand with phone slot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 863952276, "prompt": "Put the compact phone with flat design atop the phonestand with silver bar.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 253850150, "prompt": "Move the black phone onto the phonestand with curved edges.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 759757975, "prompt": "Raise the medium-sized kitchenpot upward with both hands", "success": true, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 273736925, "prompt": "Pick up the medium kitchenpot made of metal with careful lifting", "success": true, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 298285382, "prompt": "Grab the gray kitchenpot and lift together", "success": true, "manifest_episode_id": 2}

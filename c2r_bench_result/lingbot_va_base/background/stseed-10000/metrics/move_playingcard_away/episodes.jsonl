@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 114732817, "prompt": "Slide the compact box for playing cards off the table outward.", "success": false, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 691804739, "prompt": "Grab the compact red playingcards pack and shift it farther away from the table.", "success": false, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 69025302, "prompt": "Lift the compact box for playing cards with the left arm and move it outward.", "success": false, "manifest_episode_id": 2}

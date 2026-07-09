@@ -1,0 +1,3 @@
+{"task": "place_fan", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 847307321, "prompt": "Using the left arm, grab the small fan and put it on the Cyan mat facing the robot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_fan", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 681326364, "prompt": "Set the fan with rectangular base onto the Cyan colored mat, oriented towards the robot.", "success": false, "manifest_episode_id": 1}
+{"task": "place_fan", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 713674972, "prompt": "Use the right arm to pick up the smooth off-white plastic fan and place it on Pink mat.", "success": false, "manifest_episode_id": 2}

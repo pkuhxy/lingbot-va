@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 15186868, "prompt": "Stamp the smooth textured reddish-brown seal on Lime", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 411108950, "prompt": "With the left arm, secure the small red stamp handle and mark Black.", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 532709403, "prompt": "Pick the brown seal and stamp it on Green", "success": false, "manifest_episode_id": 2}

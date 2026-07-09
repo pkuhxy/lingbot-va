@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 716268860, "prompt": "Secure the bottle with printed label, shake it, and place it down.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 239702583, "prompt": "Use the right arm to grab the medium bottle with smooth texture and shake properly.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 773352428, "prompt": "Shake the rectangular brown body with white top after grabbing it.", "success": true, "manifest_episode_id": 2}

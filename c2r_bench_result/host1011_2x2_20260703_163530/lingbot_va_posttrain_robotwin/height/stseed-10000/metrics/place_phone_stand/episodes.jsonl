@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 39116909, "prompt": "Lift the compact phone onto the smooth brown phone holder.", "success": true, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 378890630, "prompt": "Lift the flat phone onto the small plastic phonestand.", "success": true, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 512939843, "prompt": "Take the compact rectangular phone to the dark green holder with clamp.", "success": true, "manifest_episode_id": 2}

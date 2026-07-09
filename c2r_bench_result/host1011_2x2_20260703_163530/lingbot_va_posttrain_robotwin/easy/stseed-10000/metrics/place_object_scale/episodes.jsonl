@@ -1,0 +1,3 @@
+{"task": "place_object_scale", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 453104998, "prompt": "Move the white bell to the medium electronicscale with gold top and leave it there.", "success": true, "manifest_episode_id": 0}
+{"task": "place_object_scale", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 598837848, "prompt": "Place the bell with protruding knob carefully on the white body electronicscale using the right arm", "success": true, "manifest_episode_id": 1}
+{"task": "place_object_scale", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 766733688, "prompt": "Carry the smooth blue bell with one arm to the handheld electronicscale", "success": true, "manifest_episode_id": 2}

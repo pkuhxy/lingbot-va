@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 170572259, "prompt": "Use the right arm to grab the cylindrical bottle with brown surface and put it on the pad.", "success": true, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 90540716, "prompt": "Pick the flat base orange bottle with the right arm and position it onto pad", "success": true, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 221127949, "prompt": "Move the smooth-textured brown bottle with one arm to the pad", "success": true, "manifest_episode_id": 2}

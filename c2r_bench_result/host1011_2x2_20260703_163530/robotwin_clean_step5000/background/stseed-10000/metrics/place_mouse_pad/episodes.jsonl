@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 457852611, "prompt": "Pick up the the small mouse with smooth surface with the right arm and place it on the Blue mat.", "success": false, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 133448974, "prompt": "Take the dark gray mouse and adjust it to rest on the Red mat.", "success": false, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 44295, "prompt": "Take the mouse with curved ergonomic shape and put it onto Blue mat.", "success": false, "manifest_episode_id": 2}

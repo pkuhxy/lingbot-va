@@ -65,9 +65,15 @@ class VA_Server:
         self.scheduler.set_timesteps(1000, training=True)
         self.action_scheduler.set_timesteps(1000, training=True)
 
+        model_root = job_config.wan22_pretrained_model_name_or_path
+        transformer_root = getattr(
+            job_config,
+            'transformer_model_name_or_path',
+            os.path.join(model_root, 'transformer'),
+        )
+
         self.vae = load_vae(
-            os.path.join(job_config.wan22_pretrained_model_name_or_path,
-                         'vae'),
+            os.path.join(model_root, 'vae'),
             torch_dtype=self.dtype,
             torch_device='cpu' if self.enable_offload else self.device,
         )
@@ -85,8 +91,7 @@ class VA_Server:
         )
 
         self.transformer = load_transformer(
-            os.path.join(job_config.wan22_pretrained_model_name_or_path,
-                         'transformer'),
+            transformer_root,
             torch_dtype=self.dtype,
             torch_device=self.device,
             attn_mode="torch"
@@ -694,7 +699,20 @@ def run(args):
     if args.save_root is not None:
         config.save_root = args.save_root
     if args.pretrained_model is not None:
-        config.wan22_pretrained_model_name_or_path = os.path.expanduser(args.pretrained_model)
+        pretrained_model = os.path.expanduser(args.pretrained_model)
+        full_model_vae_config = os.path.join(pretrained_model, "vae", "config.json")
+        finetuned_transformer_config = os.path.join(pretrained_model, "transformer", "config.json")
+        if os.path.isfile(full_model_vae_config):
+            config.wan22_pretrained_model_name_or_path = pretrained_model
+        elif os.path.isfile(finetuned_transformer_config):
+            config.finetuned_checkpoint_dir = pretrained_model
+            config.transformer_model_name_or_path = os.path.join(pretrained_model, "transformer")
+        else:
+            raise FileNotFoundError(
+                "--pretrained-model must be either a full model directory containing "
+                "vae/config.json, or a training checkpoint directory containing "
+                f"transformer/config.json: {pretrained_model}"
+            )
     rank = int(os.getenv("RANK", 0))
     local_rank = int(os.environ.get('LOCAL_RANK', 0))
     world_size = int(os.environ.get("WORLD_SIZE", 1))
@@ -705,6 +723,8 @@ def run(args):
     if rank == 0:
         logger.info(f"Using config: {args.config_name}")
         logger.info(f"Model root: {config.wan22_pretrained_model_name_or_path}")
+        if hasattr(config, 'transformer_model_name_or_path'):
+            logger.info(f"Transformer checkpoint: {config.transformer_model_name_or_path}")
         logger.info(f"Server port: {port}")
         logger.info(f"Save root: {config.save_root}")
     model = VA_Server(config)
@@ -747,7 +767,7 @@ def main():
         dest="pretrained_model",
         type=str,
         default=None,
-        help="Model root containing vae/, tokenizer/, text_encoder/, and transformer/.",
+        help="Full model root, or training checkpoint root containing transformer/.",
     )
     args = parser.parse_args()
     run(args)

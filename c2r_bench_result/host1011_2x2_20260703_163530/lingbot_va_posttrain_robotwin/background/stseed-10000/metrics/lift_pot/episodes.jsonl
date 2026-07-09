@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 710924868, "prompt": "Lift the dark gray stove kitchenpot steadily using arms", "success": true, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 8688537, "prompt": "Secure the gray cylindrical metal kitchenpot and lift upward.", "success": true, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 699950745, "prompt": "Lift the gray cylindrical metal kitchenpot upward with both arms", "success": true, "manifest_episode_id": 2}

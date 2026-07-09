@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 331664622, "prompt": "Use the seal with rounded top to mark Purple", "success": true, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 423892300, "prompt": "Pick the reddish seal with light markings and press on Indigo", "success": true, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 36261414, "prompt": "Use the left arm to grab the seal showing carved detailed textures, press Tan", "success": false, "manifest_episode_id": 2}

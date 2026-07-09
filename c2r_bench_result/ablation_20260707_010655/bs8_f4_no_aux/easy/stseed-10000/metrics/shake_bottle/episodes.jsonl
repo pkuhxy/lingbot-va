@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 49217227, "prompt": "Pick the plastic bottle up using the left arm and shake it.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 19236951, "prompt": "Lift up the smooth cylindrical bottle using the left arm, then shake.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 688302917, "prompt": "Use the right arm to pick and shake the hand-sized bottle with screw cap.", "success": true, "manifest_episode_id": 2}

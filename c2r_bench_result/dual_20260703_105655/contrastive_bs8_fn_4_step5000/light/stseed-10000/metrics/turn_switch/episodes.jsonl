@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 493838736, "prompt": "Locate and press the hand-sized switch with connector prongs", "success": true, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 593220727, "prompt": "Activate the beige switch with smooth finish via the right arm", "success": true, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 637759382, "prompt": "Activate the hand-sized switch with connector prongs with the right arm.", "success": true, "manifest_episode_id": 2}

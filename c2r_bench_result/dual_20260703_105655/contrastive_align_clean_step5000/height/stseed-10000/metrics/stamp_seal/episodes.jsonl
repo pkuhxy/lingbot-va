@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 391510540, "prompt": "Stamp Red after grabbing the round yellow seal base", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 680600576, "prompt": "the left arm grabs the decorative brown stamping seal, stamps Olive", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 61286074, "prompt": "Position the palm-sized stamping seal on Purple, apply pressure", "success": true, "manifest_episode_id": 2}

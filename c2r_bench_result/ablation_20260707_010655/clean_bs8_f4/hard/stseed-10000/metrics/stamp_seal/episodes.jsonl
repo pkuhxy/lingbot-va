@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 331664622, "prompt": "Take the seal with rounded top and stamp it on Purple.", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 423892300, "prompt": "Stamp the small stone seal on Indigo", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 36261414, "prompt": "Pick the seal with rounded top and press on Tan", "success": false, "manifest_episode_id": 2}

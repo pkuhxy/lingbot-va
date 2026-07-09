@@ -1,0 +1,3 @@
+{"task": "stack_blocks_two", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 639631926, "prompt": "Grab red block, set it in the center, then stack green block over it.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_blocks_two", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 822526679, "prompt": "Place red block and green block centrally, then stack green block on red block.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_blocks_two", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 671056353, "prompt": "Use the left arm to move red block, then the right arm to stack green block on red block at the center.", "success": false, "manifest_episode_id": 2}

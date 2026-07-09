@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 863397555, "prompt": "Grab the dark drink bottle with logo and lift it upward from the table.", "success": false, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 290312341, "prompt": "Use the left arm to hold the plastic bottle from the table", "success": false, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 721733724, "prompt": "Carefully grab the smooth bottle with red lid head-up", "success": false, "manifest_episode_id": 2}

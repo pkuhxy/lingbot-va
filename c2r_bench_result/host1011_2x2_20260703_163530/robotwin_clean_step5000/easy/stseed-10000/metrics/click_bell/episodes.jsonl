@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 778866495, "prompt": "Activate the metal bell with plastic parts by pressing its top center.", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 201221957, "prompt": "Press down the top of the blue dome-shaped bell using the right arm.", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 394400176, "prompt": "Press down the round bell's top center gently.", "success": true, "manifest_episode_id": 2}

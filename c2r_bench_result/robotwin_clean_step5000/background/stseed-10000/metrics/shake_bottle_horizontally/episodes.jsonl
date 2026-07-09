@@ -1,0 +1,3 @@
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 319358196, "prompt": "Lift the medium bottle with colorful label and shake it horizontally.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 585016416, "prompt": "Lift the black bottle and move it back and forth.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 155861943, "prompt": "Hold the yellow container with rounded edges with the left arm and shake horizontally.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "click_alarmclock", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 656863248, "prompt": "Click the white-faced alarm clock's top center button using the right arm.", "success": true, "manifest_episode_id": 0}
+{"task": "click_alarmclock", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 52974283, "prompt": "Use the left arm to press the center top of the clock with black hands", "success": false, "manifest_episode_id": 1}
+{"task": "click_alarmclock", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 399553081, "prompt": "Point the right arm to press the button of the rounded square-shaped alarm clock.", "success": true, "manifest_episode_id": 2}

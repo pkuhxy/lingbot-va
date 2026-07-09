@@ -1,0 +1,3 @@
+{"task": "place_fan", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 519267369, "prompt": "Grab the smooth compact fan and carefully place it on the Black mat facing toward the robot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_fan", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 653249117, "prompt": "Grab the small fan using the right arm and position it on the Red mat facing the robot.", "success": false, "manifest_episode_id": 1}
+{"task": "place_fan", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 329176087, "prompt": "Grab the fan with beige grilles with the right arm, making sure it faces the robot on the Navy mat.", "success": false, "manifest_episode_id": 2}

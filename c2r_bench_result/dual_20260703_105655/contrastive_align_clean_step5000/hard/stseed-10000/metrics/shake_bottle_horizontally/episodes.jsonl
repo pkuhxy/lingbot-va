@@ -1,0 +1,3 @@
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 708058173, "prompt": "Grab the yellow body bottle and shake in a horizontal motion.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 90523201, "prompt": "Shake the light gray colored container bottle horizontally without mentioning the left arm.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 63153131, "prompt": "Use the right arm to pick the bottle for holding drinks and shake it horizontally.", "success": true, "manifest_episode_id": 2}

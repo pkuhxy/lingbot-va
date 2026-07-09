@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 791372736, "prompt": "Grasp the gray stem microphone with foam top, transfer it, then let go of it smoothly.", "success": true, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 441846875, "prompt": "Take the metal head microphone and move it to the other hand.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 289746558, "prompt": "Grasp the teal microphone and pass it across.", "success": false, "manifest_episode_id": 2}

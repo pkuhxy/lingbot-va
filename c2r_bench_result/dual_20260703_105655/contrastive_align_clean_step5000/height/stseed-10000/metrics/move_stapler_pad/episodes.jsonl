@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 626979943, "prompt": "Place the curved black stapler onto the Magenta colored mat.", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 421028249, "prompt": "Stick the curved black stapler on the Black mat.", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 397044842, "prompt": "With the left arm, position the handheld red stapler on the Magenta mat", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 96634356, "prompt": "Move the smooth-screen phone onto the green plastic holder.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 369308272, "prompt": "Take the phone with smooth glass front to the phonestand with smooth texture.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 11613324, "prompt": "Carry the phone with touchscreen to the phonestand with green hooks.", "success": false, "manifest_episode_id": 2}

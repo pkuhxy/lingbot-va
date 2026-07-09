@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 410669228, "prompt": "Engage with the switch with thin red toggle manually", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 157562321, "prompt": "Engage the right arm to press the smooth tan switch with textured sides", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 498738258, "prompt": "Operate the right arm to engage the switch with trapezoidal base", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 748150648, "prompt": "Use the light beige ridged handle seal to stamp Magenta", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 198540316, "prompt": "Use the left arm, take the smooth rectangular seal, and apply to Cyan.", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 864160547, "prompt": "Take the red cylindrical seal and stamp it on Teal.", "success": true, "manifest_episode_id": 2}

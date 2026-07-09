@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 395996979, "prompt": "Pick the handheld black stapler with the right arm and place it on Blue mat", "success": true, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 186112513, "prompt": "Move the blue stapler to the Black mat with the right arm", "success": true, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 520488558, "prompt": "Lift the white stapler with rounded design and drop it onto Gray mat", "success": false, "manifest_episode_id": 2}

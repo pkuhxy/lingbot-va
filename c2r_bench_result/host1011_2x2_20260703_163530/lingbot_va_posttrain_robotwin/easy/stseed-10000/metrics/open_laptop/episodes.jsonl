@@ -1,0 +1,3 @@
+{"task": "open_laptop", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 804793745, "prompt": "Use the right arm to raise the portable folding laptop.", "success": true, "manifest_episode_id": 0}
+{"task": "open_laptop", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 344301767, "prompt": "Fully lift the laptop with blue screen using the right arm.", "success": true, "manifest_episode_id": 1}
+{"task": "open_laptop", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 822502494, "prompt": "Use the right arm to open the laptop with silver buttons on keyboard.", "success": true, "manifest_episode_id": 2}

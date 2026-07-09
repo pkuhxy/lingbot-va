@@ -1,0 +1,3 @@
+{"task": "open_microwave", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 670586037, "prompt": "Grab the handle and open the microwave with glossy dark gray finish.", "success": false, "manifest_episode_id": 0}
+{"task": "open_microwave", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 480030963, "prompt": "Access the inside by opening the microwave with glass top.", "success": false, "manifest_episode_id": 1}
+{"task": "open_microwave", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 406630359, "prompt": "Pull open the door of the gray and glass microwave for cooking using the left arm.", "success": true, "manifest_episode_id": 2}

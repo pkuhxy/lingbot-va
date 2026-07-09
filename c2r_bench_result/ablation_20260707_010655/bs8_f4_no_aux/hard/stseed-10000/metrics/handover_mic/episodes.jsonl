@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 251571692, "prompt": "Pick up the microphone with slider switch and transfer it to the opposite side.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 210965001, "prompt": "Use the left arm to hold the black and white microphone, then give it to the right arm.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 660773544, "prompt": "Hold the smooth plastic microphone handle firmly and pass it to the other arm.", "success": false, "manifest_episode_id": 2}

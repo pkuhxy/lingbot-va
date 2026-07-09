@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 385288247, "prompt": "Lift the smooth playingcards pack and shift it outward.", "success": false, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 831989397, "prompt": "Lift the playingcards pack with blue top and shift it outward.", "success": false, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 554617422, "prompt": "Lift the black playing cards box and set it away from the table.", "success": false, "manifest_episode_id": 2}

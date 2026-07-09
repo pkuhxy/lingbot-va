@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 373032052, "prompt": "the left arm holds the seal with rounded top, presses Lime", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 831044945, "prompt": "Place the seal with rounded top and patterns onto Black", "success": true, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 511825116, "prompt": "Grab the reddish-brown seal and press Teal", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 395996979, "prompt": "Position the handheld black stapler on the Blue mat.", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 186112513, "prompt": "Place the simple stapler onto the Black colored mat.", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 520488558, "prompt": "Place the white stapler with rounded design onto the Gray colored mat.", "success": false, "manifest_episode_id": 2}

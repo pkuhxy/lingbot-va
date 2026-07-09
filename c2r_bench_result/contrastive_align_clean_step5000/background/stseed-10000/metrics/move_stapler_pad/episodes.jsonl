@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 453776751, "prompt": "the right arm moves the stapler with black top section to the Red mat.", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 592249158, "prompt": "Grab the plastic stapler with metal top and stick it onto Green mat", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 36218482, "prompt": "Grab the blue stapler with silver staple tray using the right arm and shift it to Blue", "success": false, "manifest_episode_id": 2}

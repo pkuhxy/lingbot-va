@@ -1,0 +1,3 @@
+{"task": "stack_bowls_two", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 116018094, "prompt": "Place the ceramic bowl down, then set the ceramic bowl on top of the ceramic bowl.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_two", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 770590942, "prompt": "Take the glazed bowl with curved sides, place the ceramic bowl above, and let go.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_two", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 460221437, "prompt": "Take the bowl with shiny texture, place the ceramic bowl above, and let go.", "success": true, "manifest_episode_id": 2}

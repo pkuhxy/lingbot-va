@@ -1,0 +1,3 @@
+{"task": "beat_block_hammer", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 146228030, "prompt": "Grip the nail-driving hammer firmly and hit the block.", "success": true, "manifest_episode_id": 0}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 129877563, "prompt": "Lift the hammer with two-tone handle and hit the block", "success": false, "manifest_episode_id": 1}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 758641707, "prompt": "With the right arm, grab the hammer for nails and hammer the block", "success": false, "manifest_episode_id": 2}

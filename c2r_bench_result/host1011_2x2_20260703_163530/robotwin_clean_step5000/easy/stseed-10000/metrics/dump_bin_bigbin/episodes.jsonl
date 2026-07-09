@@ -1,0 +1,3 @@
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 343746692, "prompt": "Lift the smooth tabletrashbin for small waste, pour into the big bin.", "success": false, "manifest_episode_id": 0}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 296912742, "prompt": "Pick up the smooth plastic tabletrashbin and pour carefully.", "success": false, "manifest_episode_id": 1}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 576270583, "prompt": "Grab and tilt the tabletrashbin to empty the balls.", "success": false, "manifest_episode_id": 2}

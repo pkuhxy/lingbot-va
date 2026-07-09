@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 27533572, "prompt": "Use the left arm to hold the microphone covered with foam tip, then give it to the right arm.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 662507189, "prompt": "Lift the handheld teal microphone and pass it across.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 334430710, "prompt": "Take the microphone with round foam head and pass it to another hand", "success": false, "manifest_episode_id": 2}

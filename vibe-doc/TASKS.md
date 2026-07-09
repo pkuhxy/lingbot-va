@@ -1,5 +1,14 @@
 # 任务
 
+## RT-C2R Benchmark 下一步
+
+- [ ] 确认当前 4 卡 server 是否仍在跑目标 checkpoint；换 checkpoint 前先停掉旧 server，再重新启动。
+- [ ] 对四个 case 依次运行外部 server 模式：`AUTO_START_SERVER=False NUM_GPUS=4 START_PORT=29556 bash evaluation/robotwin/run_rt_c2r_<case>.sh`。
+- [ ] 每个 case 结束后检查 `c2r_bench_result/<case>/summary.json` 和 `summary.csv` 是否存在，且 6 个 split 的 `total` 是否等于 `50 tasks * 3 episodes = 150`。
+- [ ] 检查 `c2r_bench_result/<case>/client_logs/` 是否有 `ConnectionRefusedError`、`Traceback`、`KeyboardInterrupt` 或 simulator 失败。
+- [ ] 换 checkpoint 时记录实际启动命令和 server 日志批次，例如 `logs/server_0_<timestamp>.log`。
+- [ ] 决定是否清理旧失败产物：`c2r_bench_result/contrastive_align_clean_step5000/client_logs/*195031.log` 来自 server 未就绪时的失败尝试。
+
 ## 下一步
 
 - [ ] 用真实 `robbyant/robotwin-clean-and-aug-lerobot` 路径跑 Stage-1 dataset 构造 smoke test，确认能发现所有任务目录、`new_metas` 非空、单条 sample 包含 `latents/text_emb/actions/actions_mask`。

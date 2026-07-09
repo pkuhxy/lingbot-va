@@ -109,6 +109,44 @@ class MultiLatentLeRobotDataset(torch.utils.data.Dataset):
         local_idx = idx - self.acc_dset_num[self.item_id_to_dataset_id[idx]]
         return cur_dset[local_idx]
 
+def collate_variable_frame_batch(batch, max_frame_num=None):
+    """Randomly crop a variable-length batch without temporal padding."""
+    if not batch:
+        raise ValueError('Cannot collate an empty batch')
+
+    frame_counts = [int(item['latents'].shape[1]) for item in batch]
+    target_frames = min(frame_counts)
+    if max_frame_num is not None:
+        max_frame_num = int(max_frame_num)
+        if max_frame_num < 2:
+            raise ValueError('train_frame_num must be >= 2 for temporal contrastive training')
+        target_frames = min(target_frames, max_frame_num)
+    if target_frames < 2:
+        raise ValueError(
+            f'Batch contains a sample with only {target_frames} latent frame(s); '
+            'at least 2 are required for temporal contrastive training'
+        )
+
+    cropped = []
+    for item, frame_count in zip(batch, frame_counts):
+        action_frames = int(item['actions'].shape[1])
+        mask_frames = int(item['actions_mask'].shape[1])
+        if frame_count != action_frames or frame_count != mask_frames:
+            raise ValueError(
+                f'Video/action/mask frame mismatch: '
+                f'{frame_count}/{action_frames}/{mask_frames}'
+            )
+        crop_start = torch.randint(0, frame_count - target_frames + 1, (1,)).item()
+        crop_end = crop_start + target_frames
+        current = dict(item)
+        current['latents'] = item['latents'][:, crop_start:crop_end]
+        current['actions'] = item['actions'][:, crop_start:crop_end]
+        current['actions_mask'] = item['actions_mask'][:, crop_start:crop_end]
+        cropped.append(current)
+
+    return torch.utils.data.default_collate(cropped)
+
+
 class LatentLeRobotDataset(LeRobotDataset):
     def __init__(
         self,

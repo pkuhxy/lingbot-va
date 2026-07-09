@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 331664622, "prompt": "Bring the carved seal with leaf patterns to Purple and stamp", "success": true, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 36261414, "prompt": "Use the left arm to grab the brown seal, press Tan", "success": true, "manifest_episode_id": 2}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 423892302, "prompt": "Position the seal with smooth yellow bottom over Purple and stamp", "success": true, "manifest_episode_id": null}

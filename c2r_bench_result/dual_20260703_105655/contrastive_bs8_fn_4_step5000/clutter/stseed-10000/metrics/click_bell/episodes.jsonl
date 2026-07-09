@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 539095014, "prompt": "Press the flat-topped bell's top center on the table.", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 430029792, "prompt": "Direct the left arm to touch the small desk bell for tapping's top.", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 760309261, "prompt": "Pinpoint the flat-topped bell and click its top center.", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 737764344, "prompt": "Use arms to hold the smooth cylindrical roller tightly.", "success": false, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 476185267, "prompt": "Secure the smooth cylindrical roller with both arms.", "success": false, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 188128939, "prompt": "Hold the roller for rolling from the table.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 114732817, "prompt": "Use the left arm to pick up the box with cards inside and push it outward.", "success": true, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 691804739, "prompt": "Move the playingcards storage box further outward after picking it up.", "success": false, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 69025302, "prompt": "Move the cardboard playing cards box outward from the table.", "success": true, "manifest_episode_id": 2}

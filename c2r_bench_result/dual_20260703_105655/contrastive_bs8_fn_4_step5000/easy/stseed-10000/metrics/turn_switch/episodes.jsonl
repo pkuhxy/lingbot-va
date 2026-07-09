@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 410669228, "prompt": "Initiate the plastic gray body switch by clicking", "success": true, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 157562321, "prompt": "Press the light tan rectangular switch smooth finish with the right arm", "success": true, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 498738258, "prompt": "Click the gray smooth surface switch using automated tools", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 36841133, "prompt": "Raise the gray cylindrical metal kitchenpot with strong support", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 604241992, "prompt": "Grab the kitchenpot for boiling and cooking and lift it upwards", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 346464184, "prompt": "Grab the medium-sized kitchenpot and lift it up", "success": false, "manifest_episode_id": 2}

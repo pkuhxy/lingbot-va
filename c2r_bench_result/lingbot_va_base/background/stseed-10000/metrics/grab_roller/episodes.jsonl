@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 274067892, "prompt": "Place hands on the roller with polished surface and lift.", "success": false, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 102933025, "prompt": "Grasp the slim wooden roller firmly with arms.", "success": false, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 460612076, "prompt": "Use arms to firmly grab the roller with polished surface.", "success": false, "manifest_episode_id": 2}

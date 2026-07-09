@@ -1,0 +1,3 @@
+{"task": "press_stapler", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 645584852, "prompt": "Push down on the stapler for fastening papers firmly.", "success": false, "manifest_episode_id": 0}
+{"task": "press_stapler", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 278022536, "prompt": "Apply pressure to the stapler with rounded edges firmly", "success": false, "manifest_episode_id": 1}
+{"task": "press_stapler", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 66708619, "prompt": "Use an arm to press the small stapler", "success": true, "manifest_episode_id": 2}

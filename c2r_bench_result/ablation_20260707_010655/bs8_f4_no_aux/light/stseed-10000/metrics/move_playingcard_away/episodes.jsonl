@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 698951458, "prompt": "Shift the small playingcards pack outward by grabbing it with the left arm.", "success": false, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 209768011, "prompt": "Use the left arm to pick the red playingcards box and shift it outward.", "success": true, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 679752270, "prompt": "Use the left arm to grab the black box with rectangular shape and move it aside.", "success": false, "manifest_episode_id": 2}

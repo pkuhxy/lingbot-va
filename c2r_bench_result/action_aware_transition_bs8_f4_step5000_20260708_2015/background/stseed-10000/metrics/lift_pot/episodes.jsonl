@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 710924868, "prompt": "Raise the kitchenpot for boiling and cooking evenly with arms", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 8688537, "prompt": "Place hands on the medium-sized kitchenpot, then lift.", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 710924869, "prompt": "With arms, raise the medium kitchenpot made of metal upward slowly.", "success": true, "manifest_episode_id": null}

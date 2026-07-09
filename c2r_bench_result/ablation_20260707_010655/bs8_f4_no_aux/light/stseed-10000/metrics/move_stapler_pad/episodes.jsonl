@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 724544048, "prompt": "Pick the small lightweight blue stapler using the right arm and move it to Black mat.", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 7848811, "prompt": "Use the right arm to grab the blue stapler for paper fastening and place it on Yellow mat", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 556796535, "prompt": "Transfer the blue stapler to the Cyan mat", "success": false, "manifest_episode_id": 2}

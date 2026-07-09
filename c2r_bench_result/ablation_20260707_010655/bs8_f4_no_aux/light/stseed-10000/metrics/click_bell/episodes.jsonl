@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 611142223, "prompt": "Tap the top center of the white and black colored bell.", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 882122322, "prompt": "Direct the left arm to click the top of the smooth blue bell.", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 446697675, "prompt": "Click the top center of the plastic and metal bell on table.", "success": true, "manifest_episode_id": 2}

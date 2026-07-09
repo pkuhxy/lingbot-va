@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 306020811, "prompt": "Move the white bottle with screw-on lid to the pad and release it there.", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 287734483, "prompt": "Lift the white bottle for pills or liquids using the right arm and position it on the pad.", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 590418332, "prompt": "Pick the plastic bottle with brown body with the right arm and position it onto pad", "success": true, "manifest_episode_id": 2}

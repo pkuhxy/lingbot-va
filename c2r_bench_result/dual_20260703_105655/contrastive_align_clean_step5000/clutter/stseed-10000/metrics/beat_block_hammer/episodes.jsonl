@@ -1,0 +1,3 @@
+{"task": "beat_block_hammer", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 36693999, "prompt": "Lift the medium-sized metal hammer and hit the block.", "success": true, "manifest_episode_id": 0}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 360995460, "prompt": "Take the grippy handle hammer and beat the block", "success": false, "manifest_episode_id": 1}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 694654472, "prompt": "Pick up the nail-driving hammer using the left arm then beat", "success": false, "manifest_episode_id": 2}

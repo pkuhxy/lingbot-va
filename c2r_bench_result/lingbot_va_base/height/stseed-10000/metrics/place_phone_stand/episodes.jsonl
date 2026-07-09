@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 39116909, "prompt": "Move the palm-sized black and white phone onto the curved phonestand with phone slot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 378890630, "prompt": "Take the palm-sized black and white phone to the phonestand with slot.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 512939843, "prompt": "Move the smooth black phone onto the phonestand with smooth texture.", "success": false, "manifest_episode_id": 2}

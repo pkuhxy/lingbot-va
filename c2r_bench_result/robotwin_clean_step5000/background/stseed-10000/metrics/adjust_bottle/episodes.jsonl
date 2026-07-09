@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 863397555, "prompt": "Grab the brown bottle with red label and lift it with the left arm", "success": false, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 290312341, "prompt": "Lift the bottle with white printed label upright carefully using the left arm", "success": true, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 721733724, "prompt": "Using the left arm, pick the brown bottle with red label upright", "success": false, "manifest_episode_id": 2}

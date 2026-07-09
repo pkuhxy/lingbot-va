@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 698951458, "prompt": "Move the playingcards storage box farther from the table using the left arm.", "success": false, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 209768011, "prompt": "With the left arm, pick up the hand-sized playingcards container and slide it outward.", "success": true, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 679752270, "prompt": "Take the box with cards inside and place it beyond the table.", "success": false, "manifest_episode_id": 2}

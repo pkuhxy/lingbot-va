@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 358880989, "prompt": "Lift the medium kitchenpot made of metal upwards with care", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 875229830, "prompt": "Hold the medium kitchenpot made of metal firmly and move upward.", "success": true, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 390016253, "prompt": "Lift the kitchenpot with smooth exterior carefully using arms", "success": false, "manifest_episode_id": 2}

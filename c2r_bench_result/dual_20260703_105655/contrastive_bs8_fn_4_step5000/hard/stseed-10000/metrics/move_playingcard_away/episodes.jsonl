@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 333333084, "prompt": "Lift the black playing cards box from the table and move it outward.", "success": false, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 727333688, "prompt": "Grab the playingcards pack with blue top and move it further away.", "success": true, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 196985146, "prompt": "Grab the playingcards box with white accents from the table and shift it outward.", "success": true, "manifest_episode_id": 2}

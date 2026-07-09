@@ -1,0 +1,3 @@
+{"task": "move_can_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 391042719, "prompt": "Lift the sauce can for condiments and set it next to the black kitchenpot", "success": false, "manifest_episode_id": 0}
+{"task": "move_can_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 154997150, "prompt": "Bring the plastic lid sauce can over and set it near the gray pot for boiling food", "success": false, "manifest_episode_id": 1}
+{"task": "move_can_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 5195896, "prompt": "Use the right arm to grab the red cylindrical sauce can, move it beside the rounded pot with metal lid", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 737764344, "prompt": "Lift the cylindrical roller off the table with arms.", "success": true, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 476185267, "prompt": "Use arms to firmly grab the roller shaped like cylinder.", "success": false, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 188128939, "prompt": "Reach for the slim wooden roller and grab it firmly.", "success": true, "manifest_episode_id": 2}

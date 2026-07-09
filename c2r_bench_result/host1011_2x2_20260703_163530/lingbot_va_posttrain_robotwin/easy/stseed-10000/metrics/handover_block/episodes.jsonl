@@ -1,0 +1,3 @@
+{"task": "handover_block", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 843362462, "prompt": "Lift the red block with your left arm.", "success": true, "manifest_episode_id": 0}
+{"task": "handover_block", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 718810066, "prompt": "Use the left arm to grasp the red block, transfer it to the right arm, and set it down on the blue pad.", "success": true, "manifest_episode_id": 1}
+{"task": "handover_block", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 851422594, "prompt": "Lift the red block off the table using the left arm, give it to the right hand, and put it on the blue pad.", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 27533572, "prompt": "Grasp the round head microphone, then give it to the other arm.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 662507189, "prompt": "Lift the compact teal and white microphone, then pass it across without delay.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 334430710, "prompt": "Grasp the small audio microphone and pass it across.", "success": false, "manifest_episode_id": 2}

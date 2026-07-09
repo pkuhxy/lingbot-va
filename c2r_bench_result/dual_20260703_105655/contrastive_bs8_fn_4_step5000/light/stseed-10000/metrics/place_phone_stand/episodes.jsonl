@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 624751721, "prompt": "Put the phone with smooth glossy screen atop the small plastic phonestand.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 409705249, "prompt": "Move the metallic phone with glass screen front onto the compact plastic phonestand.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 852321386, "prompt": "Move the phone with touchscreen onto the curved phonestand with phone slot.", "success": false, "manifest_episode_id": 2}

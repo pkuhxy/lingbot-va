@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 97607166, "prompt": "Pick up the the mouse with scroll wheel with the right arm and place it on the Blue mat.", "success": true, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 801838291, "prompt": "Hold the the mouse with curved top and transfer it to the Green mat.", "success": true, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 663858755, "prompt": "Use the left arm to grab the the smooth plastic mouse and place it on the Blue colored mat.", "success": true, "manifest_episode_id": 2}

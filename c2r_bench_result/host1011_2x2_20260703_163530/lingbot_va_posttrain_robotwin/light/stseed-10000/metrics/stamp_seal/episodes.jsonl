@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 203079918, "prompt": "With the right arm, take the reddish-brown seal and mark Black.", "success": true, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 331445957, "prompt": "Lift the seal with smooth handle and press onto Purple", "success": true, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 381966771, "prompt": "Stamp Orange after grabbing the smooth rectangular seal.", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,5 @@
+Timestamp: 2026-07-03 16:50:24
+
+Instruction Type: seen
+
+0.6666666666666666

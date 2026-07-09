@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 521354215, "prompt": "Place hands on the wood roller and lift.", "success": false, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 732582633, "prompt": "Use both arms to grip the roller with smooth texture tightly.", "success": false, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 272293958, "prompt": "Secure the roller for rolling on the table using arms.", "success": false, "manifest_episode_id": 2}

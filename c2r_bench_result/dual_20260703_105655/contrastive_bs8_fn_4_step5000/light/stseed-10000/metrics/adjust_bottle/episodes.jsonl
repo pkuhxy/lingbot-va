@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 218427993, "prompt": "Pick the plastic drink bottle up with the right arm ensuring it stays head-up.", "success": true, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 564409770, "prompt": "Pick the smooth green bottle head-up and hold it steady.", "success": false, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 91022954, "prompt": "Hold the hand-sized soda bottle head-up after lifting it.", "success": false, "manifest_episode_id": 2}

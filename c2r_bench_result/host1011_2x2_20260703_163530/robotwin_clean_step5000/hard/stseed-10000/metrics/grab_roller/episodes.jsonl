@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 521354215, "prompt": "Take hold of the roller with polished surface with arms.", "success": false, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 732582633, "prompt": "Grasp the roller shaped like cylinder on the table.", "success": true, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 272293958, "prompt": "Grab the slim wooden roller placed on the table.", "success": false, "manifest_episode_id": 2}

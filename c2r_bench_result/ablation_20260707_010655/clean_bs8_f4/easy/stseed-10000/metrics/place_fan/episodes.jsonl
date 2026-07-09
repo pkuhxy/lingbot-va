@@ -1,0 +1,3 @@
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 346175799, "prompt": "Pick the white fan, align it toward the robot, and drop it on the Teal mat.", "success": false, "manifest_episode_id": 0}
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 2185577, "prompt": "Position the small cooling device fan on the Gray mat so it faces the robot.", "success": false, "manifest_episode_id": 1}
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 223942158, "prompt": "Use the right arm to grab the round white fan, put it on the Maroon mat, and face it toward the robot", "success": false, "manifest_episode_id": 2}

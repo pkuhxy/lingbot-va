@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 844715882, "prompt": "Put the phone with smooth glass front atop the phone holder with cutout underneath.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 863952276, "prompt": "Take the phone with smooth back panel to the flat base phonestand.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 253850150, "prompt": "Lift the silver-edged phone onto the phonestand with slot.", "success": false, "manifest_episode_id": 2}

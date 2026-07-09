@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 782913939, "prompt": "Use the right arm to grab the compact matte gray computer mouse and drop it on the Blue colored mat.", "success": false, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 300470803, "prompt": "Hold the dark gray mouse and carefully place it on the Blue mat.", "success": true, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 619747982, "prompt": "Grab the dark ergonomic mouse for computer navigation and drop it on Gray mat.", "success": false, "manifest_episode_id": 2}

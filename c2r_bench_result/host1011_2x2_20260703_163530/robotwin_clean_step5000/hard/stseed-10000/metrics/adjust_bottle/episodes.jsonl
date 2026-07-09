@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 662388751, "prompt": "Use the right arm to pick the smooth green bottle up and keep it head-up.", "success": true, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 615150008, "prompt": "Use the right arm to hold the brown bottle with red label from the table", "success": true, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 73485421, "prompt": "Pick the hand-sized soda bottle upright from the table", "success": false, "manifest_episode_id": 2}

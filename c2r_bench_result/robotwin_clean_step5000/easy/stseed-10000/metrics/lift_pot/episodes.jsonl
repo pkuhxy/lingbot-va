@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 137637108, "prompt": "Lift the cooking kitchenpot with side grips steadily using arms", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 158039042, "prompt": "Raise the dark gray stove kitchenpot with strong support", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 194653683, "prompt": "Both arms lift the cooking kitchenpot with side grips upright", "success": false, "manifest_episode_id": 2}

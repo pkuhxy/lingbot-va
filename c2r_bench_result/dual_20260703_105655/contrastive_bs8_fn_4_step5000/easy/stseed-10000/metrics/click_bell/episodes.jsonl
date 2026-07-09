@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 778866495, "prompt": "Tap the smooth blue bell's top center with the left arm.", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 201221957, "prompt": "Direct the right arm to click the top of the bell with brown base.", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 394400176, "prompt": "Activate the blue dome-shaped bell by pressing its top center.", "success": true, "manifest_episode_id": 2}

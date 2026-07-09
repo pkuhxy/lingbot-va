@@ -1,0 +1,3 @@
+{"task": "place_container_plate", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 661154812, "prompt": "Guide the container with the medium bowl for food or items onto the medium round ceramic plate", "success": true, "manifest_episode_id": 0}
+{"task": "place_container_plate", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 471436187, "prompt": "Grab container using the bowl for holding items, transfer it to the medium plate for food.", "success": true, "manifest_episode_id": 1}
+{"task": "place_container_plate", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 692728847, "prompt": "Place the container onto the food plate with the ceramic bowl.", "success": true, "manifest_episode_id": 2}

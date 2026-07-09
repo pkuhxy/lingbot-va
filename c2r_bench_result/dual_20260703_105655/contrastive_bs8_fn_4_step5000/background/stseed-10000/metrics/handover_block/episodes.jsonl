@@ -1,0 +1,3 @@
+{"task": "handover_block", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 120650234, "prompt": "Use your arms to shift the red block.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_block", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 717027428, "prompt": "Grab the red block, transfer it, and set it on blue.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_block", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 80952010, "prompt": "Use left arm to grab the red block and place it on the pad.", "success": false, "manifest_episode_id": 2}

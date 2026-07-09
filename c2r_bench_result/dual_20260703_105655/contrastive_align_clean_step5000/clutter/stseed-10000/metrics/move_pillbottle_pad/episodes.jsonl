@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 170572259, "prompt": "Move the plastic bottle with brown body using the right arm and drop it on pad", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 90540716, "prompt": "Lift the orange bottle with blue stripe label with the right arm and set it down", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 221127949, "prompt": "Lift the brown bottle with white cap with the right arm and drop on pad", "success": false, "manifest_episode_id": 2}

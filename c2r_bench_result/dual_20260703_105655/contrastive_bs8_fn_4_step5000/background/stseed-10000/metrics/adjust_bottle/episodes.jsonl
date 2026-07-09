@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 863397555, "prompt": "Grab the Coca-Cola bottle and lift it with the left arm", "success": true, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 290312341, "prompt": "Lift the bottle the green bottle with indented base headup from the table", "success": false, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 721733724, "prompt": "Use the left arm to pick up the hand-sized soda bottle in the correct orientation", "success": false, "manifest_episode_id": 2}

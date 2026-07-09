@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 781706246, "prompt": "Carry the silver phone with black screen to the phonestand with slot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 213937575, "prompt": "Take the phone with polished silver border to the green phone rack.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 602838496, "prompt": "Move the phone with digital display onto the phonestand with silver bar.", "success": false, "manifest_episode_id": 2}

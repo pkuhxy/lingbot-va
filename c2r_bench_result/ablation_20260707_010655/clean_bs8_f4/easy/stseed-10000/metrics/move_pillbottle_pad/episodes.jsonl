@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 274942227, "prompt": "Move the bottle with large orange label with one arm to the pad", "success": true, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 288595804, "prompt": "Grab the medium-sized white cylindrical container with the right arm and move it to the pad.", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 296874874, "prompt": "Pick the smooth plastic bottle with teal accents up and set it onto the pad", "success": true, "manifest_episode_id": 2}

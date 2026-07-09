@@ -1,0 +1,3 @@
+{"task": "move_can_pot", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 285658487, "prompt": "Pick the sauce can with rounded top cap and position it next to the black metal kitchenpot", "success": true, "manifest_episode_id": 0}
+{"task": "move_can_pot", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 631522339, "prompt": "Lift the yellow label sauce can and set it next to the medium-sized kitchenpot", "success": false, "manifest_episode_id": 1}
+{"task": "move_can_pot", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 781634781, "prompt": "Grab the medium sauce can with white lid and move it close to the kitchenpot with red indicator light", "success": false, "manifest_episode_id": 2}

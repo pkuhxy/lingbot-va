@@ -1,0 +1,56 @@
+checkpoints:
+  base: /mnt/data/share/checkpoints/robbyant/lingbot-va-base/transformer
+  clean: ckpts/train_out_robotwin_clean/checkpoints/checkpoint_step_5000/transformer
+  contrastive: ckpts/train_out_contrastive_align_clean/checkpoints/checkpoint_step_5000/transformer
+model_root: /mnt/data/share/checkpoints/robbyant/lingbot-va-base
+clean_dataset_path: /mnt/data/share/data/robbyant/robotwin-clean-and-aug-lerobot/robotwin-clean-and-aug-lerobot/lerobot_robotwin_eef_clean_50
+clean_manifest: output/robotwin_stage0/manifests/stage0_clean_probe.jsonl
+paired_bank: output/robotwin_stage0/banks/clean_paired/manifest.jsonl
+c2r_bank: output/robotwin_stage0/banks/c2r/manifest.jsonl
+output_dir: output/robotwin_stage0
+runtime:
+  dtype: bfloat16
+  metric_dtype: float32
+  attn_mode: flex
+  device: cuda:0
+  batch_size: 1
+  seed: 20260629
+train_forward:
+  chunk_size: 2
+  window_size: 64
+  condition_video_noise: false
+  timestep_quantiles:
+  - 0.25
+  - 0.5
+  - 0.75
+  primary_timestep_quantile: 0.5
+  hook_layers: auto
+policy_inference:
+  video_steps: 25
+  action_steps: 50
+  guidance_scale: 5.0
+  action_guidance_scale: 1.0
+  negative_prompt: ''
+perturbations:
+  brightness:
+  - 0.8
+  - 1.2
+  gamma:
+  - 0.8
+  - 1.2
+  color_temperature:
+  - -0.1
+  - 0.1
+  gaussian_noise_std:
+  - 0.01
+  - 0.03
+  gaussian_blur_sigma:
+  - 0.5
+  - 1.0
+  directional_epsilons:
+  - 0.5
+  - 1.0
+statistics:
+  bootstrap_repeats: 2000
+  confidence_level: 0.95
+  cluster_unit: episode

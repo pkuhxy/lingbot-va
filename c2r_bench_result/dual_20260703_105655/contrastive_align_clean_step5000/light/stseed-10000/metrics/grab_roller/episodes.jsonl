@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 482689013, "prompt": "Pick up the light brown wooden roller using both arms equally", "success": true, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 277991372, "prompt": "Reach for the roller with smooth and shiny texture and grab it firmly.", "success": false, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 855555173, "prompt": "Secure the roller shaped like cylinder on the table using arms.", "success": false, "manifest_episode_id": 2}

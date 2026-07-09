@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 185598812, "prompt": "With arms, raise the kitchenpot for boiling and cooking upward slowly.", "success": true, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 632672308, "prompt": "Carry the metal kitchenpot securely using arms", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 219304777, "prompt": "Bring the cylindrical kitchenpot upwards together", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 468245999, "prompt": "Lift the playingcards box with white accents with the right arm and move it outward.", "success": false, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 16883422, "prompt": "Grab the box for playingcards using the right arm and move it outward.", "success": false, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 452743455, "prompt": "Use the left arm to pick the box holding playing cards and shift it outward.", "success": false, "manifest_episode_id": 2}

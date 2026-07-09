@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 106540409, "prompt": "Trigger the rectangular switch using the left arm", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 49896849, "prompt": "Use the left arm for switching the trapezoid-shaped switch smooth surface", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 744600177, "prompt": "Press the rectangular switch with curved lever with the right arm", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 611142223, "prompt": "Click the plastic and metal bell at its top center on table.", "success": false, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 882122322, "prompt": "Click the smooth blue bell at its top center on table.", "success": false, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 446697675, "prompt": "Press the white bell with black bottom's top center on the table.", "success": false, "manifest_episode_id": 2}

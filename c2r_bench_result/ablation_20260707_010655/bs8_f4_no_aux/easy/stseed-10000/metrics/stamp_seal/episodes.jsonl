@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 15186868, "prompt": "Use the left arm for the seal with rounded top and patterns and stamp Lime", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 411108950, "prompt": "Hold the red seal for stamping and press Black", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 532709403, "prompt": "Use the left arm to lift the decorative brown stamping seal, then stamp Green.", "success": false, "manifest_episode_id": 2}

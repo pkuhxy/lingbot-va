@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 611142223, "prompt": "Push the white bell's <top center> on the table", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 882122322, "prompt": "Push the compact bell with round base's <top center> on the table", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 446697675, "prompt": "Press down the top of the white dome bell using the left arm.", "success": true, "manifest_episode_id": 2}

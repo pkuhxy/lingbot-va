@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 453776751, "prompt": "Set the handheld stapler down on the Red mat", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 592249158, "prompt": "Use the right arm to place the compact stapler onto the Green mat", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 36218482, "prompt": "Move the simple stapler with the right arm to the Blue mat", "success": false, "manifest_episode_id": 2}

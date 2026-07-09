@@ -1,0 +1,3 @@
+{"task": "place_object_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 162697052, "prompt": "Move the small toycar to the shiny black rectangular displaystand and set it there.", "success": true, "manifest_episode_id": 0}
+{"task": "place_object_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 418834084, "prompt": "Move the blue bell to the plastic matte displaystand and set it there.", "success": true, "manifest_episode_id": 1}
+{"task": "place_object_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 405003736, "prompt": "Place the smooth cube with twisting blocks on the rectangular displaystand after grabbing it", "success": true, "manifest_episode_id": 2}

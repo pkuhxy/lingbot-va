@@ -520,7 +520,8 @@ def main(usr_args):
     else:
         embodiment_name = str(embodiment_type[0]) + "+" + str(embodiment_type[1])
 
-    save_dir = Path(f"eval_result/{task_name}/{policy_name}/{task_config_name}/{ckpt_setting}/{current_time}")
+    eval_result_root = Path(str(usr_args.get("save_root", "."))) / "eval_result"
+    save_dir = eval_result_root / task_name / policy_name / task_config_name / str(ckpt_setting) / current_time
     save_dir.mkdir(parents=True, exist_ok=True)
 
     if args["eval_video_log"]:
@@ -567,6 +568,10 @@ def main(usr_args):
         usr_args.get("strict_seed_manifest"),
         default=True,
     )
+    allow_manifest_expert_fallback = str_to_bool(
+        usr_args.get("allow_manifest_expert_fallback"),
+        default=True,
+    )
 
     
     model = WebsocketClientPolicy(
@@ -586,7 +591,8 @@ def main(usr_args):
                                    video_guidance_scale=video_guidance_scale,
                                    action_guidance_scale=action_guidance_scale,
                                    seed_records=seed_records,
-                                   strict_seed_manifest=strict_seed_manifest)
+                                   strict_seed_manifest=strict_seed_manifest,
+                                   allow_manifest_expert_fallback=allow_manifest_expert_fallback)
     suc_nums.append(suc_num)
 
     file_path = os.path.join(save_dir, f"_result.txt")
@@ -639,7 +645,8 @@ def eval_policy(task_name,
                 video_guidance_scale=5.0,
                 action_guidance_scale=5.0,
                 seed_records=None,
-                strict_seed_manifest=True):
+                strict_seed_manifest=True,
+                allow_manifest_expert_fallback=True):
     print(f"\033[34mTask Name: {args['task_name']}\033[0m")
     print(f"\033[34mPolicy Name: {args['policy_name']}\033[0m")
 
@@ -658,7 +665,8 @@ def eval_policy(task_name,
     seed_record_idx = 0
     fallback_seed = st_seed
     fallback_notice_printed = False
-    if use_seed_manifest and strict_seed_manifest and len(seed_records) < test_num:
+    if (use_seed_manifest and strict_seed_manifest and not allow_manifest_expert_fallback
+            and len(seed_records) < test_num):
         raise ValueError(
             f"Seed manifest only has {len(seed_records)} records for {task_name}, "
             f"but test_num={test_num}"
@@ -675,7 +683,7 @@ def eval_policy(task_name,
                 now_seed = int(seed_record["seed"])
                 fallback_seed = max(fallback_seed, now_seed + 1)
                 now_id = int(seed_record.get("episode_id", succ_seed))
-            elif strict_seed_manifest:
+            elif strict_seed_manifest and not allow_manifest_expert_fallback:
                 raise RuntimeError(
                     f"Ran out of manifest seeds for {task_name} before {test_num} rollouts"
                 )
@@ -699,22 +707,32 @@ def eval_policy(task_name,
                 TASK_ENV.close_env()
             except UnStableError as e:
                 TASK_ENV.close_env()
-                if use_seed_manifest and strict_seed_manifest:
+                if use_seed_manifest and strict_seed_manifest and not allow_manifest_expert_fallback:
                     raise RuntimeError(
                         f"Unstable RT-C2R manifest seed for task={task_name}, "
                         f"seed={now_seed}"
                     ) from e
+                if use_seed_manifest and strict_seed_manifest:
+                    print(
+                        f"Warning: unstable RT-C2R manifest seed skipped: "
+                        f"task={task_name}, seed={now_seed}"
+                    )
                 now_seed += 1
                 fallback_seed = max(fallback_seed, now_seed)
                 args["render_freq"] = render_freq
                 continue
             except Exception as e:
                 TASK_ENV.close_env()
-                if use_seed_manifest and strict_seed_manifest:
+                if use_seed_manifest and strict_seed_manifest and not allow_manifest_expert_fallback:
                     raise RuntimeError(
                         f"Failed RT-C2R manifest seed for task={task_name}, "
                         f"seed={now_seed}: {e}"
                     ) from e
+                if use_seed_manifest and strict_seed_manifest:
+                    print(
+                        f"Warning: failed RT-C2R manifest seed skipped: "
+                        f"task={task_name}, seed={now_seed}: {e}"
+                    )
                 now_seed += 1
                 fallback_seed = max(fallback_seed, now_seed)
                 args["render_freq"] = render_freq
@@ -726,10 +744,15 @@ def eval_policy(task_name,
             succ_seed += 1
             suc_test_seed_list.append(now_seed)
         else:
-            if use_seed_manifest and strict_seed_manifest:
+            if use_seed_manifest and strict_seed_manifest and not allow_manifest_expert_fallback:
                 raise RuntimeError(
                     f"Expert plan/check failed for RT-C2R manifest seed: "
                     f"task={task_name}, seed={now_seed}"
+                )
+            if use_seed_manifest and strict_seed_manifest:
+                print(
+                    f"Warning: expert plan/check failed for RT-C2R manifest seed; "
+                    f"skipping to fallback: task={task_name}, seed={now_seed}"
                 )
             now_seed += 1
             fallback_seed = max(fallback_seed, now_seed)

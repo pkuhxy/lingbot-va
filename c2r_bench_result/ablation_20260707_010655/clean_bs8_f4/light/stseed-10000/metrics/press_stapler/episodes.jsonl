@@ -1,0 +1,3 @@
+{"task": "press_stapler", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 645584852, "prompt": "Apply pressure to the office stapler with plastic and metal parts with the left arm.", "success": true, "manifest_episode_id": 0}
+{"task": "press_stapler", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 278022536, "prompt": "Push down forcefully on the stapler the plastic and metal stapler.", "success": true, "manifest_episode_id": 1}
+{"task": "press_stapler", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 66708619, "prompt": "Push the stapler for stapling paper using one arm", "success": true, "manifest_episode_id": 2}

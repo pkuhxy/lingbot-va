@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 487447292, "prompt": "Lift the long thin bottle from the table upright", "success": false, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 737866826, "prompt": "Find the medium green bottle on the table and raise it using the right arm.", "success": false, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 371717434, "prompt": "Take the hand-sized soda bottle from the table and keep upright", "success": false, "manifest_episode_id": 2}

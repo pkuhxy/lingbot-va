@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 274942227, "prompt": "Pick the white and orange storage bottle up and drop it onto the pad", "success": true, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 288595804, "prompt": "Move the bottle with smooth body and ridged cap to the pad and leave it there", "success": true, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 296874874, "prompt": "Use the right arm to move the teal-bottom bottle with cylindrical body to the pad", "success": false, "manifest_episode_id": 2}

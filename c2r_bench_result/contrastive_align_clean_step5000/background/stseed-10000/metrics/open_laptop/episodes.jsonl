@@ -1,0 +1,2 @@
+{"task": "open_laptop", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 121410776, "prompt": "Raise the rectangular laptop with foldable hinge using the right arm firmly.", "success": true, "manifest_episode_id": 0}
+{"task": "open_laptop", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 122830649, "prompt": "Use the left arm to raise the rectangular laptop with Toshiba logo.", "success": false, "manifest_episode_id": 1}

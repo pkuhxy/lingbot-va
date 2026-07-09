@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 106540409, "prompt": "Activate the the black base switch using the left arm", "success": true, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 49896849, "prompt": "Direct the left arm to operate the small light tan switch", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 744600177, "prompt": "Engage the small switch using the robotic arm", "success": true, "manifest_episode_id": 2}

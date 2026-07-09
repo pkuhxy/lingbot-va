@@ -1,0 +1,3 @@
+{"task": "handover_block", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 153931416, "prompt": "Pick up and handover the red block.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_block", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 30771123, "prompt": "Lift the red block with the left arm, shift it to the right arm, and set it on the blue pad.", "success": false, "manifest_episode_id": 2}
+{"task": "handover_block", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 641768355, "prompt": "Pick the red block with the left hand and pass it.", "success": false, "manifest_episode_id": null}

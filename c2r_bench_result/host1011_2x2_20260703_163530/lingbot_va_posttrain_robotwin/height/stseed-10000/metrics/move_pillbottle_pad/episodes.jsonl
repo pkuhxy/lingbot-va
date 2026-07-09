@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 454258712, "prompt": "Control the right arm to pick the plastic bottle with teal bands and set it down", "success": true, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 283392860, "prompt": "Hold the white bottle for pills or liquids and position it on the pad", "success": true, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 572328467, "prompt": "Grab the orange cylindrical bottle with label and drop it on the pad", "success": true, "manifest_episode_id": 2}

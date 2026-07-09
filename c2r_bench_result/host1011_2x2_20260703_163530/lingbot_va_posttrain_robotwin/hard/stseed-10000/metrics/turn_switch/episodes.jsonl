@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 856853141, "prompt": "Click the beige switch using automated tools", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 550623619, "prompt": "Click the square gray switch panel directly.", "success": true, "manifest_episode_id": 2}
+{"task": "turn_switch", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 856853143, "prompt": "Engage the right arm to press the control switch with red lever", "success": true, "manifest_episode_id": null}

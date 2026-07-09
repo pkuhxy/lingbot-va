@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 203079918, "prompt": "Pick the smooth textured reddish-brown seal and apply it onto Black.", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 331445957, "prompt": "Grab the red seal for stamping and press Purple", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 381966771, "prompt": "Position the brown rectangular seal with slanted edges over Orange and stamp", "success": false, "manifest_episode_id": 2}

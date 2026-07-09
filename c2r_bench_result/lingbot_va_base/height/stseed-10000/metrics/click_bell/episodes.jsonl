@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 576942388, "prompt": "Press down the white dome bell's top center gently.", "success": false, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 181554294, "prompt": "Tap the brown-bottomed bell's top center with the right arm.", "success": false, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 22516350, "prompt": "Use the left arm to press the white dome bell's top section.", "success": false, "manifest_episode_id": 2}

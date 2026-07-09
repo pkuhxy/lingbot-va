@@ -1,0 +1,3 @@
+{"task": "place_object_scale", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 603032508, "prompt": "Lift the rounded gray mouse and place on the lightweight electronicscale", "success": false, "manifest_episode_id": 0}
+{"task": "place_object_scale", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 197859148, "prompt": "Pick the rounded gray mouse and carefully move it to the electronicscale", "success": false, "manifest_episode_id": 1}
+{"task": "place_object_scale", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 222638241, "prompt": "Pick the compact oval-shaped mouse with the right arm and move it to the compact electronicscale", "success": false, "manifest_episode_id": 2}

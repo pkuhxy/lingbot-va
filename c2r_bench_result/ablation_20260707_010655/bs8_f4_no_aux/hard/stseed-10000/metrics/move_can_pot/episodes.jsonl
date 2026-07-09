@@ -1,0 +1,3 @@
+{"task": "move_can_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 391042719, "prompt": "Pick the cylindrical sauce can and position it next to the black metal kitchenpot", "success": false, "manifest_episode_id": 0}
+{"task": "move_can_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 154997150, "prompt": "Move the sauce can to the medium gray pot with handles with the left arm", "success": false, "manifest_episode_id": 1}
+{"task": "move_can_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 5195896, "prompt": "Take the red can with gold patterns with the right arm, place it near the rounded pot with metal lid", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 95486067, "prompt": "Lift each the bowl with brown outer rim and stack them together neatly.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 13787679, "prompt": "Arrange the three the rounded bowl with light blue color by stacking them one over the other.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 458876426, "prompt": "Align the second the rounded bowl with light blue color atop the first, then add the third above.", "success": false, "manifest_episode_id": 2}

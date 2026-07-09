@@ -1,0 +1,3 @@
+{"task": "place_a2b_right", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 803724289, "prompt": "Move the stapler with orange button to the woodenblock with back grooves's right position.", "success": false, "manifest_episode_id": 0}
+{"task": "place_a2b_right", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 201184003, "prompt": "Position the computer mouse to the right of the rectangular box for tea.", "success": false, "manifest_episode_id": 1}
+{"task": "place_a2b_right", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 242290276, "prompt": "Grab the decorative tea-box with the right arm and set right of the small lightweight blue stapler.", "success": false, "manifest_episode_id": 2}

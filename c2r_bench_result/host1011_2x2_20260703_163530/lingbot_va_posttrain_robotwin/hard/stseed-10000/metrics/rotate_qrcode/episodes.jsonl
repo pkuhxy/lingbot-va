@@ -1,0 +1,3 @@
+{"task": "rotate_qrcode", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 242251430, "prompt": "Lift the beige paymentsign and orient its QR code toward you with the left arm.", "success": true, "manifest_episode_id": 0}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 698451167, "prompt": "Use the left arm to grab the small paymentsign with stand, lift, and turn it QR code forward", "success": true, "manifest_episode_id": 1}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 784311135, "prompt": "Use the right arm to grab the yellow and white payment display and rotate it until the QR faces forward", "success": true, "manifest_episode_id": 2}

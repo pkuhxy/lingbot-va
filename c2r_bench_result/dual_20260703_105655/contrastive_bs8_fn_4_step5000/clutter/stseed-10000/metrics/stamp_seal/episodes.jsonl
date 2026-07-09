@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 748150648, "prompt": "Pick the yellow seal and press on Magenta", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 198540316, "prompt": "Take the seal for stamping and stamp Cyan", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 864160547, "prompt": "Bring the seal with smooth handle to Teal and stamp", "success": true, "manifest_episode_id": 2}

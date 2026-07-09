@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 11397417, "prompt": "Shake the medium bottle with colorful label after holding it firmly.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 257406650, "prompt": "Pick the drink bottle with rounded yellow lid and perform shaking motion.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 175537280, "prompt": "Grip the smooth brown bottle using the right arm and shake.", "success": true, "manifest_episode_id": 2}

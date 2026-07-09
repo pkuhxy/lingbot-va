@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 649574901, "prompt": "Lift the mesh-patterned microphone head and hand it over to the other arm.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 558613823, "prompt": "Pick up the rounded white tip microphone and hand it to the other side.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 689832484, "prompt": "Take the microphone with round foam head, shift it, and release it to the other side.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 489372951, "prompt": "Secure the solid wood roller using your arms.", "success": false, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 873814779, "prompt": "Lift the long slim roller from the table carefully.", "success": false, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 237527256, "prompt": "Use arms to firmly grab the light brown wooden roller.", "success": false, "manifest_episode_id": 2}

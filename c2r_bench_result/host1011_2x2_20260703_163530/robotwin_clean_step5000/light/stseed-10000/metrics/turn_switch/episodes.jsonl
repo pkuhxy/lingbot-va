@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 493838736, "prompt": "Engage the left arm to press the rectangular switch with curved lever", "success": true, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 593220727, "prompt": "Switch the matte beige switch with flat top to its active state", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 637759382, "prompt": "Directly interact with the plastic switch with metal terminals", "success": false, "manifest_episode_id": 2}

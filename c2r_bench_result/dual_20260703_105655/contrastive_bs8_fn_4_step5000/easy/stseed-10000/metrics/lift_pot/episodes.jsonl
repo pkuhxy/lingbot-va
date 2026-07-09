@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 137637108, "prompt": "Lift the kitchenpot for boiling and cooking steadily using arms", "success": true, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 158039042, "prompt": "Hold the medium-sized kitchenpot and lift upward", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 194653683, "prompt": "Securely lift the kitchenpot with smooth exterior together", "success": false, "manifest_episode_id": 2}

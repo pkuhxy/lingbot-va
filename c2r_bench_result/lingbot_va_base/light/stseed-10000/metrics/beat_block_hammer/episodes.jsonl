@@ -1,0 +1,3 @@
+{"task": "beat_block_hammer", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 190785939, "prompt": "Grab the black and yellow hammer grip with the right arm and hit the block", "success": false, "manifest_episode_id": 0}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 478553832, "prompt": "Lift the plastic handle metal hammer using the right arm to hit the block.", "success": false, "manifest_episode_id": 1}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 774635389, "prompt": "Pick the plastic handle metal hammer and smash the block", "success": false, "manifest_episode_id": 2}

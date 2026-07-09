@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 560963078, "prompt": "Move the phone with smooth glossy screen onto the small plastic phonestand.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 527621882, "prompt": "Move the sleek black-faced smartphone onto the angled green phone support.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 820717100, "prompt": "Lift the metal and glass black phone onto the compact adjustable phone holder.", "success": false, "manifest_episode_id": 2}

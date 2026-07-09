@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 106540409, "prompt": "Activate the the plastic switch with metal prongs using the left arm", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 49896849, "prompt": "Move to the switch with darker rectangle and click it.", "success": true, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 744600177, "prompt": "Use the right arm to interact with the hand-sized switch with connector prongs", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "press_stapler", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 568177125, "prompt": "Push the top of the blue stapler with black handle area down", "success": true, "manifest_episode_id": 0}
+{"task": "press_stapler", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 525400568, "prompt": "Apply pressure on the stapler with orange button until it works.", "success": false, "manifest_episode_id": 1}
+{"task": "press_stapler", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 780203468, "prompt": "Push down on the manual blue stapler to staple papers.", "success": true, "manifest_episode_id": 2}

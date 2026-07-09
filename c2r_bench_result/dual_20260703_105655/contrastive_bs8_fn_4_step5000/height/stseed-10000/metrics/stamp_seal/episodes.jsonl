@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 391510540, "prompt": "Grab the yellow seal and press Red", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 680600576, "prompt": "Use the left arm for the hand-sized carved seal and stamp Olive", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 61286074, "prompt": "Pick up the seal with white engraving, stamp Purple", "success": false, "manifest_episode_id": 2}

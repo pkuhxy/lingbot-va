@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 509663030, "prompt": "Catch the plastic bottle with black top and shake it instantly.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 787882419, "prompt": "Shake the smooth black bottle with ridges after holding it firmly.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 854139504, "prompt": "Using the right arm, shake the bottle with green label and then place it back.", "success": true, "manifest_episode_id": 2}

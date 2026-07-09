@@ -1,0 +1,3 @@
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 296912742, "prompt": "Pour balls from the white cylindrical waste bin into the bin.", "success": false, "manifest_episode_id": 1}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 576270583, "prompt": "Grab the cylindrical tabletrashbin with flared rim and transfer balls.", "success": false, "manifest_episode_id": 2}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 576270587, "prompt": "Grasp the compact tabletop trashbin and empty it out.", "success": false, "manifest_episode_id": null}

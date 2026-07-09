@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 587935095, "prompt": "Set the blue stapler onto the Magenta colored mat.", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 377264486, "prompt": "Place the office stapler with plastic and metal parts on the Blue mat using the right arm", "success": true, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 222338649, "prompt": "Set the black smooth-textured stapler down on the Blue mat", "success": true, "manifest_episode_id": 2}

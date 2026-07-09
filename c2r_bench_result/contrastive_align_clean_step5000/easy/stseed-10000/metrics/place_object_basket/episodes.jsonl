@@ -1,0 +1,3 @@
+{"task": "place_object_basket", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 449269069, "prompt": "Grab the toycar with black wheels, set it into the handheld basket.", "success": false, "manifest_episode_id": 0}
+{"task": "place_object_basket", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 10901338, "prompt": "Pick and move the card box with golden designs, then shift the rectangular yellow basket.", "success": false, "manifest_episode_id": 1}
+{"task": "place_object_basket", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 517527136, "prompt": "Grab the playingcards storage box with one arm, drop the playingcards storage box in the woven basket.", "success": false, "manifest_episode_id": 2}

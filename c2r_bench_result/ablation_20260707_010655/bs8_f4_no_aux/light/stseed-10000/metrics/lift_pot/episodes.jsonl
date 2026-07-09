@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 185598812, "prompt": "Raise the medium kitchenpot made of metal steadily using arms", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 219304777, "prompt": "Raise the gray cylindrical metal kitchenpot securely with arms", "success": true, "manifest_episode_id": 2}
+{"task": "lift_pot", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 632672311, "prompt": "Raise the kitchenpot for boiling and cooking upward with both hands", "success": false, "manifest_episode_id": null}

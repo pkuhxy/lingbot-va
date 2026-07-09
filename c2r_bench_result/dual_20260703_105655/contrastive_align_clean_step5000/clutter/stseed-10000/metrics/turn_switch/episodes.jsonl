@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 106540409, "prompt": "Press the tiny rectangular switch carefully with the left arm", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 49896849, "prompt": "Tap the flat switch to engage it", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 744600179, "prompt": "Press the slanted-edge plastic black switch with the left arm", "success": false, "manifest_episode_id": null}

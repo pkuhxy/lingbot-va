@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 15186868, "prompt": "Use the left arm to press the rectangular seal with decorative carvings on Lime", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 411108950, "prompt": "Use the left arm for the stamp with black rectangular base and stamp Black", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 532709403, "prompt": "the left arm uses the rectangular seal block to stamp Green", "success": false, "manifest_episode_id": 2}

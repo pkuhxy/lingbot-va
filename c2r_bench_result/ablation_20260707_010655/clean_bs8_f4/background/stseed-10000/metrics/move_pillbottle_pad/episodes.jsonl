@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 568983342, "prompt": "Grab the cylindrical bottle with brown surface and place it on the pad", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 851281500, "prompt": "Move the white body bottle with textured cap with one arm to the pad", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 140710075, "prompt": "Grab the plastic bottle with labeled surface and position it on the pad", "success": true, "manifest_episode_id": 2}

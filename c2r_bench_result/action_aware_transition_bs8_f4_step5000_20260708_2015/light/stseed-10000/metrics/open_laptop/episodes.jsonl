@@ -1,0 +1,2 @@
+{"task": "open_laptop", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 627389206, "prompt": "Raise the folding laptop with black exterior using the right arm firmly.", "success": true, "manifest_episode_id": 0}
+{"task": "open_laptop", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 632583020, "prompt": "Pull the silver laptop open with the left arm.", "success": false, "manifest_episode_id": 1}

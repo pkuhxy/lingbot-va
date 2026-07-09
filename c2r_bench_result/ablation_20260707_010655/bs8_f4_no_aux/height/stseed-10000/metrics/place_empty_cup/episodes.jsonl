@@ -1,0 +1,3 @@
+{"task": "place_empty_cup", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 859277454, "prompt": "Lift the blue rounded-bottom cup and stick it onto the coaster with circular shape.", "success": true, "manifest_episode_id": 0}
+{"task": "place_empty_cup", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 268475834, "prompt": "Slide the light blue plastic cup onto the coaster with circular shape", "success": false, "manifest_episode_id": 1}
+{"task": "place_empty_cup", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 299451230, "prompt": "Pick the cup with smooth plastic surface up and drop it on the light gray round grainy coaster.", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 453776751, "prompt": "Transfer the plastic blue stapler with metal parts to the Red mat", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 592249158, "prompt": "the right arm grabs the handheld red stapler and sets it on Green mat.", "success": true, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 592249159, "prompt": "Using the left arm, set the smooth plastic stapler on the Blue colored mat", "success": true, "manifest_episode_id": null}

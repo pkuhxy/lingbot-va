@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 11397417, "prompt": "Grip the smooth orange bottle using the right arm and shake.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 257406650, "prompt": "Shake the smooth black bottle with ridges after grabbing it.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 175537280, "prompt": "Pick the bottle with dark brown color, shake it with the right arm.", "success": true, "manifest_episode_id": 2}

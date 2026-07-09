@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 96634356, "prompt": "Take the flat phone to the green phone rack.", "success": true, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 369308272, "prompt": "Carry the phone with metallic body to the phonestand with green hooks.", "success": true, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 11613324, "prompt": "Move the sleek rectangular phone onto the green plastic holder.", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 506817488, "prompt": "Grab the red-capped bottle and shake in a horizontal motion.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 352531093, "prompt": "Pick up the yellow container with rounded edges and shake it from side to side.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 709758823, "prompt": "Secure the smooth yellow plastic bottle with the right arm, shake in horizontal motion.", "success": true, "manifest_episode_id": 2}

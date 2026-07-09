@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 218427993, "prompt": "Grab the hand-sized soda bottle head-up using the right arm from the table.", "success": true, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 564409770, "prompt": "Grab the plastic bottle from the table and hold it head-up.", "success": false, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 91022954, "prompt": "Grab the bottle with ridges on bottom and lift it with the right arm", "success": true, "manifest_episode_id": 2}

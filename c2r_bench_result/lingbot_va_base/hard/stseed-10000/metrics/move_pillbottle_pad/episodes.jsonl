@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 306020811, "prompt": "Grab the plastic bottle with labeled surface and place it on the pad", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 287734483, "prompt": "Use the right arm to pick and place the plastic bottle with labeled surface onto the pad.", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 590418332, "prompt": "Take the brown plastic cylindrical bottle and place it onto the pad", "success": false, "manifest_episode_id": 2}

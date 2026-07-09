@@ -1,0 +1,3 @@
+{"task": "pick_dual_bottles", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 625462229, "prompt": "Pick up the plastic drink bottle and the bottle with white printed label together.", "success": false, "manifest_episode_id": 0}
+{"task": "pick_dual_bottles", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 289037929, "prompt": "Grab and lift the red-capped bottle, then lift the bottle with narrow top next.", "success": false, "manifest_episode_id": 1}
+{"task": "pick_dual_bottles", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 340281094, "prompt": "Use separate arms to pick the plastic drink bottle and the plastic bottle.", "success": false, "manifest_episode_id": 2}

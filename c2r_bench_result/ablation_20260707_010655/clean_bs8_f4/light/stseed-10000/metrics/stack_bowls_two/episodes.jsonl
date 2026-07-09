@@ -1,0 +1,3 @@
+{"task": "stack_bowls_two", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 656246828, "prompt": "Set the ceramic bowl over the curved bowl light blue shade to create the stack.", "success": true, "manifest_episode_id": 0}
+{"task": "stack_bowls_two", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 878575609, "prompt": "Align the blue bowl over the curved bowl light blue shade, then complete the stack.", "success": true, "manifest_episode_id": 1}
+{"task": "stack_bowls_two", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 330077405, "prompt": "Set the ceramic bowl down, then add the ceramic bowl with earthy brown trim over it.", "success": true, "manifest_episode_id": 2}

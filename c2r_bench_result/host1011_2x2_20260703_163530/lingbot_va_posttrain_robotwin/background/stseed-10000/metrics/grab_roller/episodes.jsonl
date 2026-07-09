@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 274067892, "prompt": "Grab the cylindrical roller with tapered ends placed on the table.", "success": true, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 102933025, "prompt": "Grip the smooth light brown roller firmly with arms.", "success": true, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 460612076, "prompt": "Grasp the cylindrical roller with tapered ends on the table.", "success": true, "manifest_episode_id": 2}

@@ -21,6 +21,9 @@ LingBot-VA 是一个机器人视频-动作世界模型项目。核心代码在 `
 - `script/run_wam_latent_posttrain_stage1.sh`：通过 `python -m torch.distributed.run -m wan_va.train_latent_posttrain` 启动 Stage-1 latent 后训练，并在启动前检查数据目录、`empty_emb.pt`、`meta/info.json`、`latents/` 和 pretrained transformer。
 - `script/run_launch_va_server_sync.sh`：通过 `python -m torch.distributed.run -m wan_va.wan_va_server` 启动服务/生成。
 - `evaluation/robotwin/launch_server.sh` 与 `evaluation/libero/launch_server.sh`：benchmark 服务端启动脚本。
+- `evaluation/robotwin/launch_server_multigpus.sh`：RoboTwin 多 GPU server 启动脚本，按 `START_PORT+i` 启动多个 websocket server。
+- `evaluation/robotwin/launch_rt_c2r_benchmark.sh`：RoboTwin RT-C2R 批量评测入口，遍历 6 个 split 和 50 个任务，支持 validated seed manifests、日志目录、自动启动 server 和 summary 输出。
+- `evaluation/robotwin/run_rt_c2r_*.sh`：固定 checkpoint 的 RT-C2R wrapper，每任务默认跑 3 个 episode，并把结果写到 `c2r_bench_result/<case>/`。
 - `evaluation/robotwin/launch_client.sh` 与 `evaluation/libero/launch_client.sh`：benchmark 客户端启动脚本。
 
 ## 重要目录
@@ -42,6 +45,8 @@ LingBot-VA 是一个机器人视频-动作世界模型项目。核心代码在 `
 - Stage-1 latent 后训练不更新 transformer。它从冻结 transformer 的 video/action hidden 或 input embedding 中提取表征，只训练一个小型 probe，使 video dynamics 表征和 action 表征在 controllable subspace 上相关。
 - RoboTwin latent 后训练使用 `robbyant/robotwin-clean-and-aug-lerobot` 的 LeRobot v2.1 episode-per-file 结构：低维 action 来自 `data/*.parquet`，语言和片段来自 `meta/episodes.jsonl`，视频表征来自预提取 `latents/*.pth`，训练时不直接解码 `videos/*.mp4`。
 - 推理先把 observation 编码成 VAE latent，再去噪生成未来视频 latent 和 action chunk，最后把 action 反归一化并裁剪回当前环境需要的通道。
+- `wan_va/wan_va_server.py --pretrained-model` 现在支持两类路径：完整模型目录（含 `vae/ tokenizer/ text_encoder/ transformer/`）或训练 checkpoint 目录（含 `transformer/config.json`）。训练 checkpoint 会复用 config 中的 base 模型组件，只替换 transformer。
+- RT-C2R benchmark 使用 `evaluation/robotwin/rt_c2r_validated_manifests/*.jsonl` 作为 expert-validated seed 预设，结果汇总到 `summary.json` 和 `summary.csv`。
 - `attn_mode` 与运行模式强相关：主 WAM 训练使用 `flex`；推理使用 `torch` 或 `flashattn`；Stage-1 latent 后训练配置默认 `latent_hidden_attn_mode="torch"`。
 
 ## 开发命令
@@ -56,6 +61,15 @@ NGPU=8 CONFIG_NAME='libero_train' bash script/run_va_posttrain.sh
 DATASET_PATH=/path/to/robotwin-clean-and-aug-lerobot NGPU=8 bash script/run_wam_latent_posttrain_stage1.sh
 bash evaluation/robotwin/launch_server.sh
 bash evaluation/libero/launch_server.sh
+
+# RT-C2R 4 卡 server 示例。换 checkpoint 前需要先停掉旧 server。
+GPU_IDS=0,1,2,3 NUM_GPUS=4 START_PORT=29556 MASTER_PORT=29661 \
+  bash evaluation/robotwin/launch_server_multigpus.sh \
+  /mnt/data/users/xianyi/EmbodyAi/lingbot-va/ckpts/train_out_contrastive_align_clean/checkpoints/checkpoint_step_5000
+
+# 使用外部已启动 server 跑每任务 3 个 episode 的 RT-C2R case。
+AUTO_START_SERVER=False NUM_GPUS=4 START_PORT=29556 \
+  bash evaluation/robotwin/run_rt_c2r_contrastive_align_clean_step5000.sh
 ```
 
 ## 约定

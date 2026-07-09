@@ -49,3 +49,19 @@
 - 决策: 不把 `action_dim` 改成 16。Dataset 把 16 维有效动作映射到 30 维布局中的有效 channel，并用 `actions_mask` 屏蔽无效 channel。
 - 影响: Stage-1 probe、transformer action embedding 和服务端推理保持同一 action contract；新增数据集时需要维护 `used_action_channel_ids`、`inverse_used_action_channel_ids` 和归一化统计。
 - 备选方案: 为 RoboTwin 训练单独 16 维 action head；未采用，因为会破坏现有模型/服务端 action contract。
+
+## 2026-06-24 - RT-C2R 结果按 Checkpoint Case 隔离
+
+- 状态: Accepted
+- 背景: 用户要依次评测四个 checkpoint，并要求所有结果保存到 `c2r_bench_result`，每个 case 对应一个子文件夹。
+- 决策: 为四个 checkpoint 创建 `evaluation/robotwin/run_rt_c2r_*.sh` wrapper，默认 `TEST_NUM=3`，使用 validated manifests，并把结果、client logs、server logs、pid 和 summary 写入 `c2r_bench_result/<case>/`。
+- 影响: 后续运行不需要手写长命令；重复跑同一 case 会进入同一个 case 目录，必要时应人工清理旧结果或换 `RESULT_ROOT`。
+- 备选方案: 单个脚本循环四个 checkpoint；未采用，因为用户明确要求四个 bash 文件，并且 server 切 checkpoint 需要逐个 case 控制。
+
+## 2026-06-24 - Server 支持训练 Checkpoint 目录只替换 Transformer
+
+- 状态: Accepted
+- 背景: `checkpoint_step_5000` 训练输出只包含 `transformer/` 和训练附属文件，不包含完整模型的 `vae/ tokenizer/ text_encoder/`。直接作为 `--pretrained-model` 会触发 `checkpoint_step_5000/vae/config.json` 缺失错误。
+- 决策: `wan_va/wan_va_server.py` 识别两类 `--pretrained-model`：完整模型目录按原样加载；训练 checkpoint 目录则保留 config 中的 base model root，只把 `transformer_model_name_or_path` 指向 checkpoint 的 `transformer/`。
+- 影响: 本地 `ckpts/.../checkpoint_step_5000` 可直接用于 server 启动；完整发布模型如 `lingbot-va-base` 和 `lingbot-va-posttrain-robotwin` 仍按原逻辑加载。
+- 备选方案: 手动把 `vae/ tokenizer/ text_encoder/` 复制或软链接到每个训练 checkpoint；未采用，因为会制造重复大文件并增加 checkpoint 管理成本。

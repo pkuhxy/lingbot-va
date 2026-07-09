@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 373032052, "prompt": "Grab the rectangular seal block and press Lime", "success": true, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 831044945, "prompt": "Pick the small stone seal and stamp it on Black", "success": true, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 511825116, "prompt": "Hold the rectangular seal with decorative carvings with the right arm and stamp Teal", "success": true, "manifest_episode_id": 2}

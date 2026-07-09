@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 744409618, "prompt": "Grab the black stapler with curved top and stick it onto Magenta mat", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 897601493, "prompt": "Pick the plastic stapler with metallic interior up and position it on Green mat", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 856607750, "prompt": "Set the stapler for stapling paper down on the Black mat", "success": false, "manifest_episode_id": 2}

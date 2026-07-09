@@ -1,0 +1,3 @@
+{"task": "stack_blocks_two", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 803532712, "prompt": "Move red block and green block to the center, then stack green block above red block.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_blocks_two", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 265396249, "prompt": "Put red block in the center, then add green block above it.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_blocks_two", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 599196149, "prompt": "Relocate red block and green block to the center, then layer green block over red block.", "success": false, "manifest_episode_id": 2}

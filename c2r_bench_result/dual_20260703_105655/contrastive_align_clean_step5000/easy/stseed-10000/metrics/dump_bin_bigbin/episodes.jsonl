@@ -1,0 +1,3 @@
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 296912742, "prompt": "Secure the tabletrashbin and pour the balls.", "success": false, "manifest_episode_id": 1}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 576270583, "prompt": "Grab the white round tabletrashbin, then pour balls into the bin.", "success": false, "manifest_episode_id": 2}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 576270587, "prompt": "Use the arm to lift the desk-sized white tabletrashbin and empty it.", "success": false, "manifest_episode_id": null}

@@ -1,0 +1,3 @@
+{"task": "click_alarmclock", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 656863248, "prompt": "Click the button centered on the small clock with rounded edges's top.", "success": true, "manifest_episode_id": 0}
+{"task": "click_alarmclock", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 52974283, "prompt": "Use the left arm to activate the small clock with rounded edges's button", "success": true, "manifest_episode_id": 1}
+{"task": "click_alarmclock", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 399553081, "prompt": "Touch the small clock with rounded edges's button on the top side.", "success": true, "manifest_episode_id": 2}

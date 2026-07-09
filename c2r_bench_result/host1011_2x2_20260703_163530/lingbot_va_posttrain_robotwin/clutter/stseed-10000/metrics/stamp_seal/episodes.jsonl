@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 748150648, "prompt": "Pick the yellow seal with ridged grip and press on Magenta", "success": true, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 198540316, "prompt": "Use the brown rectangular seal with slanted edges to mark Cyan", "success": true, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 864160547, "prompt": "Use the left arm, take the plastic red and black seal, and apply to Teal.", "success": true, "manifest_episode_id": 2}

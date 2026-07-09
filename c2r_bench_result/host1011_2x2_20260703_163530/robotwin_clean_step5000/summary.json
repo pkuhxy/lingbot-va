@@ -1,0 +1,1644 @@
+{
+  "splits": {
+    "easy": {
+      "success": 16.0,
+      "total": 150.0,
+      "success_rate": 0.10666666666666667,
+      "num_tasks": 50
+    },
+    "background": {
+      "success": 18.0,
+      "total": 150.0,
+      "success_rate": 0.12,
+      "num_tasks": 50
+    },
+    "light": {
+      "success": 21.0,
+      "total": 150.0,
+      "success_rate": 0.14,
+      "num_tasks": 50
+    },
+    "clutter": {
+      "success": 23.0,
+      "total": 150.0,
+      "success_rate": 0.15333333333333332,
+      "num_tasks": 50
+    },
+    "height": {
+      "success": 24.0,
+      "total": 150.0,
+      "success_rate": 0.16,
+      "num_tasks": 50
+    },
+    "hard": {
+      "success": 20.0,
+      "total": 150.0,
+      "success_rate": 0.13333333333333333,
+      "num_tasks": 50
+    }
+  },
+  "per_task": {
+    "adjust_bottle": {
+      "easy": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      }
+    },
+    "beat_block_hammer": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "hard": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      }
+    },
+    "blocks_ranking_rgb": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "blocks_ranking_size": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "click_alarmclock": {
+      "easy": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "background": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "light": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "clutter": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "height": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "hard": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      }
+    },
+    "click_bell": {
+      "easy": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "background": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "light": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "clutter": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "height": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "hard": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      }
+    },
+    "dump_bin_bigbin": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "grab_roller": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "light": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "hard": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      }
+    },
+    "handover_block": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "handover_mic": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "hanging_mug": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "lift_pot": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "move_can_pot": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "move_pillbottle_pad": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "move_playingcard_away": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "height": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "move_stapler_pad": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "open_laptop": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "open_microwave": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "light": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "clutter": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "height": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "hard": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      }
+    },
+    "pick_diverse_bottles": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "pick_dual_bottles": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_a2b_left": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_a2b_right": {
+      "easy": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_bread_basket": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_bread_skillet": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_burger_fries": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_can_basket": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_cans_plasticbox": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_container_plate": {
+      "easy": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "background": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "light": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "clutter": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "height": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_dual_shoes": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_empty_cup": {
+      "easy": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "background": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "light": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "clutter": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "height": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_fan": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_mouse_pad": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_object_basket": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      }
+    },
+    "place_object_scale": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_object_stand": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_phone_stand": {
+      "easy": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "place_shoe": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "press_stapler": {
+      "easy": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "background": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "light": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "clutter": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "height": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "hard": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      }
+    },
+    "put_bottles_dustbin": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "put_object_cabinet": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "rotate_qrcode": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "scan_object": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "shake_bottle": {
+      "easy": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "background": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "light": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "clutter": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "height": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "hard": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      }
+    },
+    "shake_bottle_horizontally": {
+      "easy": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      },
+      "background": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "light": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "clutter": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "height": {
+        "success": 3.0,
+        "total": 3.0,
+        "success_rate": 1.0
+      },
+      "hard": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      }
+    },
+    "stack_blocks_three": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "stack_blocks_two": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "stack_bowls_three": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "stack_bowls_two": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "clutter": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 2.0,
+        "total": 3.0,
+        "success_rate": 0.6666666666666666
+      }
+    },
+    "stamp_seal": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "clutter": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "height": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    },
+    "turn_switch": {
+      "easy": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "background": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      },
+      "light": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "clutter": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "height": {
+        "success": 1.0,
+        "total": 3.0,
+        "success_rate": 0.3333333333333333
+      },
+      "hard": {
+        "success": 0.0,
+        "total": 3.0,
+        "success_rate": 0.0
+      }
+    }
+  },
+  "retention_hard_over_easy": 1.25,
+  "drop_easy_minus_hard": -0.026666666666666658
+}

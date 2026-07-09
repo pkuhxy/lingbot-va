@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 454258712, "prompt": "Use the right arm to move the smooth plastic bottle with teal accents to the pad", "success": true, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 283392860, "prompt": "Move the plastic bottle with ridged cap and drop it on the pad", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 572328467, "prompt": "Lift the orange cylindrical bottle for medicine and gently lower onto the pad", "success": false, "manifest_episode_id": 2}

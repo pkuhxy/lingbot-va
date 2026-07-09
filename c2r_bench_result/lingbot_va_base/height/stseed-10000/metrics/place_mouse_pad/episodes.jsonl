@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 747588073, "prompt": "Pick up the the dark gray mouse with smooth texture with the right arm and place it on the Cyan mat.", "success": false, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 113039282, "prompt": "Take the dark gray mouse and place it onto the Red mat.", "success": false, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 770000462, "prompt": "Using the right arm, pick the wireless dark gray computer mouse and position it on Black colored mat.", "success": false, "manifest_episode_id": 2}

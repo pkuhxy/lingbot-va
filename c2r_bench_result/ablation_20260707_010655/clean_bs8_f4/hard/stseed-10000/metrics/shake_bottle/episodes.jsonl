@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 321912419, "prompt": "Pick the grooved orange drink bottle and perform shaking motion.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 608374554, "prompt": "Lift the bottle with orange cap and shake it thoroughly.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 12784272, "prompt": "Hold the smooth green bottle with the right arm and shake lightly.", "success": true, "manifest_episode_id": 2}

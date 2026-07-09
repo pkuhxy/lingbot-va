@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 521354215, "prompt": "Get hold of the palm-length roller using your arms", "success": true, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 732582633, "prompt": "Lift the roller with smooth texture from the table carefully.", "success": true, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 272293958, "prompt": "Grip the light wood roller firmly with arms.", "success": true, "manifest_episode_id": 2}

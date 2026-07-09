@@ -1,0 +1,3 @@
+{"task": "open_microwave", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 126026794, "prompt": "Open the dark gray kitchen microwave by pulling its handle.", "success": true, "manifest_episode_id": 0}
+{"task": "open_microwave", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 690303122, "prompt": "Use the left arm to engage the microwave with smooth surface's opening mechanism.", "success": false, "manifest_episode_id": 2}
+{"task": "open_microwave", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 693128433, "prompt": "Pull the handle to open the medium microwave.", "success": false, "manifest_episode_id": null}

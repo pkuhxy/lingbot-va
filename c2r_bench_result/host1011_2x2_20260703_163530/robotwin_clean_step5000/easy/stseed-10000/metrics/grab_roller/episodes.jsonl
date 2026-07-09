@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 737764344, "prompt": "Hold the smooth light brown roller firmly from the table.", "success": false, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 476185267, "prompt": "Hold the palm-sized roller on the table with hands.", "success": false, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 188128939, "prompt": "Bring both arms to grab the roller with smooth texture.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 114732817, "prompt": "Pick the rectangular box for card storage and slide it further outward.", "success": true, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 691804739, "prompt": "Move the box for playingcards further outward after picking it up.", "success": false, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 69025302, "prompt": "Use the left arm to pick up the small black box with cards and move it.", "success": true, "manifest_episode_id": 2}

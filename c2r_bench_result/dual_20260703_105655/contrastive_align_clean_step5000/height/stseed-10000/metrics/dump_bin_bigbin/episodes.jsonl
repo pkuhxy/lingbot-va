@@ -1,0 +1,3 @@
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 609125485, "prompt": "Control the arm to raise the tabletrashbin and pour.", "success": false, "manifest_episode_id": 0}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 578115340, "prompt": "Pick up the cylindrical small white trashbin using the arm, pour balls.", "success": false, "manifest_episode_id": 1}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 825217461, "prompt": "Pour balls from the black-specked gray tabletrashbin into the bin.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 274942227, "prompt": "Grab the white body bottle with textured cap and drop it on the pad", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 288595804, "prompt": "Take the white bottle and put it onto the pad", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 296874874, "prompt": "Pick the plastic bottle with teal bands with the right arm and position it onto pad", "success": false, "manifest_episode_id": 2}

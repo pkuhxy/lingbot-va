@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 97607166, "prompt": "Using the right arm, grab the dark gray mouse with smooth texture and place it on Blue colored mat.", "success": false, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 801838291, "prompt": "Lift the oval-shaped mouse up with the left arm and stick it onto the Green mat.", "success": false, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 663858755, "prompt": "Take the mouse with two buttons and wheel and put it onto Blue mat.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 49217227, "prompt": "Grab the light and medium-sized bottle and move it to shake.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 19236951, "prompt": "Use the left arm to lift and shake the rounded body bottle made of plastic.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 688302917, "prompt": "Shake the medium cylinder-shaped bottle using the right arm after grabbing.", "success": true, "manifest_episode_id": 2}

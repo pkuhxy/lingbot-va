@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 777107145, "prompt": "Stack the rounded bowl with light blue color, starting with the largest bowl at the bottom.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 364505908, "prompt": "Lift each the bowl with shiny texture and stack it over the previous one.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 777107148, "prompt": "Place the first the bowl with brown outer rim down, then stack the remaining two.", "success": false, "manifest_episode_id": null}

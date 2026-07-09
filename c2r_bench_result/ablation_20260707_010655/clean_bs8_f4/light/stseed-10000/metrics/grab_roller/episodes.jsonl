@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 482689013, "prompt": "Lift the roller with polished surface from its place on the table", "success": true, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 277991372, "prompt": "Grasp the wood roller on the table with arms.", "success": true, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 855555173, "prompt": "Take both arms to grasp the narrow tapered roller.", "success": true, "manifest_episode_id": 2}

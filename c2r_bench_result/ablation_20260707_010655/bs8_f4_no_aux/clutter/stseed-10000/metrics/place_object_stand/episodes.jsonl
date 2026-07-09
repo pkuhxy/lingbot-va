@@ -1,0 +1,3 @@
+{"task": "place_object_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 162697052, "prompt": "Set the palm-sized plastic toycar on the black displaystand using the left arm", "success": true, "manifest_episode_id": 0}
+{"task": "place_object_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 418834084, "prompt": "Lift the bell with brown base with the left arm and align it on the plastic black displaystand for display.", "success": false, "manifest_episode_id": 1}
+{"task": "place_object_stand", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 405003736, "prompt": "Lift the rubikscube and position it on the metal displaystand", "success": true, "manifest_episode_id": 2}

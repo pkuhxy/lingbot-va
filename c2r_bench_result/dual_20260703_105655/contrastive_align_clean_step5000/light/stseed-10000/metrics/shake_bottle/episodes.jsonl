@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 716268860, "prompt": "Utilize the right arm to hold the bottle with yellow cap and shake it.", "success": false, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 239702583, "prompt": "Grip the handheld brown bottle with white lid using the right arm and shake.", "success": false, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 773352428, "prompt": "Pick up the dark brown bottle with a squared body and shake it well.", "success": true, "manifest_episode_id": 2}

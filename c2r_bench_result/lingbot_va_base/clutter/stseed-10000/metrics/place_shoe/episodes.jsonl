@@ -1,0 +1,3 @@
+{"task": "place_shoe", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 148930251, "prompt": "Take the brown shoe from the table and carefully drop it on the mat", "success": false, "manifest_episode_id": 0}
+{"task": "place_shoe", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 607504024, "prompt": "Grab the the comfortable white and red shoe on the table and move it to the mat", "success": false, "manifest_episode_id": 1}
+{"task": "place_shoe", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 592514918, "prompt": "Take the shoe with lace holes with the right arm and place it carefully on the mat", "success": false, "manifest_episode_id": 2}

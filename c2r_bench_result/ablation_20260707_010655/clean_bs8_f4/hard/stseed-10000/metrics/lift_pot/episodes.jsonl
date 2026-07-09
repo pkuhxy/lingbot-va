@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 759757975, "prompt": "Hold the round kitchenpot with handles firmly and move upward.", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 273736925, "prompt": "Take hold of the cylindrical kitchenpot and lift up", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 298285382, "prompt": "Raise the dark gray stove kitchenpot steadily using arms", "success": true, "manifest_episode_id": 2}

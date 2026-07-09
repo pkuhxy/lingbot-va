@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 331965946, "prompt": "Shake the medium rectangular yellow bottle after grabbing it.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 433386922, "prompt": "Use the left arm to pick and shake the orange bottle.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 165362465, "prompt": "Shake the medium bottle for beverages firmly after grabbing.", "success": true, "manifest_episode_id": 2}

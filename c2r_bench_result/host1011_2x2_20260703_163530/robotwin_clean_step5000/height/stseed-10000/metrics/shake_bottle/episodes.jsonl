@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 11397417, "prompt": "Grab the cylindrical orange plastic bottle using the right arm, then shake.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 257406650, "prompt": "Grab the black plastic bottle with Pepsi logo and shake it steadily.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 175537280, "prompt": "Hold the bottle with dark brown color and shake it properly.", "success": true, "manifest_episode_id": 2}

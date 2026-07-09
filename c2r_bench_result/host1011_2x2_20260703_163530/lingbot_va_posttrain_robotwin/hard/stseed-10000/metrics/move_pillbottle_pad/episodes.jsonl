@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 306020811, "prompt": "Take the hand-held cylindrical white bottle and put it onto the pad", "success": true, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 287734483, "prompt": "Use the right arm to move the white cylindrical bottle to the pad", "success": true, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 590418332, "prompt": "Lift the plastic bottle with brown body and gently lower onto the pad", "success": true, "manifest_episode_id": 2}

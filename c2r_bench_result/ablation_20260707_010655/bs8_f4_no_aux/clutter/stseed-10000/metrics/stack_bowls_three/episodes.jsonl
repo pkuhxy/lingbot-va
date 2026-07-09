@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 761954913, "prompt": "Lift each the curved bowl light blue shade and stack them together neatly.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 507297234, "prompt": "Form a tower with bowls the medium-sized bowl for holding food, placing smallest last.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 205271158, "prompt": "Take the blue bowl with slightly rounded base, stack them from bottom to top.", "success": false, "manifest_episode_id": 2}

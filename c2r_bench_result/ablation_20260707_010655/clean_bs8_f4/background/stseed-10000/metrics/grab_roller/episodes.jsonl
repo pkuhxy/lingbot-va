@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 274067892, "prompt": "Take hold of the medium-sized roller with both arms.", "success": true, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 102933025, "prompt": "Grasp the roller for rolling firmly from the table.", "success": true, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 460612076, "prompt": "Use arms to hold the medium-sized roller tightly.", "success": true, "manifest_episode_id": 2}

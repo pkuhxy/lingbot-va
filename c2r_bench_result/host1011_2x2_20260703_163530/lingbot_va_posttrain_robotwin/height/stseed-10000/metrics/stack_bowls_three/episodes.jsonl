@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 777107145, "prompt": "Form a tower with bowls the small bowl with brown edge, placing smallest last.", "success": true, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 364505908, "prompt": "Grab the blue bowl, arrange them vertically.", "success": true, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 692661890, "prompt": "Lift each the small bowl with brown edge and stack them together neatly.", "success": true, "manifest_episode_id": 2}

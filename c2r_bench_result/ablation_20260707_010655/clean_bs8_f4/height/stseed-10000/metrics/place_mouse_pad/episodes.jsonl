@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 747588073, "prompt": "Take the mouse with buttons and wheel and place it on the Cyan colored mat.", "success": false, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 113039282, "prompt": "Using the right arm, grab the the dark gray mouse and set it on the Red mat.", "success": false, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 770000462, "prompt": "Lift the dark gray mouse and place it onto Black mat.", "success": false, "manifest_episode_id": 2}

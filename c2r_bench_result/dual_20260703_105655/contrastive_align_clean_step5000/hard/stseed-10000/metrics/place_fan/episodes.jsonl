@@ -1,0 +1,3 @@
+{"task": "place_fan", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 863229503, "prompt": "Take the plastic fan with smooth finish and place it on the Coral mat, making sure it faces the robot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_fan", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 518314974, "prompt": "Lift the fan with beige grilles and put it on the Beige mat so it faces the robot", "success": false, "manifest_episode_id": 1}
+{"task": "place_fan", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 487210583, "prompt": "Grab the round white fan using the right arm and place it on the Silver mat ensuring it faces the robot.", "success": false, "manifest_episode_id": 2}

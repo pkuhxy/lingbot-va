@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 649574901, "prompt": "Grab the microphone with textured metal head and smoothly give it to the other arm.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 558613823, "prompt": "Grasp the compact teal and white microphone and shift it to the opposite hand.", "success": true, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 689832484, "prompt": "Pick the round head microphone and transfer it to the other arm.", "success": true, "manifest_episode_id": 2}

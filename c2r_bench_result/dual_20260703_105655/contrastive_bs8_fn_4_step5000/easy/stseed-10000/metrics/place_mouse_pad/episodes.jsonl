@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 125168923, "prompt": "Lift the the dark gray mouse and put it down onto the Red mat.", "success": false, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 465090670, "prompt": "Slide the the mouse with two buttons and a scroll wheel onto the Green mat gently.", "success": false, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 784863665, "prompt": "Lift the the dark gray mouse and position it on the Green mat.", "success": false, "manifest_episode_id": 2}

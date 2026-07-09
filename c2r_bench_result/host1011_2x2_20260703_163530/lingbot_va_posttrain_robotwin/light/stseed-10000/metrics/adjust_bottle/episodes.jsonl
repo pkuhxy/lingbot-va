@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 218427993, "prompt": "Grab the dark drink bottle with logo from the table and hold it head-up.", "success": true, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 564409770, "prompt": "Find the green bottle with indented base on the table and raise it using the right arm.", "success": true, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 91022954, "prompt": "Secure the smooth bottle with red lid upright with the right arm", "success": true, "manifest_episode_id": 2}

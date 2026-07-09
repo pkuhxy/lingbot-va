@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 662388751, "prompt": "Lift the bottle with rounded neck ensuring it remains upright.", "success": true, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 615150008, "prompt": "Grab the plastic drink bottle from the table with the right arm", "success": true, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 73485421, "prompt": "Pick up the medium dark brown bottle from the table carefully.", "success": true, "manifest_episode_id": 2}

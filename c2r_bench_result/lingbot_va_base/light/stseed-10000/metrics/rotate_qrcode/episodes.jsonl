@@ -1,0 +1,3 @@
+{"task": "rotate_qrcode", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 24255504, "prompt": "Lift the small paymentsign for mobile payments and rotate for its qrcode to face you.", "success": false, "manifest_episode_id": 0}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 879906272, "prompt": "Grab the paymentsign, pick it up, and turn its qrcode toward you.", "success": false, "manifest_episode_id": 1}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 163025214, "prompt": "Catch the slanted gray panel for QR code scan with the left arm, then rotate it to make the QR code visible.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 114732817, "prompt": "Lift the box holding playing cards and set it away from the table.", "success": true, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 691804739, "prompt": "Pick the smooth playingcards pack and slide it further outward.", "success": false, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 69025302, "prompt": "Pick the box with cards inside and slide it further outward.", "success": false, "manifest_episode_id": 2}

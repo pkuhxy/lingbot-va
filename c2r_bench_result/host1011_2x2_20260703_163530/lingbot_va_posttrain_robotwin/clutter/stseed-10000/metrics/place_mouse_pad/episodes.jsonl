@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 782913939, "prompt": "With the right arm, take the mouse with scroll wheel in center and set it on Blue mat.", "success": true, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 300470803, "prompt": "Using the right arm, grab the rounded computer mouse and place it on Blue colored mat.", "success": true, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 619747982, "prompt": "Position the the gray mouse on the Gray mat by picking it up.", "success": true, "manifest_episode_id": 2}

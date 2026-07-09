@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 317869620, "prompt": "Position the first the bowl with brown outer rim, and sequentially add the two above it.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 619397709, "prompt": "Carefully stack the medium-sized bowl for holding food piece by piece.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 619397710, "prompt": "Grab the blue bowl with slightly rounded base, stack from largest at the base to the smallest.", "success": true, "manifest_episode_id": null}

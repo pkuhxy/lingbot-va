@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 710924868, "prompt": "Lift the dark gray stove kitchenpot steadily using arms", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 8688537, "prompt": "Place hands on the metal kitchenpot, then lift.", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 710924869, "prompt": "Raise the medium-sized kitchenpot evenly with arms", "success": false, "manifest_episode_id": null}

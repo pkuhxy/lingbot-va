@@ -1,0 +1,3 @@
+{"task": "place_a2b_right", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 219737455, "prompt": "Set the plastic and metal bell on the smooth soap's right side", "success": false, "manifest_episode_id": 0}
+{"task": "place_a2b_right", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 818076425, "prompt": "Use the right arm to position the toycar with smiling face design to the compact white coffee-box's right.", "success": false, "manifest_episode_id": 1}
+{"task": "place_a2b_right", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 113018648, "prompt": "Move the medium-sized coffee-box and place it to the mouse with scroll wheel's right.", "success": false, "manifest_episode_id": 2}

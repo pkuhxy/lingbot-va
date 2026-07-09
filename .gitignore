@@ -6,3 +6,45 @@ visualization/
 train_out_contrastive_align/
 ckpts/
 wandb/
+
+# Generated experiment artifacts / heavy binary data
+__pycache__/
+*.py[cod]
+*.log
+*.pid
+*.out
+*.err
+*.tmp
+
+# Model/checkpoint tensors and raw feature banks
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.npy
+*.npz
+
+# Images / videos / visualizations
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+*.tiff
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# Runtime logs and generated visualizations
+logs/
+**/client_logs/
+**/server_logs/
+**/server_visualization/
+**/visualization/
+output/**/features/
+output/**/banks/**/rgb/
+output/**/plots/

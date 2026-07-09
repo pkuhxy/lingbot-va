@@ -1,0 +1,2 @@
+{"task": "handover_block", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 843362462, "prompt": "Place the red block onto the blue pad using the right arm.", "success": true, "manifest_episode_id": 0}
+{"task": "handover_block", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 718810066, "prompt": "Use the left arm to grab the red block, hand it to the right arm, and place it on the blue pad.", "success": true, "manifest_episode_id": 1}

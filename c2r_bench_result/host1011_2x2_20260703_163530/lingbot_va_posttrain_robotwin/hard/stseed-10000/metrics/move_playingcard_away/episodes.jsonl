@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 333333084, "prompt": "Shift the rectangular box for card storage outward after grabbing it.", "success": true, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 727333688, "prompt": "Grab the blue carton for playingcards using the left arm and move it outward.", "success": true, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 196985146, "prompt": "Grab the yellow and red playingcards box using the left arm and push it outward.", "success": true, "manifest_episode_id": 2}

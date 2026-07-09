@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 283323218, "prompt": "Grab the compact teal and white microphone and transfer it to another hand", "success": false, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 40150823, "prompt": "Pick up the compact size microphone, pass it to the other arm, and release.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 188807311, "prompt": "Grasp the black and white microphone and switch it to another hand.", "success": false, "manifest_episode_id": 2}

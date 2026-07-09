@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 331664622, "prompt": "Grab the seal showing carved detailed textures and press Purple", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 36261414, "prompt": "Pick the seal showing carved detailed textures and apply it onto Tan.", "success": false, "manifest_episode_id": 2}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 423892303, "prompt": "the left arm picks the brown seal for marking, stamps Lime", "success": false, "manifest_episode_id": null}

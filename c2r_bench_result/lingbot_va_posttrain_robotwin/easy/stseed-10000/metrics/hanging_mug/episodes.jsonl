@@ -1,0 +1,1 @@
+{"task": "hanging_mug", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 474714700, "prompt": "Use the left arm to grab the ceramic mug smooth beige surface, rotate it, set it down, then hang the ceramic mug smooth beige surface onto the rack with two rods sticking out.", "success": true, "manifest_episode_id": 0}

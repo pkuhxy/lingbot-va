@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 125168923, "prompt": "Grab the the plastic mouse and position it onto the Red mat.", "success": false, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 465090670, "prompt": "Pick up the computer mouse and set it on the Green colored mat.", "success": false, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 784863665, "prompt": "Lift the dark gray mouse with smooth texture and stick it on Green mat.", "success": false, "manifest_episode_id": 2}

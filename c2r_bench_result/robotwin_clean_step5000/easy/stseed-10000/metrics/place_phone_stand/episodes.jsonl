@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 781706246, "prompt": "Carry the palm-sized phone to the light brown phone holder.", "success": true, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 213937575, "prompt": "Put the phone with smooth glossy screen atop the green plastic holder.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 602838496, "prompt": "Put the phone with digital display atop the compact phonestand.", "success": false, "manifest_episode_id": 2}

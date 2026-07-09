@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 866209002, "prompt": "Lift the mouse with curved ergonomic shape using the left arm and drop it on the Blue colored mat.", "success": false, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 786648586, "prompt": "Lift the dark gray mouse and set it down on the Red mat.", "success": false, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 482697968, "prompt": "Use the left arm to grab the the rounded top mouse with glossy logo and place it on the Black colored mat.", "success": false, "manifest_episode_id": 2}

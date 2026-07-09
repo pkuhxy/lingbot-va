@@ -1,0 +1,3 @@
+{"task": "beat_block_hammer", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 797298394, "prompt": "Grab the handheld medium claw hammer, then hit the block", "success": false, "manifest_episode_id": 0}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 422340764, "prompt": "Take the plastic handle metal hammer and hammer the block", "success": false, "manifest_episode_id": 1}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 220656277, "prompt": "Hold the plastic handle metal hammer and pound the block.", "success": false, "manifest_episode_id": 2}

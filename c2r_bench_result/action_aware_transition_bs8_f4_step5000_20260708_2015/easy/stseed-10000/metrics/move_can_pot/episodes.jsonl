@@ -1,0 +1,3 @@
+{"task": "move_can_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 237529936, "prompt": "Use the right arm to pick the smooth sauce can, position it near the cylindrical kitchenpot", "success": true, "manifest_episode_id": 0}
+{"task": "move_can_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 439562267, "prompt": "Lift the smooth sauce can and place it next to the cooking pot with two blue handles", "success": false, "manifest_episode_id": 1}
+{"task": "move_can_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 328901947, "prompt": "Lift the round sauce can with yellow pattern and set it next to the kitchenpot with metallic round lid", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 203079918, "prompt": "Pick the small stone seal and stamp it on Black", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 331445957, "prompt": "Grab the stamp with black rectangular base and press Purple", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 381966771, "prompt": "Use the left arm for the seal with smooth engraved top and stamp Orange", "success": false, "manifest_episode_id": 2}

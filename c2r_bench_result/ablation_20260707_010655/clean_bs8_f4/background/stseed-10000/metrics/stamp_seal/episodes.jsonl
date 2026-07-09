@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 373032052, "prompt": "Grab the stone seal with leaf designs, align it with Lime", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 831044945, "prompt": "Press the engraved reddish seal for marking onto Black with the right arm", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 511825116, "prompt": "Position the smooth textured reddish-brown seal on Teal, apply pressure", "success": false, "manifest_episode_id": 2}

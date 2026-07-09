@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 626979943, "prompt": "Grab the stapler with silver staple tray using the right arm and shift it to Magenta", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 421028249, "prompt": "Move the black stapler for joining pages to the Black mat with the left arm", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 397044842, "prompt": "Grab the lightweight red stapler using the left arm and set it on Magenta mat.", "success": false, "manifest_episode_id": 2}

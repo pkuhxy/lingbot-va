@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 622967649, "prompt": "Position the curved bowl light blue shade one on top of the other largest to smallest.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 744291, "prompt": "Use the arm to stack the the bowl with shiny texture one by one.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 193932923, "prompt": "Pick up each the rounded bowl with light blue color and set them one over another.", "success": false, "manifest_episode_id": 2}

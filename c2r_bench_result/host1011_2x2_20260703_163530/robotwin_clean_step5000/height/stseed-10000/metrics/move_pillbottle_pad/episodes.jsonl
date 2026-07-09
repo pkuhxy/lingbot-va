@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 454258712, "prompt": "Pick the bottle with teal top and bottom up and set it onto the pad", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 283392860, "prompt": "Move the white bottle for pills or liquids and drop it on the pad", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 572328467, "prompt": "Set the orange bottle for pills or liquid down on the pad after picking it.", "success": false, "manifest_episode_id": 2}

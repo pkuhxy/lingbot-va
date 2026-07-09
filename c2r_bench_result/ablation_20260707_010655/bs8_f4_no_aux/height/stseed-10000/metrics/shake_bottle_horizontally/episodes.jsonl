@@ -1,0 +1,3 @@
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 506817488, "prompt": "Shake the plastic drink bottle from side to side.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 352531093, "prompt": "Shake the yellow bottle with a green design from side to side.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 709758823, "prompt": "Lift the yellow body bottle with the right arm, then shake it side to side.", "success": true, "manifest_episode_id": 2}

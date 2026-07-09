@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 330662812, "prompt": "Secure the bottle with ridges near base upright with the right arm", "success": false, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 639052818, "prompt": "Lift the hand-sized soda bottle from the table with the right arm", "success": true, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 595136414, "prompt": "Lift the smooth green plastic bottle from the table upright", "success": true, "manifest_episode_id": 2}

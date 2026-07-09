@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 778866495, "prompt": "Click the top center of the bell with protruding knob on table.", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 201221957, "prompt": "Push the center of the compact bell with round base using the right arm.", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 394400176, "prompt": "Activate the bell with protruding knob by pressing its top center.", "success": true, "manifest_episode_id": 2}

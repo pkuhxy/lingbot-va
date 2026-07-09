@@ -592,6 +592,12 @@ def run(args):
     if rank == 0:
         logger.info(f"Using config: {args.config_name}")
         logger.info(f"World size: {world_size}, Local rank: {local_rank}")
+        logger.info(f"Per-GPU batch size: {config.batch_size}")
+        logger.info(f"Training latent frames: {getattr(config, 'train_frame_num', 'full')}")
+        logger.info(
+            f"Effective global batch size: "
+            f"{config.batch_size * world_size * getattr(config, 'gradient_accumulation_steps', 1)}"
+        )
         logger.info(f"lambda_align: {getattr(config, 'lambda_align', 0.1)}")
         logger.info(f"lambda_action_recon: {getattr(config, 'lambda_action_recon', 0.1)}")
         logger.info(f"enable_wandb: {getattr(config, 'enable_wandb', False)}")

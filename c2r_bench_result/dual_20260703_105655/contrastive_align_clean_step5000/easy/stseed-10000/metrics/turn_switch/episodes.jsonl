@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 410669228, "prompt": "Approach and tap the switch with thin red toggle via the left arm", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 157562321, "prompt": "Move to the flat switch and click it.", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 498738258, "prompt": "Command the right arm to engage the handheld switch", "success": false, "manifest_episode_id": 2}

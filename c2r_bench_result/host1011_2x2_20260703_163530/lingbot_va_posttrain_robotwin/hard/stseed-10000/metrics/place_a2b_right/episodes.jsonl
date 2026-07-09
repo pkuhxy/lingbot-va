@@ -1,0 +1,3 @@
+{"task": "place_a2b_right", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 791537952, "prompt": "Set the smooth tea-box using the left arm at the small desk bell for tapping's right", "success": true, "manifest_episode_id": 0}
+{"task": "place_a2b_right", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 253401156, "prompt": "Make sure the rectangular coffee box is placed right of the light gray soap with angled ends.", "success": true, "manifest_episode_id": 1}
+{"task": "place_a2b_right", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 706405649, "prompt": "Make sure the rubikscube cube shape is placed right of the smooth light brown coffee box.", "success": true, "manifest_episode_id": 2}

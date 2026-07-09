@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 576942388, "prompt": "Make the left arm interact with the white bell with black bottom's top center.", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 181554294, "prompt": "Pinpoint the bell with protruding knob and click its top center.", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 22516350, "prompt": "Push the white and black colored bell's <top center> on the table", "success": true, "manifest_episode_id": 2}

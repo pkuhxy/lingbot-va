@@ -1,0 +1,3 @@
+{"task": "move_can_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 237529936, "prompt": "Place the sauce can with red lid next to the medium-sized kitchenpot", "success": false, "manifest_episode_id": 0}
+{"task": "move_can_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 439562267, "prompt": "Lift the red cylindrical sauce can and set it beside the blue cylinder pot with smooth lid", "success": false, "manifest_episode_id": 1}
+{"task": "move_can_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 328901947, "prompt": "Lift the medium sauce can with white lid, place it by the cooking kitchenpot with sturdy handles", "success": false, "manifest_episode_id": 2}

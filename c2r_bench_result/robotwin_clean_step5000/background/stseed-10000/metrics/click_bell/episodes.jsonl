@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 748992159, "prompt": "Press the center of the metal bell with plastic parts using the left arm.", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 306892524, "prompt": "Guide the left arm to click the small desk bell for tapping's top center.", "success": false, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 438498233, "prompt": "Guide the left arm to click the brown-bottomed bell's top center.", "success": true, "manifest_episode_id": 2}

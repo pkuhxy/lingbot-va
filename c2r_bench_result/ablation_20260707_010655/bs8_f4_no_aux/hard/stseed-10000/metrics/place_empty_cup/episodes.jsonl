@@ -1,0 +1,3 @@
+{"task": "place_empty_cup", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 505978270, "prompt": "Carefully place the medium blue cylindrical cup onto the round coaster without arm", "success": true, "manifest_episode_id": 0}
+{"task": "place_empty_cup", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 350986743, "prompt": "Set the medium blue cylindrical cup on the round coaster with light streaks using the arm.", "success": true, "manifest_episode_id": 1}
+{"task": "place_empty_cup", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 180421141, "prompt": "Make sure the smooth blue cup for liquids ends up on the light gray round grainy coaster.", "success": false, "manifest_episode_id": 2}

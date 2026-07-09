@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 568983342, "prompt": "Take the brown bottle with white cap and put it onto the pad", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 851281500, "prompt": "Grab the compact plastic bottle with screw cap and drop it on the pad", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 140710075, "prompt": "Grab the small plastic bottle and drop it on the pad", "success": false, "manifest_episode_id": 2}

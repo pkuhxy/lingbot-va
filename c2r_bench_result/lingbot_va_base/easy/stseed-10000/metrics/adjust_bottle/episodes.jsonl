@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 330662812, "prompt": "Grab the smooth green bottle with the right arm in a head-up way", "success": false, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 639052818, "prompt": "Secure the narrow-necked bottle upright with the right arm", "success": false, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 595136414, "prompt": "Pick the bottle with narrow top head-up and hold it steady.", "success": false, "manifest_episode_id": 2}

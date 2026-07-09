@@ -1,0 +1,3 @@
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 497389386, "prompt": "Lift the medium cylinder-shaped bottle with the left arm, then shake it side to side.", "success": false, "manifest_episode_id": 0}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 407896665, "prompt": "Hold the medium green bottle and shake it side to side.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 342689606, "prompt": "Hold the long thin bottle steady and shake it horizontally.", "success": false, "manifest_episode_id": 2}

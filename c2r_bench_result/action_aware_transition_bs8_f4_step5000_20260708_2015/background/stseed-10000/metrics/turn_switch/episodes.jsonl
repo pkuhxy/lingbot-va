@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 489873751, "prompt": "Use the right arm to engage the flat switch", "success": true, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 348126012, "prompt": "Press the hand-sized switch with connector prongs with the left arm", "success": true, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 570711438, "prompt": "Engage with the compact switch with flat base manually", "success": false, "manifest_episode_id": 2}

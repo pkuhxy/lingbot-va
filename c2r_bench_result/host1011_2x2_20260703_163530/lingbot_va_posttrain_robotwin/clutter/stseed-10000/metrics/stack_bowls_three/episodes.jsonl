@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 761954913, "prompt": "Position the second the bowl with brown outer rim over the first, then the third on top.", "success": true, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 507297234, "prompt": "Grab the first the bowl with brown outer rim, position the second, then add the third.", "success": true, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 205271158, "prompt": "Arrange the curved bowl light blue shade one on top of another.", "success": false, "manifest_episode_id": 2}

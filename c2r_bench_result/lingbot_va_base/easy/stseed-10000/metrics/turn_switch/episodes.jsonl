@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 410669228, "prompt": "Press the plastic gray body switch to activate.", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 157562321, "prompt": "Switch the angled switch light tan color to its active state", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 498738258, "prompt": "Push the gray plastic switch via the right arm.", "success": false, "manifest_episode_id": 2}

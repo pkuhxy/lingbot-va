@@ -1,0 +1,3 @@
+{"task": "beat_block_hammer", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 797298394, "prompt": "With the right arm, grab the medium-sized metal hammer and hit the block", "success": true, "manifest_episode_id": 0}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 422340764, "prompt": "Lift the black and yellow hammer grip and hit the block", "success": false, "manifest_episode_id": 1}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 220656277, "prompt": "Grab the hammer for nails using the right arm then pound block", "success": false, "manifest_episode_id": 2}

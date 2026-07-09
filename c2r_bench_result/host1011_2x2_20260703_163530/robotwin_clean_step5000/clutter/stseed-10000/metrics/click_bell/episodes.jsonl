@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 539095014, "prompt": "Click the bell with protruding knob at its top center on table.", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 430029792, "prompt": "Press down the top of the simple hand bell with black stand using the left arm.", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 760309261, "prompt": "Click the bell with protruding knob's top center using the left arm.", "success": true, "manifest_episode_id": 2}

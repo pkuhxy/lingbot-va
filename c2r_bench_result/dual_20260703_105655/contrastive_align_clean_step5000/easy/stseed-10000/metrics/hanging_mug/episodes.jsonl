@@ -1,0 +1,3 @@
+{"task": "hanging_mug", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 474714700, "prompt": "Lift the medium beige mug, give it a turn, and hang it onto the smooth rack.", "success": false, "manifest_episode_id": 0}
+{"task": "hanging_mug", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 209868483, "prompt": "Lift the dark green ceramic cup, twist it, set it back, and secure it onto the rack with two rods sticking out.", "success": false, "manifest_episode_id": 1}
+{"task": "hanging_mug", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 89131365, "prompt": "Take the plain glossy mug with one arm, rotate it, and hang it onto the rack with angular body.", "success": false, "manifest_episode_id": 2}

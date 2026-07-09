@@ -1,0 +1,3 @@
+{"task": "press_stapler", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 880007787, "prompt": "Apply force to the red top black bottom stapler to staple.", "success": true, "manifest_episode_id": 0}
+{"task": "press_stapler", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 725739820, "prompt": "Use one arm to press the stapler with silver staple tray.", "success": false, "manifest_episode_id": 1}
+{"task": "press_stapler", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 39899214, "prompt": "Use one arm the right arm to press the stapler with white metallic components.", "success": true, "manifest_episode_id": 2}

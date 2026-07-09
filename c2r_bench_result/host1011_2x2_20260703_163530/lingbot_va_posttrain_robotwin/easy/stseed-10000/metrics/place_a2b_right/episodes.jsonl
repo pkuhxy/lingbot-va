@@ -1,0 +1,3 @@
+{"task": "place_a2b_right", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 219737455, "prompt": "Place the white bell precisely to the right of the bright blue smooth soap bar.", "success": true, "manifest_episode_id": 0}
+{"task": "place_a2b_right", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 818076425, "prompt": "With the right arm, move the lightweight toycar to the medium-sized coffee-box's right.", "success": true, "manifest_episode_id": 1}
+{"task": "place_a2b_right", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 113018648, "prompt": "Place the medium box with flat surfaces using the left arm at the plastic mouse's right", "success": true, "manifest_episode_id": 2}

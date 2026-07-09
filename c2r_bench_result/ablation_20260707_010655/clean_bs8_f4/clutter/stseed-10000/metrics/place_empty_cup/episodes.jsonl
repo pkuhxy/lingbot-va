@@ -1,0 +1,3 @@
+{"task": "place_empty_cup", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 270996463, "prompt": "Set the smooth blue cup for liquids carefully onto the round coaster", "success": false, "manifest_episode_id": 0}
+{"task": "place_empty_cup", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 417042454, "prompt": "Position the medium-sized plastic blue cup on the light gray round grainy coaster with the arm.", "success": false, "manifest_episode_id": 1}
+{"task": "place_empty_cup", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 111050337, "prompt": "Use an arm to place the rounded base blue cup on the small coaster with grain texture", "success": false, "manifest_episode_id": 2}

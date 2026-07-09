@@ -1,0 +1,3 @@
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 346175799, "prompt": "Position the smooth compact fan on the Teal mat so it faces the robot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 2185577, "prompt": "Grab the smooth off-white plastic fan with the left arm and ensure it's positioned on the Gray mat facing the robot.", "success": false, "manifest_episode_id": 1}
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 223942158, "prompt": "Grab the round white fan with the right arm, set it on the Maroon mat, and align it to face the robot", "success": false, "manifest_episode_id": 2}

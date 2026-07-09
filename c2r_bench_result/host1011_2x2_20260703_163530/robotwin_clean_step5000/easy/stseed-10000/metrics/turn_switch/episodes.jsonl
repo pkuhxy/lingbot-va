@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 410669228, "prompt": "Direct the left arm to operate the red bar switch", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 157562321, "prompt": "Trigger the tan switch using the right arm", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 498738258, "prompt": "Press the gray base with black buttons directly", "success": false, "manifest_episode_id": 2}

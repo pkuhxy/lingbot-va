@@ -1,0 +1,3 @@
+{"task": "place_shoe", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 259707623, "prompt": "Use the right arm to lift the the shoe with lace holes from the table and set it on the mat", "success": false, "manifest_episode_id": 0}
+{"task": "place_shoe", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 769430943, "prompt": "Use the right arm to pick the shoe for everyday wear off the table and move it onto the mat", "success": false, "manifest_episode_id": 1}
+{"task": "place_shoe", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 538037281, "prompt": "Lift the medium white shoe off the table using the right arm and drop it on the mat", "success": true, "manifest_episode_id": 2}

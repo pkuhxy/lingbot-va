@@ -1,0 +1,3 @@
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 708058173, "prompt": "Pick up the yellow bottle and shake it side to side.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 90523201, "prompt": "Pick up the light gray colored container bottle with the left arm, shake it sideways.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle_horizontally", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 63153131, "prompt": "Pick up the light and medium-sized bottle and shake it side to side.", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 331965946, "prompt": "Grab the plastic bottle using the right arm, then shake.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 433386922, "prompt": "Lift the white and orange plastic bottle and shake it thoroughly.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 165362465, "prompt": "Use the left arm to lift and shake the bottle with blue cap.", "success": true, "manifest_episode_id": 2}

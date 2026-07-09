@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 283323218, "prompt": "Grasp the handheld teal microphone, then give it to the other arm.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 40150823, "prompt": "Grasp the microphone for voice recording, then give it to the other arm.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 188807311, "prompt": "Hold the microphone with textured metal head with the right arm and give it to the left arm.", "success": false, "manifest_episode_id": 2}

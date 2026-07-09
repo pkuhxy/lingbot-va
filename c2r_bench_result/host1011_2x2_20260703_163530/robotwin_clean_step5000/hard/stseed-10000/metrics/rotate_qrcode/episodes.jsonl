@@ -1,0 +1,3 @@
+{"task": "rotate_qrcode", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 242251430, "prompt": "Take the paymentsign with blue and white text, raise it, and make the qrcode face you.", "success": false, "manifest_episode_id": 0}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 698451167, "prompt": "Use the left arm to grab the smooth surface paymentsign and rotate it until the QR faces forward", "success": false, "manifest_episode_id": 1}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 784311135, "prompt": "Catch and lift the plastic smooth paymentsign, then turn it to show the QR code.", "success": false, "manifest_episode_id": 2}

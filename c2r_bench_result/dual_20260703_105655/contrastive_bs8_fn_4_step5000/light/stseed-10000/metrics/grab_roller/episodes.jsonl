@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 482689013, "prompt": "Secure the wooden rolling tool on the table using arms.", "success": false, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 277991372, "prompt": "Securely grab the roller for smoothing materials using both arms.", "success": true, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 855555173, "prompt": "Pick up the brown roller from the table directly.", "success": true, "manifest_episode_id": 2}

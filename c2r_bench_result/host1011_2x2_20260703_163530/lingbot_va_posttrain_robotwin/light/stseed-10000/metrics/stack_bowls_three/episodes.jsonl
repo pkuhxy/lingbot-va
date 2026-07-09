@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 317869620, "prompt": "Use arms to place each the bowl with brown outer rim atop the previous one.", "success": true, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 619397709, "prompt": "Lift each the glazed bowl with curved sides and stack them together neatly.", "success": true, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 594208474, "prompt": "Place one the ceramic bowl down and carefully stack the others above it.", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "click_alarmclock", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 656863248, "prompt": "Press the center top button of the clock with white dial", "success": true, "manifest_episode_id": 0}
+{"task": "click_alarmclock", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 52974283, "prompt": "Use the left arm to press the central button on the small plastic alarm clock.", "success": true, "manifest_episode_id": 1}
+{"task": "click_alarmclock", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 399553081, "prompt": "the right arm activates the small plastic alarm clock by clicking the top button", "success": true, "manifest_episode_id": 2}

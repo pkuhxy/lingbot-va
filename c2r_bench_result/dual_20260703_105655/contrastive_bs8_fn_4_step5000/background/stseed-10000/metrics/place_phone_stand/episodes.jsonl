@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 844715882, "prompt": "Carry the metallic phone with glass screen front to the phonestand with smooth texture.", "success": false, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 863952276, "prompt": "Put the metallic phone with glass screen front atop the green plastic holder.", "success": false, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 253850150, "prompt": "Put the black phone atop the smooth brown phone holder.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 95486067, "prompt": "Start with one the bowl with brown outer rim, and stack the other two on top.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 13787679, "prompt": "Take the medium-sized bowl for holding food, stack them from bottom to top.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 458876426, "prompt": "Place one the curved bowl light blue shade down and carefully stack the others above it.", "success": true, "manifest_episode_id": 2}

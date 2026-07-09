@@ -1,0 +1,3 @@
+{"task": "stack_blocks_two", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 87492072, "prompt": "Use the right arm to move red block and the right arm to stack green block.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_blocks_two", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 638179056, "prompt": "Set red block and green block at the center, stacking green block atop red block.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_blocks_two", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 837369276, "prompt": "Place red block and green block at the center and then put green block on red block.", "success": false, "manifest_episode_id": 2}

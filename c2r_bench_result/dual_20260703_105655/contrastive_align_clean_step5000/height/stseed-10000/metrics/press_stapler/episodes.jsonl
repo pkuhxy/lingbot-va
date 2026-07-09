@@ -1,0 +1,3 @@
+{"task": "press_stapler", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 623879527, "prompt": "Lower the left arm onto the stapler the small lightweight blue stapler.", "success": true, "manifest_episode_id": 0}
+{"task": "press_stapler", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 572086478, "prompt": "Apply pressure on the small red stapler until it works.", "success": false, "manifest_episode_id": 1}
+{"task": "press_stapler", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 484718359, "prompt": "Firmly press the stapler for stapling paper using an arm.", "success": true, "manifest_episode_id": 2}

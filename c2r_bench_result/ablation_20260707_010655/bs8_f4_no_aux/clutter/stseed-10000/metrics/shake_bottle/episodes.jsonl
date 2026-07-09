@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 509663030, "prompt": "Catch the blue water bottle with textured lid and shake it instantly.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 787882419, "prompt": "Shake the black cylindrical bottle with ridges after grabbing it.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 854139504, "prompt": "Shake the bottle with white cap after grabbing it.", "success": true, "manifest_episode_id": 2}

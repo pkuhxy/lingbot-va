@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 871857874, "prompt": "Take the box for playingcards and push it further away.", "success": true, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 307853214, "prompt": "Use the left arm to grab the box holding playing cards and move it aside.", "success": false, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 200012628, "prompt": "Lift the playingcards storage box and set it away from the table.", "success": false, "manifest_episode_id": 2}

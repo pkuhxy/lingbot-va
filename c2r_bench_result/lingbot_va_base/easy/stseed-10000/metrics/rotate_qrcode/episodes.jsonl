@@ -1,0 +1,3 @@
+{"task": "rotate_qrcode", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 863796387, "prompt": "Use the left arm to grab the small black stand for payments and point its QR code toward you.", "success": false, "manifest_episode_id": 0}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 271067730, "prompt": "Using the right arm, catch the yellow and white payment display and rotate it to face the QR code.", "success": false, "manifest_episode_id": 1}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 516739595, "prompt": "Slide the paymentsign with glossy blue panel off the table and turn it to face you.", "success": false, "manifest_episode_id": 2}

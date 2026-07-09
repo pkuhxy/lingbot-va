@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 716268860, "prompt": "Shake the orange bottle after holding it firmly.", "success": false, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 239702583, "prompt": "Hold and shake the the bottle with dark brown color carefully.", "success": false, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 773352428, "prompt": "Hold the bottle with green cap with the left arm and shake lightly.", "success": false, "manifest_episode_id": 2}

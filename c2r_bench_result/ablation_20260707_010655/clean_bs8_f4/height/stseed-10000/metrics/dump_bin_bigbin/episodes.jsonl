@@ -1,0 +1,3 @@
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 609125485, "prompt": "Take the white cylindrical waste bin using arm, pour contents inside", "success": false, "manifest_episode_id": 0}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 578115340, "prompt": "Take the cylindrical small white trashbin and pour contents.", "success": false, "manifest_episode_id": 1}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 825217461, "prompt": "Use the arm to move the tabletrashbin for tabletop trash and pour.", "success": true, "manifest_episode_id": 2}

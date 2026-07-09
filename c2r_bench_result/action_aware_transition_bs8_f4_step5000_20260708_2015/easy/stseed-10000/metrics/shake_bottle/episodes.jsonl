@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 49217227, "prompt": "Grab the medium bottle with colorful label firmly, shake it, and put it down.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 19236951, "prompt": "Hold the hand-sized bottle with screw cap, shake it briefly.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 688302917, "prompt": "Grab the smooth surface bottle with gray shade firmly, shake it, and put it down.", "success": true, "manifest_episode_id": 2}

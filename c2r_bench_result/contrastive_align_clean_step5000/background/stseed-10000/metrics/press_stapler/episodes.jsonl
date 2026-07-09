@@ -1,0 +1,3 @@
+{"task": "press_stapler", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 262831721, "prompt": "Push down forcefully on the stapler the red stapler with black base.", "success": true, "manifest_episode_id": 0}
+{"task": "press_stapler", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 651759672, "prompt": "Firmly press down on the red stapler with black base to staple.", "success": true, "manifest_episode_id": 1}
+{"task": "press_stapler", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 624670365, "prompt": "Push the blue plastic stapler with silver metal until it staples.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "rotate_qrcode", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 391550427, "prompt": "Lift the paymentsign for scanning QR codes from the surface and adjust its angle towards you", "success": false, "manifest_episode_id": 0}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 67366601, "prompt": "Take the paymentsign with angled black stand, raise it, and make the qrcode face you.", "success": false, "manifest_episode_id": 1}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 493677681, "prompt": "Catch the white paymentsign with raised base, raise it, and turn it so the QR code faces you", "success": false, "manifest_episode_id": 2}

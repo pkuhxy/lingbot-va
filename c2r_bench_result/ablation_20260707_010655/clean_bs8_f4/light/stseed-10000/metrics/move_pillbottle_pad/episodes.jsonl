@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 635002489, "prompt": "Move the small brown bottle and drop it on the pad", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 190998679, "prompt": "Use the right arm to move the cylindrical bottle with ridged white lid to the pad", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 592267141, "prompt": "Use the left arm to move the small brown bottle to the pad", "success": false, "manifest_episode_id": 2}

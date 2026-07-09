@@ -1,0 +1,3 @@
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 346175799, "prompt": "Lift the compact plastic fan and set it on the Teal mat, ensuring it faces the robot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 2185577, "prompt": "Set the plastic fan with smooth finish on the Gray colored mat ensuring it faces the robot.", "success": false, "manifest_episode_id": 1}
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 223942158, "prompt": "Lift the table fan with white finish and put it on the Maroon mat so it faces the robot", "success": false, "manifest_episode_id": 2}

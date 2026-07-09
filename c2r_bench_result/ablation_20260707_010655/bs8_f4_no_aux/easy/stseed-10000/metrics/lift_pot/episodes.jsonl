@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 137637108, "prompt": "Lift the dark gray stove kitchenpot up together", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 158039042, "prompt": "Hold and raise the cylindrical kitchenpot together", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 194653683, "prompt": "Hold the medium kitchenpot made of metal firmly and lift it", "success": false, "manifest_episode_id": 2}

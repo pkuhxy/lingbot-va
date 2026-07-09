@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 388598700, "prompt": "Activate the the light-colored trapezoid-shaped plastic switch using the right arm", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 893888357, "prompt": "Operate the sleek black rectangular switch with the left arm", "success": true, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 893888358, "prompt": "Use the left arm to engage the smooth gray switch", "success": false, "manifest_episode_id": null}

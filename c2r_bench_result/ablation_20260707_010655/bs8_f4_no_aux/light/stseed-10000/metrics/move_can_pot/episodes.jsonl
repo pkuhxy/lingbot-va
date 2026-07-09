@@ -1,0 +1,3 @@
+{"task": "move_can_pot", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 248023816, "prompt": "Set the rounded-edge sauce can right next to the cooking pot with two blue handles", "success": false, "manifest_episode_id": 0}
+{"task": "move_can_pot", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 468520900, "prompt": "Bring the smooth cylindrical sauce can over and set it near the cooking kitchenpot with side grips", "success": false, "manifest_episode_id": 1}
+{"task": "move_can_pot", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 481123598, "prompt": "Use the left arm to take the yellow brown sauce can to the cooking pot with two blue handles", "success": true, "manifest_episode_id": 2}

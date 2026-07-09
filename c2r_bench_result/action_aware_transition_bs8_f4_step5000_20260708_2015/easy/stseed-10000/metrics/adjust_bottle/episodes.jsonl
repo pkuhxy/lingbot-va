@@ -1,0 +1,3 @@
+{"task": "adjust_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 330662812, "prompt": "Using the right arm, pick the green bottle with indented base upright", "success": false, "manifest_episode_id": 0}
+{"task": "adjust_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 639052818, "prompt": "Grab the hand-sized soda bottle from the table and hold it head-up.", "success": false, "manifest_episode_id": 1}
+{"task": "adjust_bottle", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 595136414, "prompt": "Locate the smooth green plastic bottle and lift it upright with the left arm.", "success": true, "manifest_episode_id": 2}

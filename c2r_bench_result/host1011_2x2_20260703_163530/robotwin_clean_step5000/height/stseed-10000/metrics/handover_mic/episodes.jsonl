@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 537376167, "prompt": "Pick up the microphone with black tip and white body and hand it to the other side.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 608063380, "prompt": "Pick up the black and white microphone and transfer it to the opposite side.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 477166296, "prompt": "Use the right arm to hold the microphone with black tip and white body, then give it to the left arm.", "success": false, "manifest_episode_id": 2}

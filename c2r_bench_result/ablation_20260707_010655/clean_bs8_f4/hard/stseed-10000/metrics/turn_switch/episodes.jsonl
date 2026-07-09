@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 856853141, "prompt": "Activate the the matte beige switch with flat top using the left arm", "success": true, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 415279015, "prompt": "Press the sleek black rectangular switch with the left arm", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 550623619, "prompt": "Click the small square switch to activate it", "success": true, "manifest_episode_id": 2}

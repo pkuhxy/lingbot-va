@@ -1,0 +1,3 @@
+{"task": "place_shoe", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 406684209, "prompt": "Use the left arm to grab the rounded tip leather shoe from the table and move it to the mat", "success": false, "manifest_episode_id": 1}
+{"task": "place_shoe", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 771315851, "prompt": "Use the left arm to pick the medium-sized adult shoe and position it on the mat", "success": false, "manifest_episode_id": 2}
+{"task": "place_shoe", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 771315852, "prompt": "Pick up the shoe with curved sole and move it to the mat", "success": false, "manifest_episode_id": null}

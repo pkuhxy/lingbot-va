@@ -1,0 +1,3 @@
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 346175799, "prompt": "Set the portable white fan onto the Teal colored mat, oriented towards the robot.", "success": false, "manifest_episode_id": 0}
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 2185577, "prompt": "Use the left arm to pick the curved plastic body small fan, set it on the Gray mat, and direct it toward the robot", "success": false, "manifest_episode_id": 1}
+{"task": "place_fan", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 223942158, "prompt": "Pick the fan with round blades, align it toward the robot, and drop it on the Maroon mat.", "success": false, "manifest_episode_id": 2}

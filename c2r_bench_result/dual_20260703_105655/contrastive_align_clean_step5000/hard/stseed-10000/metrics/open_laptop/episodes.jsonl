@@ -1,0 +1,3 @@
+{"task": "open_laptop", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 777737616, "prompt": "Raise the black laptop's top section.", "success": false, "manifest_episode_id": 0}
+{"task": "open_laptop", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 333968662, "prompt": "Raise the rectangular laptop with orange body using the right arm.", "success": true, "manifest_episode_id": 1}
+{"task": "open_laptop", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 472584621, "prompt": "Push the portable black laptop with textured casing's lid upward using the right arm.", "success": false, "manifest_episode_id": 2}

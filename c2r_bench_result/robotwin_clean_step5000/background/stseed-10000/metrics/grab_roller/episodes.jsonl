@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 274067892, "prompt": "Grasp the roller for smoothing materials on the table.", "success": true, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 102933025, "prompt": "Pick up the roller with smooth texture from the table.", "success": false, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 460612076, "prompt": "Take hold of the roller with smooth and shiny texture.", "success": true, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "rotate_qrcode", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 362674036, "prompt": "Grab the blue and white rectangular paymentsign, lift it from the table, and rotate it QR front", "success": false, "manifest_episode_id": 0}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 859982985, "prompt": "Employ the right arm to seize the QR code paymentsign, raise it, and rotate it QR-forward", "success": false, "manifest_episode_id": 1}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 831392377, "prompt": "Catch the QR code paymentsign, lift it, and adjust its QR code to face you.", "success": false, "manifest_episode_id": 2}

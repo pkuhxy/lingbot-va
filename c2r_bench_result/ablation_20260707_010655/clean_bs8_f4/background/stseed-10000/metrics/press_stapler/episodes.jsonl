@@ -1,0 +1,3 @@
+{"task": "press_stapler", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 262831721, "prompt": "Use an arm to press the stapler with red top", "success": true, "manifest_episode_id": 0}
+{"task": "press_stapler", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 651759672, "prompt": "Firmly press the desk stapler with red body using an arm.", "success": true, "manifest_episode_id": 1}
+{"task": "press_stapler", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 624670365, "prompt": "Press the plastic stapler with metal on base to complete the task.", "success": true, "manifest_episode_id": 2}

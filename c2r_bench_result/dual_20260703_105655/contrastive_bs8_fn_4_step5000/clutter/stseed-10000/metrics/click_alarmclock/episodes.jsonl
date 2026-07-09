@@ -1,0 +1,3 @@
+{"task": "click_alarmclock", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 257639388, "prompt": "Tap the center button on the digital screen alarm-clock.", "success": true, "manifest_episode_id": 0}
+{"task": "click_alarmclock", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 440855859, "prompt": "Point the left arm to press the button of the compact alarm-clock.", "success": true, "manifest_episode_id": 1}
+{"task": "click_alarmclock", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 282037745, "prompt": "Press the center top button of the lightweight plastic alarm-clock", "success": true, "manifest_episode_id": 2}

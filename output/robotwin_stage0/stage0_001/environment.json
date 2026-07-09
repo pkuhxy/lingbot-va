@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-06-29T10:48:41.155315+00:00",
+  "cuda": "12.6",
+  "diffusers": "0.36.0",
+  "git_commit": "39236eb29e8198ddfe38f4d3a8e15d42af7fdf3a",
+  "git_dirty": true,
+  "gpu": "NVIDIA H20",
+  "platform": "Linux-5.10.134-013.8.2.kangaroo.al8.x86_64-x86_64-with-glibc2.39",
+  "python": "3.10.16",
+  "torch": "2.9.0+cu126"
+}

@@ -1,0 +1,3 @@
+{"task": "beat_block_hammer", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 662897214, "prompt": "Use the hammer with claw-shaped end to beat after grabbing with the right arm", "success": true, "manifest_episode_id": 1}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 662897215, "prompt": "Pick up the hammer for nails and use it on the block", "success": true, "manifest_episode_id": null}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 662897216, "prompt": "With the left arm, grab the hammer with claw-shaped end and hammer the block", "success": true, "manifest_episode_id": null}

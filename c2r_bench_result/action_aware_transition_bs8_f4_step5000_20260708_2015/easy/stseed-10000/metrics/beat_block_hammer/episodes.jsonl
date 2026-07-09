@@ -1,0 +1,3 @@
+{"task": "beat_block_hammer", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 800201550, "prompt": "Grab the silver curved hammer head with the right arm and beat the block.", "success": false, "manifest_episode_id": 0}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 749515795, "prompt": "Use the left arm to take the handheld medium claw hammer and strike", "success": false, "manifest_episode_id": 1}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 159442177, "prompt": "Take the yellow and black hammer grip using the left arm, hit the block.", "success": true, "manifest_episode_id": 2}

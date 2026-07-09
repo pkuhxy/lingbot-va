@@ -1,0 +1,3 @@
+{"task": "place_dual_shoes", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 618305670, "prompt": "Pick up two the white-laced green running shoe, tips left, drop them into the orange shoe-box.", "success": false, "manifest_episode_id": 0}
+{"task": "place_dual_shoes", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 160852113, "prompt": "Put two the shoe with curved sole in the bright orange shoe-box with tips facing left.", "success": false, "manifest_episode_id": 1}
+{"task": "place_dual_shoes", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 450965019, "prompt": "Move two the shoe with flat rubber sole into the orange shoe-box, ensure tips point left.", "success": false, "manifest_episode_id": 2}

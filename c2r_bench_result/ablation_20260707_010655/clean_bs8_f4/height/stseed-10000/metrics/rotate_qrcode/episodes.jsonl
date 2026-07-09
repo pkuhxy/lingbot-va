@@ -1,0 +1,3 @@
+{"task": "rotate_qrcode", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 391550427, "prompt": "Employ the left arm to seize the blue and white paymentsign, raise it, and rotate it QR-forward", "success": false, "manifest_episode_id": 0}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 67366601, "prompt": "Pick the small paymentsign with stand up, then rotate to make its qrcode visible.", "success": false, "manifest_episode_id": 1}
+{"task": "rotate_qrcode", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 493677681, "prompt": "Lift the tabletop paymentsign from the surface and adjust its angle towards you", "success": false, "manifest_episode_id": 2}

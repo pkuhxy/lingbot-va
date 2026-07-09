@@ -1,0 +1,3 @@
+{"task": "place_mouse_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 747588073, "prompt": "Take hold of the dark gray mouse with the right arm and drop it on the Cyan mat.", "success": true, "manifest_episode_id": 0}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 113039282, "prompt": "With the right arm, pick up the mouse with two buttons and wheel and lay it on Red mat.", "success": false, "manifest_episode_id": 1}
+{"task": "place_mouse_pad", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 770000462, "prompt": "Use the right arm to pick the plastic mouse and place it on the Black mat.", "success": true, "manifest_episode_id": 2}

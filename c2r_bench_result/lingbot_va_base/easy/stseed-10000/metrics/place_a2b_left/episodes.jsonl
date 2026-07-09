@@ -1,0 +1,3 @@
+{"task": "place_a2b_left", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 684117033, "prompt": "Set the black phone carefully on the left of the rounded bar of dark soap", "success": false, "manifest_episode_id": 0}
+{"task": "place_a2b_left", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 454120611, "prompt": "With the right arm, set the black tea-box with gold logo on the left of the medium light coffee box for holding.", "success": false, "manifest_episode_id": 1}
+{"task": "place_a2b_left", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 471332874, "prompt": "With the right arm, position the blue top toycar left of the coffee-box with green logo.", "success": false, "manifest_episode_id": 2}

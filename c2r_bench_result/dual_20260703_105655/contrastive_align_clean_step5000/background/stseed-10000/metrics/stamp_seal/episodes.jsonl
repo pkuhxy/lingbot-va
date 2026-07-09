@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 373032052, "prompt": "Grab the smooth brown seal, align it with Lime", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 831044945, "prompt": "Stamp Black after grabbing the seal with white engraving", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 511825116, "prompt": "Press the seal with raised rounded edges onto Teal with the right arm", "success": false, "manifest_episode_id": 2}

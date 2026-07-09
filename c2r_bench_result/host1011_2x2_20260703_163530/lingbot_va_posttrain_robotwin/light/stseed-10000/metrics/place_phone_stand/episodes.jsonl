@@ -1,0 +1,3 @@
+{"task": "place_phone_stand", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 624751721, "prompt": "Put the phone featuring glass and silver frame atop the phonestand with smooth texture.", "success": true, "manifest_episode_id": 0}
+{"task": "place_phone_stand", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 409705249, "prompt": "Take the phone with black touchscreen to the light brown phone holder.", "success": true, "manifest_episode_id": 1}
+{"task": "place_phone_stand", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 852321386, "prompt": "Put the phone for calls and apps atop the small plastic phonestand.", "success": true, "manifest_episode_id": 2}

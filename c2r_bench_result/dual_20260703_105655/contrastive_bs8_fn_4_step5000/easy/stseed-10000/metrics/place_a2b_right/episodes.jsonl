@@ -1,0 +1,3 @@
+{"task": "place_a2b_right", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 219737455, "prompt": "Grab the plastic and metal bell with the right arm and set right of the solid blue cleansing soap.", "success": false, "manifest_episode_id": 0}
+{"task": "place_a2b_right", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 818076425, "prompt": "Move the palm-sized plastic toycar to the coffee-box with flat top's right using the right arm", "success": false, "manifest_episode_id": 1}
+{"task": "place_a2b_right", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 113018648, "prompt": "Set the medium-sized coffee-box neatly on the right side of the dark gray mouse.", "success": false, "manifest_episode_id": 2}

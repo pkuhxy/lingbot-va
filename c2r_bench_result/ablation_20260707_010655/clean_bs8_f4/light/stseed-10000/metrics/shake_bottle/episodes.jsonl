@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 716268860, "prompt": "Lift the yellow-capped plastic bottle and shake it thoroughly.", "success": true, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 239702583, "prompt": "Secure the plastic bottle with printed label, shake it, and place it down.", "success": true, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 773352428, "prompt": "Hold the rectangular brown body with white top with the left arm and shake lightly.", "success": true, "manifest_episode_id": 2}

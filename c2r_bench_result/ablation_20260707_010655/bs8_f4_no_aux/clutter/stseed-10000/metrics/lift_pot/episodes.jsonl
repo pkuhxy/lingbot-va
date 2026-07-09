@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 36841133, "prompt": "With arms, raise the kitchenpot for boiling and cooking upward slowly.", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 604241992, "prompt": "Engage arms to grip and lift the cylindrical kitchenpot.", "success": true, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 346464184, "prompt": "Lift the dark gray stove kitchenpot upward and hold it", "success": true, "manifest_episode_id": 2}

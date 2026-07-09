@@ -1,0 +1,3 @@
+{"task": "handover_block", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 624737248, "prompt": "Grab the red block with the left arm, pass it to the right hand, and drop it on the blue pad.", "success": false, "manifest_episode_id": 0}
+{"task": "handover_block", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 136741610, "prompt": "Use the left arm to pick up the red block and transfer it to the right arm before placing it on the blue pad.", "success": false, "manifest_episode_id": 1}
+{"task": "handover_block", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 750071861, "prompt": "Move the red block from the left hand to the pad.", "success": false, "manifest_episode_id": 2}

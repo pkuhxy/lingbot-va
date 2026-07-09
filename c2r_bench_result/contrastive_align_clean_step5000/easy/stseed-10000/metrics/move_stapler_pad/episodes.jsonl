@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 587935095, "prompt": "Move the compact bright blue stapler to the Magenta mat.", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 377264486, "prompt": "Set the desk stapler with red body down on the Blue mat", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 222338649, "prompt": "Move the black stapler with shiny interior with the left arm to the Blue mat", "success": false, "manifest_episode_id": 2}

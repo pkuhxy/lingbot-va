@@ -1,0 +1,3 @@
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 48286788, "prompt": "Lift the mini white trashbin for desk, then pour the balls.", "success": true, "manifest_episode_id": 0}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 579252647, "prompt": "Grab and tilt the light gray tabletrashbin to empty the balls.", "success": true, "manifest_episode_id": 1}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 297426591, "prompt": "Lift the light gray bucket-shaped waste bin and pour contents down.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 331664622, "prompt": "Place the decorative brown stamping seal onto Purple after grabbing.", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 423892300, "prompt": "Lift the seal with white engraving and press onto Indigo", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 36261414, "prompt": "Hold the decorative brown stamping seal and press Tan", "success": false, "manifest_episode_id": 2}

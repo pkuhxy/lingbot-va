@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 388598700, "prompt": "Click the beige switch with smooth finish to activate it", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 893888357, "prompt": "Command the left arm to engage the slanted-edge plastic black switch", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 893888358, "prompt": "Initiate the smooth gray switch by clicking", "success": false, "manifest_episode_id": null}

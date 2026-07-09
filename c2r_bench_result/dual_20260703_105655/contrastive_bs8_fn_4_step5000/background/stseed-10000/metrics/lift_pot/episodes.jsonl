@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 710924868, "prompt": "Raise the smooth gray kitchenpot using both arms", "success": true, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 8688537, "prompt": "Use arms to lift the cooking kitchenpot with side grips upward", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 699950745, "prompt": "Hold the medium kitchenpot made of metal firmly and move upward.", "success": true, "manifest_episode_id": 2}

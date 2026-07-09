@@ -1,0 +1,3 @@
+{"task": "place_bread_skillet", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 394408374, "prompt": "Use the right arm to grab the square-shaped bread piece for the solid dark-colored round pan", "success": true, "manifest_episode_id": 0}
+{"task": "place_bread_skillet", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 238928750, "prompt": "Pick the golden bread and set it into the metal skillet.", "success": true, "manifest_episode_id": 1}
+{"task": "place_bread_skillet", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 184901406, "prompt": "Pick the bread with split top off the table and place it in the medium black pan with handle.", "success": true, "manifest_episode_id": 2}

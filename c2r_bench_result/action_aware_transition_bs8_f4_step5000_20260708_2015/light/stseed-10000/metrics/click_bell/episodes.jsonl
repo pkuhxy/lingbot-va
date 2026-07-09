@@ -1,0 +1,3 @@
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 611142223, "prompt": "Click the small desk bell for tapping's <top center> using the left arm", "success": true, "manifest_episode_id": 0}
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 882122322, "prompt": "Tap the round bell's top center with the left arm.", "success": true, "manifest_episode_id": 1}
+{"task": "click_bell", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 446697675, "prompt": "Direct the left arm to touch the white bell with black bottom's top.", "success": true, "manifest_episode_id": 2}

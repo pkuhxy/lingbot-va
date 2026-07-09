@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 453776751, "prompt": "Grab the stapler for stapling paper using the right arm and shift it to Red", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 592249158, "prompt": "Move the compact red stapler with silver accents to the Green mat.", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 36218482, "prompt": "the right arm places the blue stapler for paper fastening on the Blue mat.", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 759757975, "prompt": "Use both arms to raise the dark gray stove kitchenpot.", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 273736925, "prompt": "Carry the medium kitchenpot made of metal securely using arms", "success": true, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 298285382, "prompt": "Raise the medium-sized kitchenpot with strong support", "success": false, "manifest_episode_id": 2}

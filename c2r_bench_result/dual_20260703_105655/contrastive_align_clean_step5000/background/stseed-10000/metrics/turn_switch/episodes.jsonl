@@ -1,0 +1,3 @@
+{"task": "turn_switch", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 489873751, "prompt": "Engage the tan switch with a press.", "success": false, "manifest_episode_id": 0}
+{"task": "turn_switch", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 348126012, "prompt": "Initiate the plastic switch with metal terminals by clicking", "success": false, "manifest_episode_id": 1}
+{"task": "turn_switch", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 570711438, "prompt": "Directly interact with the compact switch with flat base", "success": false, "manifest_episode_id": 2}

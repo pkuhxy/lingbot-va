@@ -1,0 +1,3 @@
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 137637108, "prompt": "Place hands on the kitchenpot for boiling and cooking, then lift.", "success": false, "manifest_episode_id": 0}
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 158039042, "prompt": "Secure the medium kitchenpot made of metal and lift it up", "success": false, "manifest_episode_id": 1}
+{"task": "lift_pot", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 194653683, "prompt": "Bring the smooth gray kitchenpot upwards together", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 761954913, "prompt": "Organize bowls the bowl with brown outer rim by stacking them in size order.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 507297234, "prompt": "Grab the bowl with brown outer rim, stack from largest at the base to the smallest.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 205271158, "prompt": "Place the first the small bowl with brown edge down, then stack the remaining two.", "success": false, "manifest_episode_id": 2}

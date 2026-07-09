@@ -1,0 +1,3 @@
+{"task": "move_playingcard_away", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 698951458, "prompt": "Lift the playingcards storage box using the left arm and transfer it outward.", "success": false, "manifest_episode_id": 0}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 209768011, "prompt": "Pick the smooth playingcards pack from the table and shift it outward.", "success": false, "manifest_episode_id": 1}
+{"task": "move_playingcard_away", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 679752270, "prompt": "Move the black playing cards box away from its position on the table.", "success": false, "manifest_episode_id": 2}

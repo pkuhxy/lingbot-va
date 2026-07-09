@@ -1,0 +1,3 @@
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 48286788, "prompt": "Secure the white round tabletrashbin and pour the balls.", "success": true, "manifest_episode_id": 0}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 579252647, "prompt": "Take the light gray waste container and pour contents.", "success": false, "manifest_episode_id": 1}
+{"task": "dump_bin_bigbin", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 579252648, "prompt": "Control the arm to raise the tabletrashbin with yellow symbol and pour.", "success": false, "manifest_episode_id": null}

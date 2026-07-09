@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 0, "seed": 95486067, "prompt": "Place the bottom the bowl with brown outer rim, then add the other two on top.", "success": false, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 1, "seed": 458876426, "prompt": "Take each the glazed bowl with curved sides and place them one by one on top.", "success": false, "manifest_episode_id": 2}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_easy", "split": "easy", "rollout_id": 2, "seed": 458876430, "prompt": "Arrange the dark inside bowl light blue outside one on top of another.", "success": false, "manifest_episode_id": null}

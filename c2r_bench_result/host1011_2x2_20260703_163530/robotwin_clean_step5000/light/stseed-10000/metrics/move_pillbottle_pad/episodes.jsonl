@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 635002489, "prompt": "Lift the bottle with white label and cap with the left arm and drop on pad", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 190998679, "prompt": "Use the right arm to grab the white bottle with teal rounded edges and put it on the pad.", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 592267141, "prompt": "Grab the small brown bottle with white accents and carefully set it onto the pad.", "success": false, "manifest_episode_id": 2}

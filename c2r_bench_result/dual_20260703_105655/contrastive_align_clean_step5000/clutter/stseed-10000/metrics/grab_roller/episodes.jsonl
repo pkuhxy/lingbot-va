@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 489372951, "prompt": "Take both arms to grasp the cylindrical roller with tapered ends.", "success": false, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 873814779, "prompt": "Pick up the roller shaped like cylinder from the table directly.", "success": true, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 237527256, "prompt": "Securely grab the palm-length roller using both arms.", "success": false, "manifest_episode_id": 2}

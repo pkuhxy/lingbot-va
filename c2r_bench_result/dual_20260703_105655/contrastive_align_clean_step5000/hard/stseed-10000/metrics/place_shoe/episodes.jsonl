@@ -1,0 +1,3 @@
+{"task": "place_shoe", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 217340311, "prompt": "Use the right arm to grab the the shoe with smooth top and grippy sole from the table and set it on the mat", "success": false, "manifest_episode_id": 0}
+{"task": "place_shoe", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 785833814, "prompt": "Use the right arm to pick the medium shoe with synthetic material off the table and move it onto the mat", "success": false, "manifest_episode_id": 1}
+{"task": "place_shoe", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 361686882, "prompt": "Take the white shoe from the table and place it on the mat", "success": false, "manifest_episode_id": 2}

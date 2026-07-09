@@ -1,0 +1,3 @@
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 744409618, "prompt": "With the left arm, move the black stapler with rectangular base to the Magenta mat", "success": false, "manifest_episode_id": 0}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 897601493, "prompt": "Set the blue stapler for paper fastening on the Green mat with the left arm.", "success": false, "manifest_episode_id": 1}
+{"task": "move_stapler_pad", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 856607750, "prompt": "Pick the metal and plastic stapler up and position it on Black mat", "success": false, "manifest_episode_id": 2}

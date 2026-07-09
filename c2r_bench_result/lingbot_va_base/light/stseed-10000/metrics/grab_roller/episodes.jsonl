@@ -1,0 +1,3 @@
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 482689013, "prompt": "Use both arms to grab the roller for smoothing materials.", "success": false, "manifest_episode_id": 0}
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 277991372, "prompt": "Take hold of the medium roller with narrower tips using your arms.", "success": false, "manifest_episode_id": 1}
+{"task": "grab_roller", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 855555173, "prompt": "Grasp the cylindrical roller firmly with arms.", "success": false, "manifest_episode_id": 2}

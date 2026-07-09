@@ -1,0 +1,3 @@
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 761954913, "prompt": "Use arms to stack each the ceramic bowl carefully.", "success": true, "manifest_episode_id": 0}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 507297234, "prompt": "Lift each the small bowl with brown edge and stack them together neatly.", "success": false, "manifest_episode_id": 1}
+{"task": "stack_bowls_three", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 205271158, "prompt": "Take each the small bowl with brown edge and place them one by one on top.", "success": false, "manifest_episode_id": 2}

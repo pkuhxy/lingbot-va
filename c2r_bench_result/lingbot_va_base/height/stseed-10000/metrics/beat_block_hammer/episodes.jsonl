@@ -1,0 +1,3 @@
+{"task": "beat_block_hammer", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 146228030, "prompt": "Use the hammer for nails to hammer the block.", "success": false, "manifest_episode_id": 0}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 129877563, "prompt": "Grab the hammer with claw-shaped end using the left arm and hit the block", "success": false, "manifest_episode_id": 1}
+{"task": "beat_block_hammer", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 758641707, "prompt": "Lift the silver curved hammer head with the right arm then strike block", "success": false, "manifest_episode_id": 2}

@@ -1,0 +1,3 @@
+{"task": "click_alarmclock", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 762866989, "prompt": "Use the left arm to press the center top of the compact alarm-clock", "success": false, "manifest_episode_id": 0}
+{"task": "click_alarmclock", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 215776478, "prompt": "Use the left arm to activate the rectangular alarm-clock's button", "success": false, "manifest_episode_id": 1}
+{"task": "click_alarmclock", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 481766951, "prompt": "Touch the small clock with rounded edges's button on the top side.", "success": false, "manifest_episode_id": 2}

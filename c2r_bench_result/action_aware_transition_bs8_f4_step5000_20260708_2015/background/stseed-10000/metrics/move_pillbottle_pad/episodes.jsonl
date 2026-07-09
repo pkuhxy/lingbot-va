@@ -1,0 +1,3 @@
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 0, "seed": 568983342, "prompt": "Place the brown bottle with white cap onto the pad after picking it.", "success": false, "manifest_episode_id": 0}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 1, "seed": 851281500, "prompt": "Use the left arm to place the palm-sized bottle with orange cover on the pad", "success": false, "manifest_episode_id": 1}
+{"task": "move_pillbottle_pad", "task_config": "rt_c2r_background", "split": "background", "rollout_id": 2, "seed": 140710075, "prompt": "Grab the plastic bottle with ridged cap with the right arm and move it to the pad.", "success": false, "manifest_episode_id": 2}

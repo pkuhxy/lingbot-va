@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 0, "seed": 203079918, "prompt": "the right arm picks the seal made of polished stone, stamps Black", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 1, "seed": 331445957, "prompt": "Stamp the red seal for stamping on Purple", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_light", "split": "light", "rollout_id": 2, "seed": 381966771, "prompt": "With the left arm, secure the seal with smooth engraved top and mark Orange.", "success": true, "manifest_episode_id": 2}

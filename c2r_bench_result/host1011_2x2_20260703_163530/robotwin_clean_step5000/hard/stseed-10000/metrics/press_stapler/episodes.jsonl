@@ -1,0 +1,3 @@
+{"task": "press_stapler", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 0, "seed": 179056869, "prompt": "Push down on the plastic stapler with silver mechanism to staple", "success": false, "manifest_episode_id": 0}
+{"task": "press_stapler", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 1, "seed": 209687887, "prompt": "Press the red stapler with black base downward using your arm the left arm.", "success": true, "manifest_episode_id": 1}
+{"task": "press_stapler", "task_config": "rt_c2r_hard", "split": "hard", "rollout_id": 2, "seed": 864098297, "prompt": "Use your arm the right arm to push the small office stapler down.", "success": false, "manifest_episode_id": 2}

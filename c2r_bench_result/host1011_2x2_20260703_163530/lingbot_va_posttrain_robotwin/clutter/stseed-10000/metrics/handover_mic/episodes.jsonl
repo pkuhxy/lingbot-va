@@ -1,0 +1,3 @@
+{"task": "handover_mic", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 27533572, "prompt": "Reach for the gray and dark blue microphone and move it to the other hand.", "success": true, "manifest_episode_id": 0}
+{"task": "handover_mic", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 662507189, "prompt": "Take the plastic teal microphone with slider using the left arm and transfer it to the right arm.", "success": true, "manifest_episode_id": 1}
+{"task": "handover_mic", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 334430710, "prompt": "Lift the dark blue microphone and hand it to someone else.", "success": true, "manifest_episode_id": 2}

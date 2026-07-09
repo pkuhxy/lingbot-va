@@ -1,0 +1,3 @@
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 0, "seed": 748150648, "prompt": "the left arm uses the small seal with round base to stamp Magenta", "success": false, "manifest_episode_id": 0}
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 1, "seed": 198540316, "prompt": "the left arm grabs the compact stone seal, stamps Cyan", "success": false, "manifest_episode_id": 1}
+{"task": "stamp_seal", "task_config": "rt_c2r_clutter", "split": "clutter", "rollout_id": 2, "seed": 864160547, "prompt": "Place the plastic red and black seal onto Teal", "success": false, "manifest_episode_id": 2}

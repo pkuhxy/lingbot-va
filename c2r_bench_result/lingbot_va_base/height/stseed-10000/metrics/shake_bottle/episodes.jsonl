@@ -1,0 +1,3 @@
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 0, "seed": 11397417, "prompt": "Secure the light and medium-sized bottle and perform a shake.", "success": false, "manifest_episode_id": 0}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 1, "seed": 257406650, "prompt": "Secure the black plastic bottle with Pepsi logo, shake it, and place it down.", "success": false, "manifest_episode_id": 1}
+{"task": "shake_bottle", "task_config": "rt_c2r_height", "split": "height", "rollout_id": 2, "seed": 175537280, "prompt": "Lift up the bottle with dark brown color using the right arm, then shake.", "success": false, "manifest_episode_id": 2}
